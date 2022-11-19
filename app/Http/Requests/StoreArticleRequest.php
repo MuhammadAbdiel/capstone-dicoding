@@ -24,7 +24,11 @@ class StoreArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => ['required', 'string', 'max:255'],
+            'image' => ['image', 'file', 'max:5120'],
+            'content' => ['required', 'string'],
+            'category_id' => ['required', 'integer', 'exists:categories,id'],
+            'user_id' => ['required', 'integer', 'exists:users,id'],
         ];
     }
 }

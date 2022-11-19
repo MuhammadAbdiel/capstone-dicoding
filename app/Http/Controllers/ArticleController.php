@@ -1,11 +1,12 @@
-
 <?php
 
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Http\Resources\ArticleResource;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
+use Symfony\Component\HttpFoundation\Response;
 
 class ArticleController extends Controller
 {
@@ -16,7 +17,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        return new ArticleResource(Article::with(['user', 'category'])->latest()->get());
     }
 
     /**
@@ -37,7 +38,9 @@ class ArticleController extends Controller
      */
     public function store(StoreArticleRequest $request)
     {
-        //
+        $article = Article::create($request->validated());
+
+        return (new ArticleResource($article))->response()->setStatusCode(Response::HTTP_CREATED);
     }
 
     /**
@@ -48,7 +51,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        return new ArticleResource($article->load(['user', 'category']));
     }
 
     /**
@@ -71,7 +74,9 @@ class ArticleController extends Controller
      */
     public function update(UpdateArticleRequest $request, Article $article)
     {
-        //
+        $article->update($request->validated());
+
+        return (new ArticleResource($article))->response()->setStatusCode(Response::HTTP_ACCEPTED);
     }
 
     /**
@@ -82,6 +87,8 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->delete();
+
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }
