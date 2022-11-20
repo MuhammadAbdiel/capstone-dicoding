@@ -29,7 +29,7 @@
     "no-use-before-define": 0,
     "react/no-unescaped-entities": 0,
     "react/prop-types": 0,
-    "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }, { "usePrettierrc": true }],
     "react/function-component-definition": [
       2,
       {

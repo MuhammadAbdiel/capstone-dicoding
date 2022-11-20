@@ -15,5 +15,6 @@
   "useTabs": false,
   "printWidth": 140,
   "tabWidth": 2,
-  "rangeStart": 0
+  "rangeStart": 0,
+  "endOfLine": "auto"
 }
