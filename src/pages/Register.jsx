@@ -2,7 +2,8 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Link } from 'react-router-dom'
-import FooterComponent from '../components/FooterComponent'
+// import FooterComponent from '../components/FooterComponent'
+import FooterStyleComponent from '../components/FooterStyleComponent'
 import HeaderComponent from '../components/HeaderComponent'
 
 const Register = () => {
@@ -35,7 +36,7 @@ const Register = () => {
           </Form>
         </div>
       </div>
-      <FooterComponent />
+      <FooterStyleComponent />
     </>
   )
 }
