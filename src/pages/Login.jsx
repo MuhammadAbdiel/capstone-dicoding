@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import HeaderComponent from '../components/HeaderComponent'
 import { Link } from 'react-router-dom'
+import FooterComponent from '../components/FooterComponent'
 
 const Login = () => {
   return (
@@ -28,6 +29,7 @@ const Login = () => {
           </p>
         </Form>
       </div>
+      <FooterComponent />
     </>
   )
 }

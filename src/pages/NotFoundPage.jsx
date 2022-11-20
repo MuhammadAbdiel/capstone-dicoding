@@ -1,6 +1,7 @@
 import React from 'react'
 import HeaderComponent from '../components/HeaderComponent'
 import { TiWarningOutline } from 'react-icons/ti'
+import FooterComponent from '../components/FooterComponent'
 
 const NotFoundPage = () => {
   return (
@@ -14,6 +15,7 @@ const NotFoundPage = () => {
           <p>Halaman yang anda minta tidak dapat ditemukan!</p>
         </div>
       </div>
+      <FooterComponent />
     </>
   )
 }
