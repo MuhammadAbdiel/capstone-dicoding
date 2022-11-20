@@ -24,7 +24,7 @@ const Login = () => {
           <Button style={{ width: '100%' }} className='mb-3 fw-bold' variant='primary' type='submit'>
             Login
           </Button>
-          <p className='d-flex justify-content-center'>
+          <p className='text-center'>
             Don't have an account? <Link to='/register'> Register here</Link>
           </p>
         </Form>
