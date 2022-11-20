@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import HeaderComponent from '../components/HeaderComponent'
 import FooterComponent from '../components/FooterComponent'
+import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    window.addEventListener('load', () => {
+      setIsLoading(false)
+    })
+  }, [])
   return (
     <>
       <HeaderComponent />
+      {isLoading && <LoadingIndicatorComponent />}
       <div className='jumbotron'>
         <img src='https://source.unsplash.com/U6t80TWJ1DM/1920x1280' alt='Pantai' className='jumbotron-img' />
         <div className='jumbotron-text-overlay'>
