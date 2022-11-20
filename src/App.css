@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+/* custom css start from here */
+.not-found {
+  background-color: #eee;
+  width: 70%;
+}
+.not-found > * {
+  margin: 0;
+}
+.not-found .warning-icon {
+  font-size: 20vw;
+}
+.not-found h1 {
+  font-size: 5vw;
+}
+.not-found p {
+  font-size: 1.5vw;
+}
