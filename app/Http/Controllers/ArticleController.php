@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use Illuminate\Support\Facades\Gate;
 use App\Http\Resources\ArticleResource;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
@@ -38,6 +39,8 @@ class ArticleController extends Controller
      */
     public function store(StoreArticleRequest $request)
     {
+        abort_if(Gate::denies('create-article'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $article = Article::create($request->validated());
 
         return (new ArticleResource($article))->response()->setStatusCode(Response::HTTP_CREATED);
@@ -74,6 +77,8 @@ class ArticleController extends Controller
      */
     public function update(UpdateArticleRequest $request, Article $article)
     {
+        abort_if(Gate::denies('update-article', $article), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $article->update($request->validated());
 
         return (new ArticleResource($article))->response()->setStatusCode(Response::HTTP_ACCEPTED);
@@ -87,6 +92,8 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
+        abort_if(Gate::denies('delete-article', $article), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $article->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
