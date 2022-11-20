@@ -1,0 +1,63 @@
+.overlay-loading {
+  background-color: rgba(0, 0, 0, 0.8);
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.dots {
+  width: 100vw;
+  height: 5vw;
+}
+.dots .dot {
+  position: fixed;
+  width: 1vw;
+  height: 1vw;
+  border-radius: 50%;
+  background: white;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  margin: 0 calc(50% - 3vw);
+}
+.dots div:nth-child(1) {
+  left: 1vw;
+  animation: dots1 0.6s infinite;
+}
+.dots div:nth-child(2) {
+  left: 1vw;
+  animation: dots2 0.6s infinite;
+}
+.dots div:nth-child(3) {
+  left: 4vw;
+  animation: dots2 0.6s infinite;
+}
+.dots div:nth-child(4) {
+  left: 7vw;
+  animation: dots3 0.6s infinite;
+}
+@keyframes dots1 {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes dots2 {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(3vw, 0);
+  }
+}
+@keyframes dots3 {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
