@@ -1,16 +1,21 @@
 import React from 'react'
-import HeaderComponent from '../components/HeaderComponent'
-import FooterStyleComponent from '../components/FooterStyleComponent'
+import logo from '../images/logo192.png'
 const ProfileComponent = () => {
   return (
-    <>
-      <HeaderComponent />
-      <div className='container-fluid px-4'>
-        <p>Profile Component, aku lanjutin nanti bang</p>
-        <p>mencoba berguna walau tidak berguna:)</p>
+    <div>
+      <div className='card' style={{ width: '20rem', margin: '25px auto' }}>
+        <div className='card-header'>
+          <img src={logo} className='card-img-top' alt='...' />
+        </div>
+        <ul className='list-group list-group-flush'>
+          <li className='list-group-item'>An item</li>
+          <li className='list-group-item'>A second item</li>
+          <li className='list-group-item'>A third item</li>
+          <li className='list-group-item'>A third item</li>
+          <li className='list-group-item'>A third item</li>
+        </ul>
       </div>
-      <FooterStyleComponent />
-    </>
+    </div>
   )
 }
 

@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import NotFoundPage from './pages/NotFoundPage'
-import ProfileComponent from './components/ProfileComponent'
+import Profile from './pages/Profile'
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/user/profile' element={<ProfileComponent />} />
+        <Route path='/user/profile' element={<Profile />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
