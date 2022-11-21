@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Destination;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Resources\DestinationResource;
 use App\Http\Requests\StoreDestinationRequest;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\UpdateDestinationRequest;
+use App\Models\DetailTransaction;
+use Illuminate\Http\Request;
 
 class DestinationController extends Controller
 {
@@ -97,5 +100,46 @@ class DestinationController extends Controller
         $destination->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    public function order(Destination $destination, Request $request)
+    {
+        $request->validate([
+            'quantity' => ['required', 'integer', 'min:1'],
+        ]);
+
+        $total_price = $destination->price * $request->quantity;
+
+        $transaction = Transaction::where('user_id', auth()->user()->id)->where('transaction_status', 0)->first();
+
+        if (empty($transaction)) {
+            $transaction = Transaction::create([
+                'user_id' => auth()->user()->id,
+                'transaction_status' => 0,
+                'total_price' => $total_price,
+            ]);
+        } else {
+            $transaction->total_price += $total_price;
+            $transaction->update();
+        }
+
+        DetailTransaction::create([
+            'transaction_id' => $transaction->id,
+            'destination_id' => $destination->id,
+            'quantity' => $request->quantity,
+            'price' => $total_price,
+        ]);
+
+        // $detailTransactions = DetailTransaction::where('transaction_id', $transaction->id)->get();
+        // foreach ($detailTransactions as $detailTransaction) {
+        //     $destination = Destination::find($detailTransaction->destination_id);
+        //     $destination->quantity -= $detailTransaction->quantity;
+        //     $destination->update();
+        // }
+
+        return response()->json([
+            'message' => 'success',
+            'data' => $transaction->load(['user', 'detail_transactions']),
+        ]);
     }
 }

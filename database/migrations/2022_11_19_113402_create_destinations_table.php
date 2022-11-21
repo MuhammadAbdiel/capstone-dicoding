@@ -16,6 +16,7 @@ class CreateDestinationsTable extends Migration
         Schema::create('destinations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->bigInteger('price');
             $table->double('rating');
             $table->string('location');
             $table->text('description');

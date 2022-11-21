@@ -17,6 +17,7 @@ class DestinationSeeder extends Seeder
         $destination = [
             [
                 'name' => 'Hawai Waterpark',
+                'price' => 100000,
                 'rating' => 5.0,
                 'location' => 'Kabupaten Malang, Jawa Timur',
                 'description' => 'Taman rekreasi air dengan seluncuran warna-warni, kolam ombak & area panjat tebing anak, serta food court.'

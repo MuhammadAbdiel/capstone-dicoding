@@ -70,8 +70,11 @@ Route::middleware('auth:sanctum')->group(function () {
   // Route get User Login
   Route::get('/user', [AuthController::class, 'getUserLoggedIn']);
 
-  // Route put wishlists
+  // Route put Wishlists
   Route::put('/wishlists/{destination}', [UserController::class, 'wishlist']);
+
+  // Route put Orders
+  Route::put('/orders/{destination}', [DestinationController::class, 'order']);
 
   Route::post('/logout', [AuthController::class, 'logout']);
 });

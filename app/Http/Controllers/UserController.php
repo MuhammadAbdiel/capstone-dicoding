@@ -30,19 +30,23 @@ class UserController extends Controller
     {
         $userLogin = auth()->user();
 
+        $wishlist = false;
         $userWishlist = Wishlist::where('user_id', $userLogin->id)->where('destination_id', $destination->id)->first();
 
-        if (!$userWishlist) {
+        if (empty($userWishlist)) {
             Wishlist::create([
                 'user_id' => $userLogin->id,
                 'destination_id' => $destination->id,
             ]);
+
+            $wishlist = true;
         } else {
             $userWishlist->delete();
         }
 
         return response()->json([
             'message' => 'success',
+            'wishlist' => $wishlist,
         ]);
     }
 }
