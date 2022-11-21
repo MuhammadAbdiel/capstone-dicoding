@@ -25,6 +25,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        // Gate Articles
         Gate::define('create-article', function ($user) {
             return $user->role == 'admin';
         });
@@ -32,6 +33,20 @@ class AuthServiceProvider extends ServiceProvider
             return $user->role == 'admin';
         });
         Gate::define('delete-article', function ($user) {
+            return $user->role == 'admin';
+        });
+
+        // Gate Categories
+        Gate::define('create-category', function ($user) {
+            return $user->role == 'admin';
+        });
+        Gate::define('show-category', function ($user) {
+            return $user->role == 'admin';
+        });
+        Gate::define('update-category', function ($user) {
+            return $user->role == 'admin';
+        });
+        Gate::define('delete-category', function ($user) {
             return $user->role == 'admin';
         });
     }

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Support\Facades\Gate;
+use App\Http\Resources\CategoryResource;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use Symfony\Component\HttpFoundation\Response;
 
 class CategoryController extends Controller
 {
@@ -15,7 +18,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return new CategoryResource(Category::with(['articles'])->latest()->get());
     }
 
     /**
@@ -36,7 +39,11 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        abort_if(Gate::denies('create-category'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $category = Category::create($request->validated());
+
+        return (new CategoryResource($category))->response()->setStatusCode(Response::HTTP_CREATED);
     }
 
     /**
@@ -47,7 +54,9 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        abort_if(Gate::denies('show-category'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        return new CategoryResource($category->load(['articles']));
     }
 
     /**
@@ -70,7 +79,11 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+        abort_if(Gate::denies('update-category'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $category->update($request->validated());
+
+        return (new CategoryResource($category))->response()->setStatusCode(Response::HTTP_ACCEPTED);
     }
 
     /**
@@ -81,6 +94,10 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        abort_if(Gate::denies('delete-category'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $category->delete();
+
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }
