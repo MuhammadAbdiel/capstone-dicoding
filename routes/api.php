@@ -70,5 +70,8 @@ Route::middleware('auth:sanctum')->group(function () {
   // Route get User Login
   Route::get('/user', [AuthController::class, 'getUserLoggedIn']);
 
+  // Route put wishlists
+  Route::put('/wishlists/{destination}', [UserController::class, 'wishlist']);
+
   Route::post('/logout', [AuthController::class, 'logout']);
 });
