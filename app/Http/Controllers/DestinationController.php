@@ -130,13 +130,6 @@ class DestinationController extends Controller
             'price' => $total_price,
         ]);
 
-        // $detailTransactions = DetailTransaction::where('transaction_id', $transaction->id)->get();
-        // foreach ($detailTransactions as $detailTransaction) {
-        //     $destination = Destination::find($detailTransaction->destination_id);
-        //     $destination->quantity -= $detailTransaction->quantity;
-        //     $destination->update();
-        // }
-
         return response()->json([
             'message' => 'success',
             'data' => $transaction->load(['user', 'detail_transactions']),
