@@ -49,5 +49,24 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('delete-category', function ($user) {
             return $user->role == 'admin';
         });
+
+        // Gate user
+        Gate::define('index-user', function ($user) {
+            return $user->role == 'admin';
+        });
+        Gate::define('show-user', function ($user) {
+            return $user->role == 'admin';
+        });
+
+        // Gate Destination
+        Gate::define('create-destination', function ($user) {
+            return $user->role == 'admin';
+        });
+        Gate::define('update-destination', function ($user) {
+            return $user->role == 'admin';
+        });
+        Gate::define('delete-destination', function ($user) {
+            return $user->role == 'admin';
+        });
     }
 }

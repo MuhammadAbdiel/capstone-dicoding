@@ -18,7 +18,7 @@ class CreateDestinationsTable extends Migration
             $table->string('name');
             $table->double('rating');
             $table->string('location');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }

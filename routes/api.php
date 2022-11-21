@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 
 /*
@@ -27,7 +29,10 @@ Route::get('articles/{article}', [ArticleController::class, 'show']);
 
 // Route get Categories
 Route::get('categories', [CategoryController::class, 'index']);
-Route::get('categories/{category}', [CategoryController::class, 'show']);
+
+// Route get Destinations
+Route::get('destinations', [DestinationController::class, 'index']);
+Route::get('destinations/{destination}', [DestinationController::class, 'show']);
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
@@ -50,7 +55,14 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
   Route::resource('articles', ArticleController::class)->except(['index', 'create', 'show', 'edit']);
 
   // Route resource Categories
-  Route::resource('categories', CategoryController::class)->except(['index', 'create', 'show', 'edit']);
+  Route::resource('categories', CategoryController::class)->except(['index', 'create', 'edit']);
+
+  // Route get Users
+  Route::get('users', [UserController::class, 'index']);
+  Route::get('users/{user}', [UserController::class, 'show']);
+
+  // Route resource Destinations
+  Route::resource('destinations', DestinationController::class)->except(['index', 'create', 'show', 'edit']);
 });
 
 Route::middleware('auth:sanctum')->group(function () {

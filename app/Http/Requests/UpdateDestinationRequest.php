@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateDestinationRequest extends FormRequest
@@ -13,7 +14,7 @@ class UpdateDestinationRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return Gate::allows('update-destination');
     }
 
     /**
@@ -24,7 +25,10 @@ class UpdateDestinationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['string', 'max:255'],
+            'rating' => ['numeric', 'min:0', 'max:5'],
+            'location' => ['string', 'max:255'],
+            'description' => ['string'],
         ];
     }
 }

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Destination;
+use Illuminate\Support\Facades\Gate;
+use App\Http\Resources\DestinationResource;
 use App\Http\Requests\StoreDestinationRequest;
+use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\UpdateDestinationRequest;
 
 class DestinationController extends Controller
@@ -15,7 +18,7 @@ class DestinationController extends Controller
      */
     public function index()
     {
-        //
+        return new DestinationResource(Destination::with(['destination_galleries', 'wishlists', 'detail_transactions'])->latest()->get());
     }
 
     /**
@@ -36,7 +39,11 @@ class DestinationController extends Controller
      */
     public function store(StoreDestinationRequest $request)
     {
-        //
+        abort_if(Gate::denies('create-destination'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $destination = Destination::create($request->validated());
+
+        return (new DestinationResource($destination))->response()->setStatusCode(Response::HTTP_CREATED);
     }
 
     /**
@@ -47,7 +54,7 @@ class DestinationController extends Controller
      */
     public function show(Destination $destination)
     {
-        //
+        return new DestinationResource($destination->load(['destination_galleries', 'wishlists', 'detail_transactions']));
     }
 
     /**
@@ -70,7 +77,11 @@ class DestinationController extends Controller
      */
     public function update(UpdateDestinationRequest $request, Destination $destination)
     {
-        //
+        abort_if(Gate::denies('update-destination'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $destination->update($request->validated());
+
+        return (new DestinationResource($destination))->response()->setStatusCode(Response::HTTP_ACCEPTED);
     }
 
     /**
@@ -81,6 +92,10 @@ class DestinationController extends Controller
      */
     public function destroy(Destination $destination)
     {
-        //
+        abort_if(Gate::denies('delete-destination'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $destination->delete();
+
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }
