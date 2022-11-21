@@ -22,6 +22,7 @@ const HeaderComponent = ({ isUserLogged = true }) => {
             </Nav.Link>
             {isUserLogged ? (
               <NavDropdown title='Username' id='collasible-nav-dropdown' className='ms-3'>
+                <NavDropdown.Item href='/user/profile'>Profile</NavDropdown.Item>
                 <NavDropdown.Item href='/user/saved'>Saved</NavDropdown.Item>
                 <NavDropdown.Item href='/user/setting'>Setting</NavDropdown.Item>
                 <NavDropdown.Divider />
