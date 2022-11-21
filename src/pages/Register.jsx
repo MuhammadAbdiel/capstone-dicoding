@@ -27,6 +27,11 @@ const Register = () => {
               <Form.Control type='password' placeholder='Enter your Password' />
             </Form.Group>
 
+            <Form.Group className='mb-3 ' controlId='formRePassword'>
+              <Form.Label>Reenter Password</Form.Label>
+              <Form.Control type='password' placeholder='Enter your Reenter Password' />
+            </Form.Group>
+
             <Button style={{ width: '100%' }} className='mb-3 fw-bold' variant='primary' type='submit'>
               Register
             </Button>
