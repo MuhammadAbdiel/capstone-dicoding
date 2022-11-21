@@ -17,6 +17,8 @@ class DestinationSeeder extends Seeder
         $destination = [
             [
                 'name' => 'Hawai Waterpark',
+                'open_time' => '08:00:00',
+                'close_time' => '17:00:00',
                 'price' => 100000,
                 'rating' => 5.0,
                 'location' => 'Kabupaten Malang, Jawa Timur',

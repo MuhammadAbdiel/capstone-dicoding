@@ -16,6 +16,8 @@ class CreateDestinationsTable extends Migration
         Schema::create('destinations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->time('open_time')->default('00:00:00');
+            $table->time('close_time')->default('00:00:00');
             $table->bigInteger('price');
             $table->double('rating');
             $table->string('location');
