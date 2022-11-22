@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Destination;
+use Illuminate\Http\Request;
 use App\Models\DestinationGallery;
+use Illuminate\Support\Facades\Gate;
+use Symfony\Component\HttpFoundation\Response;
+use App\Http\Resources\DestinationGalleryResource;
 use App\Http\Requests\StoreDestinationGalleryRequest;
 use App\Http\Requests\UpdateDestinationGalleryRequest;
 
@@ -15,7 +20,9 @@ class DestinationGalleryController extends Controller
      */
     public function index()
     {
-        //
+        abort_if(Gate::denies('index-destination-gallery'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        return new DestinationGalleryResource(DestinationGallery::with(['destination'])->latest()->get());
     }
 
     /**
@@ -36,7 +43,7 @@ class DestinationGalleryController extends Controller
      */
     public function store(StoreDestinationGalleryRequest $request)
     {
-        //
+        // 
     }
 
     /**
@@ -47,7 +54,9 @@ class DestinationGalleryController extends Controller
      */
     public function show(DestinationGallery $destinationGallery)
     {
-        //
+        abort_if(Gate::denies('show-destination-gallery'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        return new DestinationGalleryResource($destinationGallery->load(['destination']));
     }
 
     /**
@@ -81,6 +90,10 @@ class DestinationGalleryController extends Controller
      */
     public function destroy(DestinationGallery $destinationGallery)
     {
-        //
+        abort_if(Gate::denies('delete-destination-gallery'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $destinationGallery->delete();
+
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

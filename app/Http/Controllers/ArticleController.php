@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Gate;
 use App\Http\Resources\ArticleResource;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
+use App\Models\ArticleGallery;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class ArticleController extends Controller
@@ -97,5 +99,20 @@ class ArticleController extends Controller
         $article->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    public function store_image(Request $request, Article $article)
+    {
+        abort_if(Gate::denies('create-article-gallery', $article), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $articleGallery = ArticleGallery::create([
+            'article_id' => $article->id,
+            'image' => $request->image,
+        ]);
+
+        return response()->json([
+            'message' => 'success',
+            'article_gallery' => $articleGallery->load('article'),
+        ]);
     }
 }

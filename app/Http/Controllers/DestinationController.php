@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Destination;
 use App\Models\Transaction;
+use Illuminate\Http\Request;
+use App\Models\DetailTransaction;
+use App\Models\DestinationGallery;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Resources\DestinationResource;
 use App\Http\Requests\StoreDestinationRequest;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\UpdateDestinationRequest;
-use App\Models\DetailTransaction;
-use Illuminate\Http\Request;
 
 class DestinationController extends Controller
 {
@@ -133,6 +134,21 @@ class DestinationController extends Controller
         return response()->json([
             'message' => 'success',
             'data' => $transaction->load(['user', 'detail_transactions']),
+        ]);
+    }
+
+    public function store_image(Request $request, Destination $destination)
+    {
+        abort_if(Gate::denies('create-destination-gallery'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $destinationGallery = DestinationGallery::create([
+            'destination_id' => $destination->id,
+            'image' => $request->image,
+        ]);
+
+        return response()->json([
+            'message' => 'success',
+            'destination_gallery' => $destinationGallery->load('destination'),
         ]);
     }
 }

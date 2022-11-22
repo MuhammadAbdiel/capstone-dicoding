@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DestinationController;
+use App\Http\Controllers\ArticleGalleryController;
+use App\Http\Controllers\DestinationGalleryController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 
 /*
@@ -34,12 +36,14 @@ Route::get('categories', [CategoryController::class, 'index']);
 Route::get('destinations', [DestinationController::class, 'index']);
 Route::get('destinations/{destination}', [DestinationController::class, 'show']);
 
+// Prefix admin, namespace Admin
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
   // Route Auth Admin
   Route::post('/register', [AdminAuthController::class, 'register']);
   Route::post('/login', [AdminAuthController::class, 'login']);
 
+  // Middleware Admin
   Route::middleware(['auth:sanctum', 'admin'])->group(function () {
 
     // Route get Admin Login
@@ -49,10 +53,17 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
   });
 });
 
+// Middleware Admin
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
 
   // Route resource Articles
   Route::resource('articles', ArticleController::class)->except(['index', 'create', 'show', 'edit']);
+
+  // Route put Article Galleries
+  Route::put('galleries/{article}', [ArticleController::class, 'store_image']);
+
+  // Route resource Article Galleries
+  Route::resource('article_galleries', ArticleGalleryController::class)->except(['create', 'store', 'edit', 'update']);
 
   // Route resource Categories
   Route::resource('categories', CategoryController::class)->except(['index', 'create', 'edit']);
@@ -63,6 +74,12 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
 
   // Route resource Destinations
   Route::resource('destinations', DestinationController::class)->except(['index', 'create', 'show', 'edit']);
+
+  // Route put Destination Galleries
+  Route::put('galleries/{destination}', [DestinationController::class, 'store_image']);
+
+  // Route resource Destination Galleries
+  Route::resource('destination_galleries', DestinationGalleryController::class)->except(['create', 'store', 'edit', 'update']);
 });
 
 Route::middleware('auth:sanctum')->group(function () {
