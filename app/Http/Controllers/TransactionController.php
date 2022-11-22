@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaction;
+use Illuminate\Support\Facades\Gate;
+use App\Http\Resources\TransactionResource;
 use App\Http\Requests\StoreTransactionRequest;
+use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\UpdateTransactionRequest;
 
 class TransactionController extends Controller
@@ -15,7 +18,9 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        abort_if(Gate::denies('index-transaction'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        return new TransactionResource(Transaction::with(['user', 'detail_transactions'])->latest()->get());
     }
 
     /**
@@ -47,7 +52,9 @@ class TransactionController extends Controller
      */
     public function show(Transaction $transaction)
     {
-        //
+        abort_if(Gate::denies('show-transaction'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        return new TransactionResource($transaction->load(['user', 'detail_transactions']));
     }
 
     /**
@@ -70,7 +77,11 @@ class TransactionController extends Controller
      */
     public function update(UpdateTransactionRequest $request, Transaction $transaction)
     {
-        //
+        abort_if(Gate::denies('update-transaction'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $transaction->update($request->validated());
+
+        return (new TransactionResource($transaction))->response()->setStatusCode(Response::HTTP_ACCEPTED);
     }
 
     /**

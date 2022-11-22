@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class UpdateTransactionRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class UpdateTransactionRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return Gate::allows('update-transaction');
     }
 
     /**
@@ -24,7 +25,7 @@ class UpdateTransactionRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'transaction_status' => ['integer'],
         ];
     }
 }

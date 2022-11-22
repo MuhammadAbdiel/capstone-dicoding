@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DestinationController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ArticleGalleryController;
 use App\Http\Controllers\DestinationGalleryController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
@@ -80,6 +81,9 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
 
   // Route resource Destination Galleries
   Route::resource('destination_galleries', DestinationGalleryController::class)->except(['create', 'store', 'edit', 'update']);
+
+  // Route resource Transactions
+  Route::resource('transactions', TransactionController::class)->except(['create', 'store', 'update', 'destroy']);
 });
 
 Route::middleware('auth:sanctum')->group(function () {
