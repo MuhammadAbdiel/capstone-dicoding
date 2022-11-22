@@ -16,7 +16,7 @@ class CreateDestinationGalleriesTable extends Migration
         Schema::create('destination_galleries', function (Blueprint $table) {
             $table->id();
             $table->foreignId('destination_id')->constrained('destinations');
-            $table->string('image');
+            $table->text('image');
             $table->timestamps();
         });
     }

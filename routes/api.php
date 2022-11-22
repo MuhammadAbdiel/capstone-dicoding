@@ -83,7 +83,7 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
   Route::resource('destination_galleries', DestinationGalleryController::class)->except(['create', 'store', 'edit', 'update']);
 
   // Route resource Transactions
-  Route::resource('transactions', TransactionController::class)->except(['create', 'store', 'update', 'destroy']);
+  Route::resource('transactions', TransactionController::class)->except(['create', 'store', 'edit', 'destroy']);
 });
 
 Route::middleware('auth:sanctum')->group(function () {

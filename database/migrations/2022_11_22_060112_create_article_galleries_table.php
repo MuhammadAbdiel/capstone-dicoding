@@ -16,7 +16,7 @@ class CreateArticleGalleriesTable extends Migration
         Schema::create('article_galleries', function (Blueprint $table) {
             $table->id();
             $table->foreignId('article_id')->constrained('articles');
-            $table->string('image');
+            $table->text('image');
             $table->timestamps();
         });
     }
