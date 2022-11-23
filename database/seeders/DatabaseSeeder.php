@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ArticleSeeder::class,
             DestinationGallerySeeder::class,
+            ArticleGallerySeeder::class,
         ]);
     }
 }

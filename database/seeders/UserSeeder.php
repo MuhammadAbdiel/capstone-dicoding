@@ -16,10 +16,20 @@ class UserSeeder extends Seeder
     {
         $user = [
             [
+                'name' => 'Admin 1',
+                'username' => 'admin1',
+                'email' => 'admin1@email.com',
+                'password' => bcrypt('password'),
+                'role' => 'admin',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
                 'name' => 'User 1',
                 'username' => 'user1',
                 'email' => 'user1@email.com',
                 'password' => bcrypt('password'),
+                'role' => 'user',
                 'created_at' => now(),
                 'updated_at' => now(),
             ]

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\TransactionController;
@@ -84,6 +85,9 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
 
   // Route resource Transactions
   Route::resource('transactions', TransactionController::class)->except(['create', 'store', 'edit', 'destroy']);
+
+  // Route resource Comments
+  Route::resource('comments', CommentController::class)->except(['create', 'store', 'edit', 'update']);
 });
 
 Route::middleware('auth:sanctum')->group(function () {
@@ -93,6 +97,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
   // Route put Wishlists
   Route::put('/wishlists/{destination}', [UserController::class, 'wishlist']);
+
+  // Route put Comments
+  Route::put('/comments/{article}', [UserController::class, 'comment']);
 
   // Route put Orders
   Route::put('/orders/{destination}', [DestinationController::class, 'order']);

@@ -20,7 +20,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return new ArticleResource(Article::with(['user', 'category'])->latest()->get());
+        return new ArticleResource(Article::with(['user', 'category', 'article_galleries', 'comments'])->latest()->get());
     }
 
     /**
@@ -56,7 +56,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return new ArticleResource($article->load(['user', 'category']));
+        return new ArticleResource($article->load(['user', 'category', 'article_galleries', 'comments']));
     }
 
     /**

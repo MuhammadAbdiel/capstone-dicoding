@@ -107,5 +107,16 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('update-transaction', function ($user) {
             return $user->role == 'admin';
         });
+
+        // Gate Comment
+        Gate::define('index-comment', function ($user) {
+            return $user->role == 'admin';
+        });
+        Gate::define('show-comment', function ($user) {
+            return $user->role == 'admin';
+        });
+        Gate::define('delete-comment', function ($user) {
+            return $user->role == 'admin';
+        });
     }
 }

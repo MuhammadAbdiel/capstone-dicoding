@@ -16,15 +16,20 @@ class CategorySeeder extends Seeder
     {
         $category = [
             [
-                'name' => 'Technology',
+                'name' => 'Teknologi',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Entertainment',
+                'name' => 'Hiburan',
                 'created_at' => now(),
                 'updated_at' => now(),
-            ]
+            ],
+            [
+                'name' => 'Peraturan',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ];
 
         Category::insert($category);

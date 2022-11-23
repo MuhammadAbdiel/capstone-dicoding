@@ -16,26 +16,41 @@ class ArticleSeeder extends Seeder
     {
         $article = [
             [
-                'title' => 'Tampilkan Guyon Waton dan Mr. Jono and Joni, Hawai Ambyar Siap Bikin Hati Remuk Redam',
-                'content' => '
-                            Setelah sukses dengan Festival Army Day, Hawai Group kini bersiap menggelar event Hawai Ambyar. Perhelatan di destinasi buatan terbesar di Kota Malang ini dikemas dengan menhadirkan mini konser yang dimeriahkan Guyon Waton dan Mr. Jono & Joni.
+                'title' => 'Perhatikan Hal-Hal Ini Jika Kamu Ingin Wisata Ke Hawai Group Malang',
+                'excerpt' => 'HAWAI GROUP - Tiap tempat wisata pasti punya peraturan masing-masing untuk menjaga tempatnya agar tetap aman dan nyaman bagi pengunjung. Salah satu tempat wisata yang juga punya peraturan sendiri untuk pengunjung adalah Hawai Group Malang.',
+                'content' => 'HAWAI GROUP – Tiap tempat wisata pasti punya peraturan masing-masing untuk menjaga tempatnya agar tetap aman dan nyaman bagi pengunjung. Salah satu tempat wisata yang juga punya peraturan sendiri untuk pengunjung adalah Hawai Group Malang.
 
-                            “Konsep Hawai Ambyar kami kemas untuk memanjakan pengunjung Hawai Group. Untuk itu, Hawai Waterpark berusaha memberikan tawaran baru bagi masyarakat dalam berwisata. Tidak hanya berenang atau bermain di Kolam Tsunami semata. Namun pengunjung juga dapat menikmati penampilan khusus dari Guyon Waton dan Mr. Jono & Joni,” ungkap Marketing Communication Hawai Group, Andi Prasetya kepada Malang Pagi, Sabtu (30/7/2022).
+                Hawai Group Malang yang terdiri dari Hawai Waterpark Malang, Malang Night Paradise, Malang Smart Arena, dan Museum Ganesya ini mengajak pengunjung untuk bersama-sama tertib demi kenyamanan bersama.
 
+                Selain itu, peraturan-peraturan ini juga dibuat berdasarkan beberapa komplain dari pengunjung lain yang merasa terganggu karena pengunjung lainnya yang meresahkan.
 
-                            “Selain itu kami juga menyediakan sejumlah activity fun games berhadiah, Foam Party, Smoke Bomb, dan yang paling spesial kami juga menghadirkan sensasi baru dan tantangan seru, yaitu bermain snow di Hawai Waterpark,” imbuhnya.
+                Di sini, ada beberapa peraturan utama yang wajib untuk kamu ingat ya, Hawaians. Yuk disimak!
 
-                            Seluruh rangkaian acara Hawai Ambyar akan dilaksanakan pada Minggu, 14 Agustus 2022 mendatang, mulai pukul 10.00 WIB hingga 17.00 WIB. “Jangan sampai terlewat. Ada harga tiket presale sebesar Rp100.000 untuk pembelian tiket hingga 31 Juli 2022. Dan harga tiket normal kami bandrol sebesar Rp110.000, berlaku saat pembelian tiket di Agustus,” jelas Andi.
+                1. Dilarang Membawa Makanan Dan Minuman Dari Luar
+                Larangan yang pertama adalah Hawaians dilarang untuk membawa makanan dan minuman dari luar. Ketentuan ini dibuat agar kebersihan area di dalam tetap terjaga, mengingat ada kemungkinan sampah yang bertebaran di mana-mana bisa menyebabkan kolam renangnya kotor.
 
-                            Tiket dapat dibeli secara online melalui laman hawaiwaterpark.com/ambyar. Untuk informasi lebih lanjut dapat menghubungi nomor kontak WhatsApp 0811 42 525252, atau melalui Instagram @hawaiwaterpark.
+                Namun, pengunjung diperbolehkan untuk menitipkan makanan atau bekalnya di area lobby. Jika sewaktu-waktu lapar dan ingin memakan bekalnya, kamu bisa mengambilnya. Lalu, kamu akan diarahkan keluar sambil diberikan cap oleh petugas agar bisa masuk kembali.
 
-                            Andi membeberkan, dengan harga tiket yang cukup terjangkau tersebut, pihaknya memberikan banyak fasilitas. Pengunjung dapat menikmati semua permainan wahana air seperti Jet Coaster, Rainbow, Ekolu, Tsunami Pool, serta bebas bermain snow di Hawai Waterpark. “Sekaligus menikmati penampilan khusus dari Guyon Waton dan Mr. Jono & Joni.
-                            Di samping itu, kami juga menyediakan berbagai hadiah bagi pengunjung,” terangnya.
+                2. Dilarang Membawa Senjata Tajam dan Obat-Obatan Terlarang
+                Selanjutnya, sudah sangat jelas bahwa Hawaians dilarang untuk membawa senjata tajam dan obat-obatan terlarang saat akan masuk ke area manapun di Hawai Group Malang.
 
-                            Ditargetkan sebanyak 3.000 pengunjung akan memenuhi lokasi konser di area Kolam Tsunami. “Sedangkan untuk snow-nya ditempatkan atau dibuat di dalam Kolam Tsunami. Jadi pengunjung dapat bermain seluncuran di kolam menggunakan seluncuran es,” ujar Andi.
+                Kamu akan melewati pemeriksaan tas dan barang bawaan, maka dari itu lebih baik barang kesayanganmu disimpan di rumah saja ya!
 
-                            Hawai Ambyar diharapkan mampu memberi pengalaman terbaik bagi pengunjung. “Jadi Hawai Ambyar kami sajikan untuk memberikan hiburan dan pelayanan terbaik kepada para pengunjung. Ayo buruan beli tiketnya,” tandasnya. (Har/MAS)',
-                'category_id' => 2,
+                3. Dilarang Membawa Hewan Peliharaan
+                Nah yang ketiga ini tak kalah krusial juga. Jika kamu berlibur ke tiap area di Hawai Group Malang, pastikan peliharaanmu jangan dibawa. Alasannya karena selain untuk kebersihan, kami juga tidak menyediakan tempat penitipan untuk hewan.
+
+                4. Dilarang Menerbangkan Drone di Area Hawai Group Malang
+                Keempat, kamu juga dilarang untuk menerbangkan drone di area Hawai Group Malang. Selain karena alasan privasi dan kenyamanan pengunjung lain, alasan keselamatan alatmu juga jadi prioritas kami. Maka dari itu, lebih baik diterbangkan di tempat lain saja ya, Hawaians.
+
+                5. Tinggi Badan Anak di Atas 85 Cm Dikenakan Harga Tiket Penuh
+                Peraturan terakhir cukup sederhana, yakni minimum tinggi badan sebelum akhirnya dikenakan harga tiket. Untuk anak-anak, jika tingginya sudah diatas 85 cm, berarti orang tuanya sudah harus membelikan tiket agar anaknya bisa ikut masuk ke dalam.
+
+                Namun, khusus di Malang Smart Arena anak dengan tinggi di bawah 85 cm juga sudah dikenakan biaya tiket ya, Hawaians.
+
+                Itu dia tadi beberapa peraturan utama jika kamu ingin berwisata ke seluruh wahana Hawai Group Malang. Beberapa peraturan lainnya seperti wajib menjaga barang berharga masing-masing dan peraturan lainnya, bisa kamu lihat langsung di papan peraturan ya.
+
+                Selamat berlibur, Hawaians!',
+                'category_id' => 3,
                 'user_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
