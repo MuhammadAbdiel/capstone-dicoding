@@ -33,6 +33,13 @@ const SideBarAdmin = ({ active }) => {
           </Link>
         </li>
       </ul>
+      <ul className='nav flex-column bg-white mb-0'>
+        <li className='nav-item'>
+          <Link className='nav-link text-dark' to='/admin/destinations'>
+            Destination
+          </Link>
+        </li>
+      </ul>
     </div>
   )
 }

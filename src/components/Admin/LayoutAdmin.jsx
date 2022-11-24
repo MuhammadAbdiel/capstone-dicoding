@@ -3,7 +3,7 @@ import { useState } from 'react'
 import SideBarAdmin from './SideBarAdmin'
 import HeaderAdmin from './HeaderAdmin'
 
-const Layout = () => {
+const LayoutAdmin = () => {
   const [active, setActive] = useState(false)
 
   return (
@@ -15,4 +15,4 @@ const Layout = () => {
   )
 }
 
-export default Layout
+export default LayoutAdmin
