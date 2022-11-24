@@ -26,10 +26,9 @@ class UpdateArticleRequest extends FormRequest
     {
         return [
             'title' => ['string', 'max:255'],
-            'image' => ['image', 'file', 'max:5120'],
+            'excerpt' => ['string'],
             'content' => ['string'],
             'category_id' => ['integer', 'exists:categories,id'],
-            'user_id' => ['integer', 'exists:users,id'],
         ];
     }
 }

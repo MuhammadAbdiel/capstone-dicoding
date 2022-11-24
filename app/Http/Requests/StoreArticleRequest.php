@@ -26,10 +26,9 @@ class StoreArticleRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:255'],
-            'image' => ['image', 'file', 'max:5120'],
+            'excerpt' => ['required', 'string'],
             'content' => ['required', 'string'],
             'category_id' => ['required', 'integer', 'exists:categories,id'],
-            'user_id' => ['required', 'integer', 'exists:users,id'],
         ];
     }
 }

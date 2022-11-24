@@ -51,7 +51,6 @@ class ArticleSeeder extends Seeder
 
                 Selamat berlibur, Hawaians!',
                 'category_id' => 3,
-                'user_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

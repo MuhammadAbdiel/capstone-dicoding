@@ -18,14 +18,14 @@ class UserController extends Controller
     {
         abort_if(Gate::denies('index-user'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return new UserResource(User::with(['articles', 'wishlists', 'transactions', 'comments'])->latest()->get());
+        return new UserResource(User::with(['wishlists', 'transactions', 'comments'])->latest()->get());
     }
 
     public function show(User $user)
     {
         abort_if(Gate::denies('show-user'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return new UserResource($user->load(['articles', 'wishlists', 'transactions', 'comments']));
+        return new UserResource($user->load(['wishlists', 'transactions', 'comments']));
     }
 
     public function wishlist(Destination $destination)
