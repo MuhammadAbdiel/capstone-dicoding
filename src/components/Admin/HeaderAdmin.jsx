@@ -1,5 +1,5 @@
 import React from 'react'
-import { TbLayoutNavbar } from 'react-icons/tb'
+import { FaBars } from 'react-icons/fa'
 
 const HeaderAdmin = ({ active, setActive }) => {
   return (
@@ -13,7 +13,7 @@ const HeaderAdmin = ({ active, setActive }) => {
         }}
       >
         <i>
-          <TbLayoutNavbar />
+          <FaBars />
         </i>
       </button>
     </header>
