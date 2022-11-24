@@ -74,6 +74,24 @@ https://capstone-backend-production-7544.up.railway.app/api
 
   - #### `Authorization` : `Bearer <accessToken>`
 
+### Logout
+
+- URL :
+
+  - #### `/logout`
+
+- Method :
+
+  - #### `POST`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
 ## Admin
 
 ### Register
@@ -143,6 +161,322 @@ https://capstone-backend-production-7544.up.railway.app/api
   - #### `Accept` : `application/json`
 
   - #### `Authorization` : `Bearer <accessToken>`
+  
+### Logout
+
+- URL :
+
+  - #### `/admin/logout`
+
+- Method :
+
+  - #### `POST`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+## Category
+
+### Get All Categories
+
+- URL :
+
+  - #### `/categories`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+### Get Category by ID (Admin)
+
+- URL :
+
+  - #### `/categories/{category_id}`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+### Create Category (Admin)
+
+- URL :
+
+  - #### `/categories`
+
+- Method :
+
+  - #### `POST`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+- Request Body :
+
+  - #### `name` as `String`
+
+### Update Category (Admin)
+
+- URL :
+
+  - #### `/categories/{category_id}`
+
+- Method :
+
+  - #### `PUT`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+- Request Body :
+
+  - #### `name` as `String`
+
+### Delete Category (Admin)
+
+- URL :
+
+  - #### `/categories/{category_id}`
+
+- Method :
+
+  - #### `DELETE`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+## Destination
+
+### Get All Destinations
+
+- URL :
+
+  - #### `/destinations`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+### Get Destination by ID
+
+- URL :
+
+  - #### `/destinations/{destination_id}`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+### Create Destination (Admin)
+
+- URL :
+
+  - #### `/destinations`
+
+- Method :
+
+  - #### `POST`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+- Request Body :
+
+  - #### `name` as `String`
+
+  - #### `open_time` as `String` (HH:MM:SS)
+  
+  - #### `close_time` as `String` (HH:MM:SS)
+
+  - #### `price` as `Integer`
+  
+  - #### `rating` as `Double`
+  
+  - #### `location` as `String`
+
+  - #### `description` as `String`
+
+### Update Destination (Admin)
+
+- URL :
+
+  - #### `/destinations/{destination_id}`
+
+- Method :
+
+  - #### `PUT`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+- Request Body :
+
+  - #### `name` as `String`
+
+  - #### `open_time` as `String` (HH:MM:SS)
+  
+  - #### `close_time` as `String` (HH:MM:SS)
+
+  - #### `price` as `Integer`
+  
+  - #### `rating` as `Double`
+  
+  - #### `location` as `String`
+
+  - #### `description` as `String`
+
+### Delete Destination (Admin)
+
+- URL :
+
+  - #### `/destinations/{destination_id}`
+
+- Method :
+
+  - #### `DELETE`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+## Destination Gallery
+
+### Get All Destination Galleries (Admin)
+
+- URL :
+
+  - #### `/destination_galleries`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+### Get Destination Gallery by ID (Admin)
+
+- URL :
+
+  - #### `/destination_galleries/{destination_gallery_id}`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+### Create Destination Gallery (Admin)
+
+- URL :
+
+  - #### `/galleries/{destination_id}`
+
+- Method :
+
+  - #### `POST`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+- Request Body :
+
+  - #### `image` as `String`
+
+  - ### `destination_id` as `Integer`
+
+### Delete Destination Gallery (Admin)
+
+- URL :
+
+  - #### `/destination_galleries/{destination_gallery_id}`
+
+- Method :
+
+  - #### `DELETE`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
 
 ## Article
 
@@ -162,8 +496,6 @@ https://capstone-backend-production-7544.up.railway.app/api
 
   - #### `Accept` : `application/json`
 
-  - #### `Authorization` : `Bearer <accessToken>`
-
 ### Get Article by ID (User)
 
 - URL :
@@ -179,8 +511,6 @@ https://capstone-backend-production-7544.up.railway.app/api
   - #### `Content-Type` : `application/json`
 
   - #### `Accept` : `application/json`
-
-  - #### `Authorization` : `Bearer <accessToken>`
 
 ### Create Article (Admin)
 
@@ -204,8 +534,314 @@ https://capstone-backend-production-7544.up.railway.app/api
 
   - #### `title` as `String`
 
+  - #### `excerpt` as `String`
+
   - #### `content` as `String`
+
+  - #### `category_id` as `Integer`
+
+### Update Article (Admin)
+
+- URL :
+
+  - #### `/articles/{article_id}`
+
+- Method :
+
+  - #### `PUT`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+- Request Body :
+
+  - #### `title` as `String`
 
   - #### `excerpt` as `String`
 
+  - #### `content` as `String`
+
   - #### `category_id` as `Integer`
+
+### Delete Article (Admin)
+
+- URL :
+
+  - #### `/articles/{article_id}`
+
+- Method :
+
+  - #### `DELETE`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+## Article Gallery
+
+### Get All Article Galleries (Admin)
+
+- URL :
+
+  - #### `/article_galleries`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+### Get Article Gallery by ID (Admin)
+
+- URL :
+
+  - #### `/article_galleries/{article_gallery_id}`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+### Create Article Gallery (Admin)
+
+- URL :
+
+  - #### `/galleries/{article_id}`
+
+- Method :
+
+  - #### `POST`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+- Request Body :
+
+  - #### `image` as `String`
+
+  - ### `article_id` as `Integer`
+
+### Delete Article Gallery (Admin)
+
+- URL :
+
+  - #### `/article_galleries/{article_gallery_id}`
+
+- Method :
+
+  - #### `DELETE`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+## Transaction
+
+### Get All Transactions (Admin)
+
+- URL :
+
+  - #### `/transactions`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+### Get Transaction by ID (Admin)
+
+- URL :
+
+  - #### `/transactions/{transaction_id}`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+### Create Transaction (User)
+
+- URL :
+
+  - #### `/orders/{destination_id}`
+
+- Method :
+
+  - #### `PUT`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+- Request Body :
+
+  - #### `quantity` as `Integer`
+
+### Update Transaction (Admin)
+
+- URL :
+
+  - #### `/transactions/{transaction_id}`
+
+- Method :
+
+  - #### `PUT`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+- Request Body :
+
+  - #### `transaction_status` as `Integer`
+
+## Article Comment
+
+### Get All Article Comments (Admin)
+
+- URL :
+
+  - #### `/comments`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+### Get Article Comment by ID (Admin)
+
+- URL :
+
+  - #### `/comments/{comment_id}`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+### Create Article Comment
+
+- URL :
+
+  - #### `/comments/{article_id}`
+
+- Method :
+
+  - #### `PUT`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+- Request Body :
+
+  - #### `content` as `String`
+
+### Delete Article Comment (Admin)
+
+- URL :
+
+  - #### `/comments/{comment_id}`
+
+- Method :
+
+  - #### `DELETE`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+## Wishlist
+
+### Create Wishlist
+
+- URL :
+
+  - #### `/wishlists/{destination_id}`
+
+- Method :
+
+  - #### `PUT`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
