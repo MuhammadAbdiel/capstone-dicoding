@@ -444,7 +444,7 @@ https://capstone-backend-production-7544.up.railway.app/api
 
 - Method :
 
-  - #### `POST`
+  - #### `PUT`
 
 - Headers :
 
@@ -632,7 +632,7 @@ https://capstone-backend-production-7544.up.railway.app/api
 
 - Method :
 
-  - #### `POST`
+  - #### `PUT`
 
 - Headers :
 
