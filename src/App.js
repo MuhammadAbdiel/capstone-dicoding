@@ -9,7 +9,9 @@ import Profile from './pages/Profile'
 import Dashboard from './pages/Admin/Dashboard'
 import Articles from './pages/Admin/Articles'
 import Categories from './pages/Admin/Categories'
-import Destinations from './pages/Admin/Destinations'
+import Tourism from './pages/Admin/Tourism'
+import DetailTourism from './pages/DetailTourism'
+import DetailArticle from './pages/DetailArticle'
 
 const App = () => {
   return (
@@ -19,10 +21,12 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/user/profile' element={<Profile />} />
+        <Route path='/Tourism/detail' element={<DetailTourism />} />
+        <Route path='/articles/detail' element={<DetailArticle />} />
         <Route path='/admin/' element={<Dashboard />} />
         <Route path='/admin/articles' element={<Articles />} />
         <Route path='/admin/categories' element={<Categories />} />
-        <Route path='/admin/destinations' element={<Destinations />} />
+        <Route path='/admin/Tourism' element={<Tourism />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
