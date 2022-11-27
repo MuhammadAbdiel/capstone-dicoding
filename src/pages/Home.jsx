@@ -23,6 +23,7 @@ const Home = () => {
           <button>Start My Trip</button>
         </div>
       </div>
+
       <h1 className='text-center fs-3 mt-3'>Lorem</h1>
       <div className='d-grid container mb-4'>
         <div className='row'>

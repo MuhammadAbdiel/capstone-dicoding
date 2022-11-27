@@ -6,15 +6,24 @@ import { Link } from 'react-router-dom'
 import FooterStyleComponent from '../components/FooterStyleComponent'
 import HeaderComponent from '../components/HeaderComponent'
 import useInput from '../components/useInput'
+import Swal from 'sweetalert2'
 
 const Register = () => {
   const [username, handleUsernameChange] = useInput('')
   const [email, handleEmailChange] = useInput('')
   const [password, handlePasswordChange] = useInput('')
   const [repassword, handleRePasswordChange] = useInput('')
+
   const onSubmitHandler = async (event) => {
     event.preventDefault()
-    console.log('register here')
+    if (password !== repassword) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Password are not the same'
+      })
+    }
+    console.log('registered')
   }
   return (
     <>
