@@ -623,6 +623,22 @@ async function deleteArticleGallery(article_gallery_id) {
 
 // Transaction
 
+async function getAllTransactionUsers() {
+  const response = await fetchWithToken(`${BASE_URL}/user/transactions`)
+  const responseJson = await response.json()
+
+  if (responseJson.status !== 'success') {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: responseJson.message
+    })
+    return { error: true, data: null }
+  }
+
+  return { error: false, data: responseJson.data }
+}
+
 async function getAllTransactions() {
   const response = await fetchWithToken(`${BASE_URL}/transactions`)
   const responseJson = await response.json()
@@ -789,6 +805,22 @@ async function createWishlists(destination_id) {
   return { error: false }
 }
 
+async function getAllWishlistUsers() {
+  const response = await fetchWithToken(`${BASE_URL}/user/wishlists`)
+  const responseJson = await response.json()
+
+  if (responseJson.status !== 'success') {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: responseJson.message
+    })
+    return { error: true, data: null }
+  }
+
+  return { error: false, data: responseJson.data }
+}
+
 export {
   getAccessToken,
   putAccessToken,
@@ -823,6 +855,7 @@ export {
   getArticleGalleryById,
   createArticleGallery,
   deleteArticleGallery,
+  getAllTransactionUsers,
   getAllTransactions,
   getTransactionById,
   createTransaction,
@@ -831,5 +864,6 @@ export {
   getArticleCommentById,
   createArticleComment,
   deleteArticleComment,
-  createWishlists
+  createWishlists,
+  getAllWishlistUsers
 }
