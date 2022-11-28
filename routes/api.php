@@ -61,8 +61,11 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
   // Route resource Articles
   Route::resource('articles', ArticleController::class)->except(['index', 'create', 'show', 'edit']);
 
-  // Route put Article Galleries
+  // Route put Article Galleries via Link
   Route::put('galleries/{article}', [ArticleController::class, 'store_image']);
+
+  // Route put Article Galleries via Upload File
+  // Route::post('galleries/{article}/upload', [ArticleController::class, 'upload_image']);
 
   // Route resource Article Galleries
   Route::resource('article_galleries', ArticleGalleryController::class)->except(['create', 'store', 'edit', 'update']);
@@ -77,7 +80,7 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
   // Route resource Destinations
   Route::resource('destinations', DestinationController::class)->except(['index', 'create', 'show', 'edit']);
 
-  // Route put Destination Galleries
+  // Route put Destination Galleries via Link
   Route::put('galleries/{destination}', [DestinationController::class, 'store_image']);
 
   // Route resource Destination Galleries
@@ -106,6 +109,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
   // Route get Wishlists based on User Login
   Route::get('/user/wishlists', [UserController::class, 'getWishlists']);
+
+  // Route get Transactions based on User Login
+  Route::get('/user/transactions', [UserController::class, 'getTransactions']);
 
   Route::post('/logout', [AuthController::class, 'logout']);
 });

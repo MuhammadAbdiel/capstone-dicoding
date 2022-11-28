@@ -668,6 +668,24 @@ https://capstone-backend-production-7544.up.railway.app/api
 
 ## Transaction
 
+### Get All Transactions by User Logged In
+
+- URL :
+
+  - #### `/user/transactions`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
 ### Get All Transactions (Admin)
 
 - URL :
@@ -846,7 +864,7 @@ https://capstone-backend-production-7544.up.railway.app/api
 
   - #### `Authorization` : `Bearer <accessToken>`
 
-### Get All Wishlists
+### Get All Wishlists by User Logged In
 
 - URL :
 

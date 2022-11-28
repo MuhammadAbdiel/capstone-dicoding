@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class StoreArticleGalleryRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class StoreArticleGalleryRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return Gate::allows('create-article-gallery');
     }
 
     /**
@@ -24,7 +25,7 @@ class StoreArticleGalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'image' => ['required', 'image', 'file', 'mimes:jpeg,png,jpg,gif,svg', 'max:5120'],
         ];
     }
 }

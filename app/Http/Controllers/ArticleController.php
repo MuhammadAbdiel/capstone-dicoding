@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use Illuminate\Http\Request;
+use App\Models\ArticleGallery;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Resources\ArticleResource;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
-use App\Models\ArticleGallery;
-use Illuminate\Http\Request;
+use App\Http\Resources\ArticleGalleryResource;
 use Symfony\Component\HttpFoundation\Response;
+use App\Http\Requests\StoreArticleGalleryRequest;
 
 class ArticleController extends Controller
 {
@@ -115,4 +118,17 @@ class ArticleController extends Controller
             'article_gallery' => $articleGallery->load('article'),
         ]);
     }
+
+    // public function upload_image(StoreArticleGalleryRequest $request, Article $article)
+    // {
+    //     abort_if(Gate::denies('create-article-gallery', $article), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+    //     $validatedData = $request->validated();
+    //     $validatedData['article_id'] = $article->id;
+    //     $validatedData['image'] = $request->file('image')->store('article_galleries');
+
+    //     $articleGallery = ArticleGallery::create($validatedData);
+
+    //     return (new ArticleGalleryResource($articleGallery->load('article')))->response()->setStatusCode(Response::HTTP_CREATED);
+    // }
 }

@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Comment;
 use App\Models\Wishlist;
 use App\Models\Destination;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Gate;
@@ -77,6 +78,18 @@ class UserController extends Controller
         return response()->json([
             'message' => 'success',
             'wishlists' => $wishlists->load(['user', 'destination']),
+        ]);
+    }
+
+    public function getTransactions()
+    {
+        $user = auth()->user();
+
+        $transactions = Transaction::where('user_id', $user->id)->get();
+
+        return response()->json([
+            'message' => 'success',
+            'transactions' => $transactions->load(['user', 'detail_transactions']),
         ]);
     }
 }
