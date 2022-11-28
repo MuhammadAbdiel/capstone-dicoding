@@ -116,7 +116,7 @@ class DestinationController extends Controller
         if (empty($transaction)) {
             $transaction = Transaction::create([
                 'user_id' => auth()->user()->id,
-                'transaction_status' => 0,
+                'transaction_status' => 1,
                 'total_price' => $total_price,
             ]);
         } else {
