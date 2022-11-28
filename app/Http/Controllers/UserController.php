@@ -67,4 +67,16 @@ class UserController extends Controller
             'comment' => $comment,
         ]);
     }
+
+    public function getWishlists()
+    {
+        $userLogin = auth()->user();
+
+        $wishlists = Wishlist::where('user_id', $userLogin->id)->get();
+
+        return response()->json([
+            'message' => 'success',
+            'wishlists' => $wishlists->load(['user', 'destination']),
+        ]);
+    }
 }

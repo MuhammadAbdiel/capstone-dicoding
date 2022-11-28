@@ -104,5 +104,8 @@ Route::middleware('auth:sanctum')->group(function () {
   // Route put Orders
   Route::put('/orders/{destination}', [DestinationController::class, 'order']);
 
+  // Route get Wishlists based on User Login
+  Route::get('/user/wishlists', [UserController::class, 'getWishlists']);
+
   Route::post('/logout', [AuthController::class, 'logout']);
 });
