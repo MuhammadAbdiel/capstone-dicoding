@@ -845,3 +845,21 @@ https://capstone-backend-production-7544.up.railway.app/api
   - #### `Accept` : `application/json`
 
   - #### `Authorization` : `Bearer <accessToken>`
+
+### Get All Wishlists
+
+- URL :
+
+  - #### `/user/wishlists`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
