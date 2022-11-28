@@ -3,7 +3,7 @@ import { FaBars } from 'react-icons/fa'
 
 const HeaderAdmin = ({ active, setActive }) => {
   return (
-    <header className={active ? 'sidebar_active bg-dark p-3' : 'bg-dark p-3 sidebar'}>
+    <header style={{ backgroundColor: '#0AA1DD' }} className={active ? 'sidebar_active p-3' : 'p-3 sidebar'}>
       <button
         id='sidebarCollapse'
         type='button'
