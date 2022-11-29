@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 const HeaderComponent = ({ isUserLogged = true }) => {
   return (
@@ -13,9 +14,16 @@ const HeaderComponent = ({ isUserLogged = true }) => {
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='ms-auto'>
-            <Nav.Link href='./explore' className='mx-3'>
-              Explore
-            </Nav.Link>{' '}
+            <Nav.Link className='mx-3 '>
+              <Link className='text-decoration-none text-white' to='/articles'>
+                Article
+              </Link>
+            </Nav.Link>
+            <Nav.Link className='mx-3 '>
+              <Link className='text-decoration-none text-white' to='/tourism'>
+                Explore
+              </Link>
+            </Nav.Link>
             {/* Link explore nih bisa dimanfaatkan sebagai halaman yang memberikan rekomendasi tempat wisata (Semacam pages explore instagram) */}
             <Nav.Link href='./my-booking' className='mx-3'>
               My Booking

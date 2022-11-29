@@ -12,6 +12,8 @@ import Categories from './pages/Admin/Categories'
 import Tourism from './pages/Admin/Tourism'
 import DetailTourism from './pages/DetailTourism'
 import DetailArticle from './pages/DetailArticle'
+import Explore from './pages/Explore'
+import Article from './pages/Article'
 
 const App = () => {
   return (
@@ -21,12 +23,14 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/user/profile' element={<Profile />} />
-        <Route path='/Tourism/detail' element={<DetailTourism />} />
+        <Route path='/tourism' element={<Explore />} />
+        <Route path='/tourism/detail' element={<DetailTourism />} />
+        <Route path='/articles' element={<Article />} />
         <Route path='/articles/detail' element={<DetailArticle />} />
         <Route path='/admin/' element={<Dashboard />} />
         <Route path='/admin/articles' element={<Articles />} />
         <Route path='/admin/categories' element={<Categories />} />
-        <Route path='/admin/Tourism' element={<Tourism />} />
+        <Route path='/admin/tourism' element={<Tourism />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
