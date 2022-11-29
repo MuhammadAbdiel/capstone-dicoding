@@ -1,5 +1,3 @@
-import Swal from 'sweetalert2'
-
 const BASE_URL = 'https://capstone-backend-production-7544.up.railway.app/api'
 
 function getAccessToken() {
@@ -32,16 +30,7 @@ async function updateProfile({ name, username, email, phone_number, back_account
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function changePassword({ old_password, password, password_confirmation }) {
@@ -52,16 +41,7 @@ async function changePassword({ old_password, password, password_confirmation })
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 // User
@@ -78,15 +58,6 @@ async function login({ email, password }) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
-
   return { error: false, data: responseJson.data }
 }
 
@@ -102,30 +73,12 @@ async function register({ name, username, email, phone_number, back_account_numb
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function getUserLogged() {
   const response = await fetchWithToken(`${BASE_URL}/user`)
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
@@ -133,15 +86,6 @@ async function getUserLogged() {
 async function getDataAdmin() {
   const response = await fetchWithToken(`${BASE_URL}/admin/data`)
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
@@ -154,15 +98,6 @@ async function logout() {
   const responseJson = await response.json()
 
   localStorage.removeItem('accessToken')
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
@@ -181,15 +116,6 @@ async function loginAdmin({ email, password }) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
-
   return { error: false, data: responseJson.data }
 }
 
@@ -205,30 +131,12 @@ async function registerAdmin({ name, username, email, phone_number, back_account
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function getUserLoggedAdmin() {
   const response = await fetchWithToken(`${BASE_URL}/admin/user`)
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
@@ -242,32 +150,19 @@ async function logoutAdmin() {
 
   localStorage.removeItem('accessToken')
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
-
   return { error: false, data: responseJson.data }
 }
 
 // Category
 
 async function getAllCategories() {
-  const response = await fetchWithToken(`${BASE_URL}/categories`)
+  const response = await fetch(`${BASE_URL}/categories`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    }
+  })
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
@@ -275,15 +170,6 @@ async function getAllCategories() {
 async function getCategoryById(category_id) {
   const response = await fetchWithToken(`${BASE_URL}/categories/${category_id}`)
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
@@ -296,16 +182,7 @@ async function createCategory({ name }) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function updateCategory({ name }, category_id) {
@@ -316,16 +193,7 @@ async function updateCategory({ name }, category_id) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function deleteCategory(category_id) {
@@ -335,48 +203,31 @@ async function deleteCategory(category_id) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 // Destination
 
 async function getAllDestinations() {
-  const response = await fetchWithToken(`${BASE_URL}/destinations`)
+  const response = await fetch(`${BASE_URL}/destinations`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    }
+  })
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
 
 async function getDestinationById(destination_id) {
-  const response = await fetchWithToken(`${BASE_URL}/destinations/${destination_id}`)
+  const response = await fetch(`${BASE_URL}/destinations/${destination_id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    }
+  })
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
@@ -389,16 +240,7 @@ async function createDestination({ name, open_time, close_time, price, rating, l
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function updateDestination({ name, open_time, close_time, price, rating, location, description }, destination_id) {
@@ -409,16 +251,7 @@ async function updateDestination({ name, open_time, close_time, price, rating, l
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function deleteDestination(destination_id) {
@@ -428,16 +261,7 @@ async function deleteDestination(destination_id) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 // Destination Gallery
@@ -446,30 +270,12 @@ async function getAllDestinationGalleries() {
   const response = await fetchWithToken(`${BASE_URL}/destination_galleries`)
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
-
   return { error: false, data: responseJson.data }
 }
 
 async function getDestinationGalleryById(destination_gallery_id) {
   const response = await fetchWithToken(`${BASE_URL}/destination_galleries/${destination_gallery_id}`)
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
@@ -482,16 +288,7 @@ async function createDestinationGallery({ image, destination_id }) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function deleteDestinationGallery(destination_gallery_id) {
@@ -501,48 +298,31 @@ async function deleteDestinationGallery(destination_gallery_id) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 // Article
 
 async function getAllArticles() {
-  const response = await fetchWithToken(`${BASE_URL}/articles`)
+  const response = await fetch(`${BASE_URL}/articles`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    }
+  })
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
 
 async function getArticleById(article_id) {
-  const response = await fetchWithToken(`${BASE_URL}/articles/${article_id}`)
+  const response = await fetch(`${BASE_URL}/articles/${article_id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    }
+  })
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
@@ -555,16 +335,7 @@ async function createArticle({ title, excerpt, content, category_id }) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function updateArticle({ title, excerpt, content, category_id }, article_id) {
@@ -575,16 +346,7 @@ async function updateArticle({ title, excerpt, content, category_id }, article_i
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function deleteArticle(article_id) {
@@ -594,16 +356,7 @@ async function deleteArticle(article_id) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 // Article Gallery
@@ -612,30 +365,12 @@ async function getAllArticleGalleries() {
   const response = await fetchWithToken(`${BASE_URL}/article_galleries`)
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
-
   return { error: false, data: responseJson.data }
 }
 
 async function getArticleGalleryById(article_gallery_id) {
   const response = await fetchWithToken(`${BASE_URL}/article_galleries/${article_gallery_id}`)
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
@@ -648,16 +383,7 @@ async function createArticleGallery({ image, article_id }) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function deleteArticleGallery(article_gallery_id) {
@@ -667,16 +393,7 @@ async function deleteArticleGallery(article_gallery_id) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 // Transaction
@@ -685,15 +402,6 @@ async function getAllTransactionUsers() {
   const response = await fetchWithToken(`${BASE_URL}/user/transactions`)
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
-
   return { error: false, data: responseJson.data }
 }
 
@@ -701,30 +409,12 @@ async function getAllTransactions() {
   const response = await fetchWithToken(`${BASE_URL}/transactions`)
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
-
   return { error: false, data: responseJson.data }
 }
 
 async function getTransactionById(transaction_id) {
   const response = await fetchWithToken(`${BASE_URL}/transactions/${transaction_id}`)
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
@@ -737,16 +427,7 @@ async function createTransaction({ quantity }, destination_id) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function updateTransaction({ transaction_status }, transaction_id) {
@@ -757,16 +438,7 @@ async function updateTransaction({ transaction_status }, transaction_id) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 // Article Comment
@@ -775,30 +447,12 @@ async function getAllArticleComments() {
   const response = await fetchWithToken(`${BASE_URL}/comments`)
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
-
   return { error: false, data: responseJson.data }
 }
 
 async function getArticleCommentById(comment_id) {
   const response = await fetchWithToken(`${BASE_URL}/comments/${comment_id}`)
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }
@@ -811,16 +465,7 @@ async function createArticleComment({ content }, article_id) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function deleteArticleComment(comment_id) {
@@ -830,16 +475,7 @@ async function deleteArticleComment(comment_id) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 // Wishlist
@@ -851,30 +487,12 @@ async function createWishlists(destination_id) {
 
   const responseJson = await response.json()
 
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true }
-  }
-
-  return { error: false }
+  return { error: false, data: responseJson.data }
 }
 
 async function getAllWishlistUsers() {
   const response = await fetchWithToken(`${BASE_URL}/user/wishlists`)
   const responseJson = await response.json()
-
-  if (responseJson.status !== 'success') {
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: responseJson.message
-    })
-    return { error: true, data: null }
-  }
 
   return { error: false, data: responseJson.data }
 }

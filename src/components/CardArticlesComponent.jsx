@@ -3,19 +3,12 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
 
-const CardArticlesComponent = () => {
+const CardArticlesComponent = ({ title, excerpt }) => {
   return (
     <Card className='m-4'>
       <Card.Body>
-        <Card.Title>Article title</Card.Title>
-        <Card.Text className='descrp'>
-          Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur laboriosam atque nostrum nihil ullam dicta! Quia modi,
-          expedita maiores, quam alias omnis blanditiis cupiditate magni libero accusantium sapiente, eligendi ducimus. expedita maiores,
-          quam alias omnis blanditiis cupiditate magni libero accusantium sapiente, eligendi ducimus. Lorem Lorem ipsum dolor sit, amet
-          consectetur adipisicing elit. Consequatur laboriosam atque nostrum nihil ullam dicta! Quia modi, expedita maiores, quam alias
-          omnis blanditiis cupiditate magni libero accusantium sapiente, eligendi ducimus. expedita maiores, quam alias omnis blanditiis
-          cupiditate magni libero accusantium sapiente, eligendi ducimus.
-        </Card.Text>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text className='descrp'>{excerpt}</Card.Text>
         <div className='d-flex justify-content-end'>
           <Link to='/articles/detail'>
             <Button variant='primary'>View More</Button>
