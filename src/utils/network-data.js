@@ -22,6 +22,48 @@ async function fetchWithToken(url, options = {}) {
   })
 }
 
+// Profile
+
+async function updateProfile({ name, username, email, phone_number, back_account_number }) {
+  const response = await fetchWithToken(`${BASE_URL}/user/update`, {
+    method: 'PUT',
+    body: JSON.stringify({ name, username, email, phone_number, back_account_number })
+  })
+
+  const responseJson = await response.json()
+
+  if (responseJson.status !== 'success') {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: responseJson.message
+    })
+    return { error: true }
+  }
+
+  return { error: false }
+}
+
+async function changePassword({ old_password, password, password_confirmation }) {
+  const response = await fetchWithToken(`${BASE_URL}/user/change-password`, {
+    method: 'PUT',
+    body: JSON.stringify({ old_password, password, password_confirmation })
+  })
+
+  const responseJson = await response.json()
+
+  if (responseJson.status !== 'success') {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: responseJson.message
+    })
+    return { error: true }
+  }
+
+  return { error: false }
+}
+
 // User
 
 async function login({ email, password }) {
@@ -48,14 +90,14 @@ async function login({ email, password }) {
   return { error: false, data: responseJson.data }
 }
 
-async function register({ name, username, email, password, password_confirmation }) {
+async function register({ name, username, email, phone_number, back_account_number, password, password_confirmation }) {
   const response = await fetch(`${BASE_URL}/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json'
     },
-    body: JSON.stringify({ name, username, email, password, password_confirmation })
+    body: JSON.stringify({ name, username, email, phone_number, back_account_number, password, password_confirmation })
   })
 
   const responseJson = await response.json()
@@ -74,6 +116,22 @@ async function register({ name, username, email, password, password_confirmation
 
 async function getUserLogged() {
   const response = await fetchWithToken(`${BASE_URL}/user`)
+  const responseJson = await response.json()
+
+  if (responseJson.status !== 'success') {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: responseJson.message
+    })
+    return { error: true, data: null }
+  }
+
+  return { error: false, data: responseJson.data }
+}
+
+async function getDataAdmin() {
+  const response = await fetchWithToken(`${BASE_URL}/admin/data`)
   const responseJson = await response.json()
 
   if (responseJson.status !== 'success') {
@@ -135,14 +193,14 @@ async function loginAdmin({ email, password }) {
   return { error: false, data: responseJson.data }
 }
 
-async function registerAdmin({ name, username, email, password, password_confirmation }) {
+async function registerAdmin({ name, username, email, phone_number, back_account_number, password, password_confirmation }) {
   const response = await fetch(`${BASE_URL}/admin/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json'
     },
-    body: JSON.stringify({ name, username, email, password, password_confirmation })
+    body: JSON.stringify({ name, username, email, phone_number, back_account_number, password, password_confirmation })
   })
 
   const responseJson = await response.json()
@@ -673,7 +731,7 @@ async function getTransactionById(transaction_id) {
 
 async function createTransaction({ quantity }, destination_id) {
   const response = await fetchWithToken(`${BASE_URL}/orders/${destination_id}`, {
-    method: 'POST',
+    method: 'PUT',
     body: JSON.stringify({ quantity })
   })
 
@@ -824,9 +882,12 @@ async function getAllWishlistUsers() {
 export {
   getAccessToken,
   putAccessToken,
+  updateProfile,
+  changePassword,
   login,
   register,
   getUserLogged,
+  getDataAdmin,
   logout,
   loginAdmin,
   registerAdmin,
