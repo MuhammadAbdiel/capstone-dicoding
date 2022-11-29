@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 const HeaderComponent = ({ isUserLogged = true }) => {
   return (
-    <Navbar collapseOnSelect expand='sm' style={{ backgroundColor: '#0AA1DD' }} variant='dark' className='py-3'>
+    <Navbar collapseOnSelect expand='md' style={{ backgroundColor: '#0AA1DD' }} variant='dark' className='py-3'>
       <Container>
         <Navbar.Brand>
           <Link className='text-decoration-none text-white' to='/'>
@@ -17,23 +17,19 @@ const HeaderComponent = ({ isUserLogged = true }) => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
-          <Nav className='ms-auto'>
-            <Nav.Link className='mx-3 '>
-              <Link className='text-decoration-none text-white' to='/articles'>
-                Article
-              </Link>
+          <Nav className='ms-auto header-link'>
+            <Nav.Link className='mx-3' href='/articles'>
+              Article
             </Nav.Link>
-            <Nav.Link className='mx-3 '>
-              <Link className='text-decoration-none text-white' to='/tourism'>
-                Explore
-              </Link>
+            <Nav.Link className='mx-3' href='/tourism'>
+              Explore
             </Nav.Link>
             {/* Link explore nih bisa dimanfaatkan sebagai halaman yang memberikan rekomendasi tempat wisata (Semacam pages explore instagram) */}
             <Nav.Link href='./my-booking' className='mx-3'>
               My Booking
             </Nav.Link>
             {isUserLogged ? (
-              <NavDropdown title='Username' id='collasible-nav-dropdown' className='ms-3'>
+              <NavDropdown title='Username' id='collasible-nav-dropdown' className='ms-3 header-link'>
                 <NavDropdown.Item href='/user/profile'>Profile</NavDropdown.Item>
                 <NavDropdown.Item href='/admin'>Admin</NavDropdown.Item>
                 <NavDropdown.Item href='/user/saved'>Saved</NavDropdown.Item>
