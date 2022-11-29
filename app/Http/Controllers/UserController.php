@@ -11,6 +11,8 @@ use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\UpdateProfileRequest;
 use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller
@@ -91,5 +93,44 @@ class UserController extends Controller
             'message' => 'success',
             'transactions' => $transactions->load(['user', 'detail_transactions']),
         ]);
+    }
+
+    public function updateProfile(UpdateProfileRequest $request)
+    {
+        $user = User::where('id', auth()->user()->id)->first();
+
+        $user->update($request->validated());
+
+        return (new UserResource($user))->response()->setStatusCode(Response::HTTP_ACCEPTED);
+    }
+
+    public function changePassword(Request $request)
+    {
+        $user = auth()->user();
+
+        $request->validate([
+            'old_password' => ['required', 'string', 'min:8'],
+            'password' => ['required', 'string', 'min:8'],
+            'password_confirmation' => ['required', 'string', 'min:8', 'same:password'],
+        ]);
+
+        if (!Hash::check($request->old_password, $user->password)) {
+            return response()->json([
+                'message' => 'Old password is incorrect!',
+            ], 422);
+        }
+
+        User::where('id', $user->id)->update([
+            'password' => Hash::make($request->password),
+        ]);
+
+        return response()->json([
+            'message' => 'Password has been changed!',
+        ]);
+    }
+
+    public function getDataAdmin()
+    {
+        return new UserResource(User::where('role', 'admin')->first());
     }
 }

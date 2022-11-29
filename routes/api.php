@@ -98,6 +98,12 @@ Route::middleware('auth:sanctum')->group(function () {
   // Route get User Login
   Route::get('/user', [AuthController::class, 'getUserLoggedIn']);
 
+  // Route put Update Profile
+  Route::put('/user/update', [UserController::class, 'updateProfile']);
+
+  // Route put Change Password
+  Route::put('/user/change-password', [UserController::class, 'changePassword']);
+
   // Route put Wishlists
   Route::put('/wishlists/{destination}', [UserController::class, 'wishlist']);
 
@@ -106,6 +112,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
   // Route put Orders
   Route::put('/orders/{destination}', [DestinationController::class, 'order']);
+
+  // Route get Data Admin
+  Route::get('/admin/data', [UserController::class, 'getDataAdmin']);
 
   // Route get Wishlists based on User Login
   Route::get('/user/wishlists', [UserController::class, 'getWishlists']);

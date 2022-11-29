@@ -4,6 +4,64 @@
 
 https://capstone-backend-production-7544.up.railway.app/api
 
+## Profile
+
+### Update Profile
+
+- URL : 
+  
+  - #### `/user/update`
+
+- Method :
+
+  - #### `PUT`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+- Request Body :
+
+  - #### `name` as `String`
+
+  - #### `username` as `String`, must be unique
+
+  - #### `email` as `String`, must be unique, must be an email
+
+  - #### `phone_number` as `String`, must be unique
+
+  - #### `bank_account_number` as `String`, must be unique
+
+### Change Password
+
+- URL : 
+  
+  - #### `/user/change-password`
+
+- Method :
+
+  - #### `PUT`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+- Request Body :
+
+  - #### `old_password` as `String`
+
+  - #### `password` as `String`, must be at least 8 characters
+
+  - #### `password_confirmation` as `String`, must be the same as `password`
+
 ## User
 
 ### Register
@@ -30,9 +88,13 @@ https://capstone-backend-production-7544.up.railway.app/api
 
   - #### `email` as `String`, must be unique, must be an email
 
+  - #### `phone_number` as `String`, must be unique
+
+  - #### `bank_account_number` as `String`, must be unique
+
   - #### `password` as `String`, must be at least 8 characters
 
-  - #### `password_confirmation` as `String` must be the same as `password`
+  - #### `password_confirmation` as `String`, must be the same as `password`
 
 ### Login
 
@@ -61,6 +123,24 @@ https://capstone-backend-production-7544.up.railway.app/api
 - URL :
 
   - #### `/user`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
+### Get Data Admin
+
+- URL :
+
+  - #### `/admin/data`
 
 - Method :
 
@@ -118,9 +198,13 @@ https://capstone-backend-production-7544.up.railway.app/api
 
   - #### `email` as `String`, must be unique, must be an email
 
+  - #### `phone_number` as `String`, must be unique
+
+  - #### `bank_account_number` as `String`, must be unique
+
   - #### `password` as `String`, must be at least 8 characters
 
-  - #### `password_confirmation` as `String` must be the same as `password`
+  - #### `password_confirmation` as `String`, must be the same as `password`
 
 ### Login
 
