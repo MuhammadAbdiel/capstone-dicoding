@@ -1,5 +1,5 @@
 import React from 'react'
-import CardComponent from '../components/CardComponent'
+// import CardComponent from '../components/CardComponent'
 import FooterComponent from '../components/FooterComponent'
 import HeaderComponent from '../components/HeaderComponent'
 
@@ -7,7 +7,7 @@ const Explore = () => {
   return (
     <div>
       <HeaderComponent />
-      <CardComponent />
+      {/* <CardComponent /> */}
       <FooterComponent />
     </div>
   )

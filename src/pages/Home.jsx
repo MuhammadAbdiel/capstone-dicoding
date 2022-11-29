@@ -4,7 +4,7 @@ import FooterComponent from '../components/FooterComponent'
 import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     window.addEventListener('load', () => {
@@ -16,7 +16,11 @@ const Home = () => {
       <HeaderComponent />
       {isLoading && <LoadingIndicatorComponent />}
       <div className='jumbotron'>
-        <img src='https://source.unsplash.com/U6t80TWJ1DM/1920x1280' alt='Pantai' className='jumbotron-img' />
+        <img
+          src='https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80'
+          alt='Pantai'
+          className='jumbotron-img'
+        />
         <div className='jumbotron-text-overlay'>
           <h1>Lorem ipsum dolor sit amet.</h1>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima odio in officiis debitis recusandae consectetur minus!</p>

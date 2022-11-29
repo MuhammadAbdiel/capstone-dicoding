@@ -10,7 +10,11 @@ const HeaderComponent = ({ isUserLogged = true }) => {
   return (
     <Navbar collapseOnSelect expand='sm' style={{ backgroundColor: '#0AA1DD' }} variant='dark' className='py-3'>
       <Container>
-        <Navbar.Brand href='./'>Navbar</Navbar.Brand>
+        <Navbar.Brand>
+          <Link className='text-decoration-none text-white' to='/'>
+            Navbar
+          </Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='ms-auto'>
