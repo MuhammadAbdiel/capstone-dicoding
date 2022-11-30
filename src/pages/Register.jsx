@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+import { InputGroup } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 // import FooterComponent from '../components/FooterComponent'
 import FooterStyleComponent from '../components/FooterStyleComponent'
 import HeaderComponent from '../components/HeaderComponent'
 import useInput from '../components/useInput'
 import Swal from 'sweetalert2'
+import { alertIfFoundMissingInput } from '../utils/alertMissingInputForm'
 import { IoMdCloseCircle } from 'react-icons/io'
 import { putAccessToken, register } from '../utils/network-data'
+import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
 const Register = () => {
   const navigate = useNavigate()
   const [fullname, handleFullnameChange] = useInput('')
@@ -21,6 +24,8 @@ const Register = () => {
   const [isEmailValid, setIsEmailValid] = useState('Not Set')
   const [isPasswordValid, setIsPasswordValid] = useState('Not Set')
   const [isBothPasswordMatch, setIsBothPasswordMatch] = useState('Not Set')
+  const [isPhoneNumberValid, setIsPhoneNumberValid] = useState('Not Set')
+  const [isLoading, setIsLoading] = useState(false)
   useEffect(() => {
     if (email !== '') {
       if (/\S+@\S+\.\S+/.test(email)) {
@@ -32,6 +37,17 @@ const Register = () => {
       setIsEmailValid('Not Set')
     }
   }, [email])
+  useEffect(() => {
+    if (phoneNumber !== '') {
+      if (phoneNumber.length >= 9) {
+        setIsPhoneNumberValid(true)
+      } else {
+        setIsPhoneNumberValid(false)
+      }
+    } else if (phoneNumber === '') {
+      setIsPhoneNumberValid('Not Set')
+    }
+  }, [phoneNumber])
   useEffect(() => {
     if (password !== '') {
       if (password.length >= 8) {
@@ -58,25 +74,34 @@ const Register = () => {
 
   const onSubmitHandler = async (event) => {
     event.preventDefault()
-    if (isBothPasswordMatch === false) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'The confirmation password does not match'
-      })
-    } else if (isBothPasswordMatch === 'Not Set') {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Please enter your password!'
-      })
-    }
-    if (isEmailValid === true && isBothPasswordMatch === true) {
+    alertIfFoundMissingInput({
+      fullname,
+      username,
+      email,
+      phoneNumber,
+      bankAccountNumber,
+      isPhoneNumberValid,
+      isPasswordValid,
+      isBothPasswordMatch
+    })
+
+    if (
+      isPhoneNumberValid === true &&
+      isEmailValid === true &&
+      isBothPasswordMatch === true &&
+      fullname !== '' &&
+      username !== '' &&
+      phoneNumber !== '' &&
+      bankAccountNumber !== '' &&
+      password !== '' &&
+      repassword !== ''
+    ) {
+      setIsLoading(true)
       const response = await register({
         name: fullname,
         username,
         email,
-        phone_number: phoneNumber,
+        phone_number: `+62${phoneNumber}`,
         bank_account_number: bankAccountNumber,
         password,
         password_confirmation: repassword
@@ -84,18 +109,18 @@ const Register = () => {
       console.log(response)
       try {
         if (!response.error) {
+          setIsLoading(false)
           putAccessToken(response.data.access_token)
           navigate('/')
         }
       } catch (e) {
+        setIsLoading(false)
         Swal.fire({
           icon: 'error',
           title: 'Error',
           text: e
         })
       }
-      // console.log(registerStatus)
-      // console.log('registered')
     }
   }
 
@@ -113,6 +138,7 @@ const Register = () => {
               <Form.Label>Username</Form.Label>
               <Form.Control type='text' placeholder='Enter your username' value={username} onChange={handleUsernameChange} />
             </Form.Group>
+
             <Form.Group
               className='mb-3'
               controlId='formEmail'
@@ -131,9 +157,26 @@ const Register = () => {
               />
             </Form.Group>
 
-            <Form.Group className='mb-3' controlId='formPhoneNumber'>
-              <Form.Label>Phone Number</Form.Label>
-              <Form.Control type='text' placeholder='Enter your phone number' value={phoneNumber} onChange={handlePhoneNumberChange} />
+            <Form.Group
+              className='mb-3'
+              controlId='formPhoneNumber'
+              title={isPhoneNumberValid === false ? 'Phone number must contain at least 10 digit number' : undefined}
+            >
+              <Form.Label>
+                Phone Number
+                {isPhoneNumberValid === false && <IoMdCloseCircle color='red' />}
+              </Form.Label>
+              <InputGroup className='mb-3'>
+                <InputGroup.Text id='basic-addon1'>+62</InputGroup.Text>
+                <Form.Control
+                  type='number'
+                  placeholder='Enter your phone number'
+                  value={phoneNumber}
+                  min='0'
+                  onChange={handlePhoneNumberChange}
+                  className={isPhoneNumberValid === false && 'invalid'}
+                />
+              </InputGroup>
             </Form.Group>
 
             <Form.Group className='mb-3' controlId='formBankAccountNumber'>
@@ -188,6 +231,7 @@ const Register = () => {
         </div>
       </div>
       <FooterStyleComponent />
+      {isLoading && <LoadingIndicatorComponent />}
     </>
   )
 }
