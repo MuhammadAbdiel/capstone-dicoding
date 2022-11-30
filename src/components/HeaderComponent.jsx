@@ -31,6 +31,7 @@ const HeaderComponent = ({ isUserLogged = true }) => {
             text: e
           })
         }
+        localStorage.removeItem('accessToken')
       }
     })
   }

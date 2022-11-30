@@ -97,8 +97,6 @@ async function logout() {
 
   const responseJson = await response.json()
 
-  localStorage.removeItem('accessToken')
-
   return { error: false, data: responseJson }
 }
 
