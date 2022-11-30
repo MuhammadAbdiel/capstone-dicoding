@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Swal from 'sweetalert2'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import PropTypes from 'prop-types'
-import { Link, useNavigate } from 'react-router-dom'
-import { logout } from '../utils/network-data'
+// import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import { getUserLogged, logout } from '../utils/network-data'
 
-const HeaderComponent = ({ isUserLogged = true }) => {
-  const navigate = useNavigate()
+const HeaderComponent = () => {
+  const [authedUser, setAuthedUser] = useState(null)
+  const [name, setName] = useState('')
+
+  useEffect(() => {
+    if (!localStorage.getItem('accessToken')) {
+      setAuthedUser(null)
+      setName('')
+    } else {
+      const fetchData = async () => {
+        const response = await getUserLogged()
+
+        setAuthedUser(response.data.data)
+        setName(response.data.data.name)
+      }
+
+      fetchData()
+    }
+  }, [])
+
   const handleLogout = async () => {
     Swal.fire({
       title: 'Are you sure?',
@@ -22,7 +40,7 @@ const HeaderComponent = ({ isUserLogged = true }) => {
         const response = await logout()
         try {
           if (!response.error) {
-            navigate('/')
+            window.location.href = '/'
           }
         } catch (e) {
           Swal.fire({
@@ -57,8 +75,8 @@ const HeaderComponent = ({ isUserLogged = true }) => {
             <Nav.Link href='./my-booking' className='mx-3'>
               My Booking
             </Nav.Link>
-            {isUserLogged ? (
-              <NavDropdown title='Username' id='collasible-nav-dropdown' className='ms-3 header-link'>
+            {authedUser != null ? (
+              <NavDropdown title={name} id='collasible-nav-dropdown' className='ms-3 header-link'>
                 <NavDropdown.Item href='/user/profile'>Profile</NavDropdown.Item>
                 <NavDropdown.Item href='/admin'>Admin</NavDropdown.Item>
                 <NavDropdown.Item href='/user/saved'>Saved</NavDropdown.Item>
@@ -78,7 +96,4 @@ const HeaderComponent = ({ isUserLogged = true }) => {
   )
 }
 
-HeaderComponent.propTypes = {
-  isUserLogged: PropTypes.bool
-}
 export default HeaderComponent

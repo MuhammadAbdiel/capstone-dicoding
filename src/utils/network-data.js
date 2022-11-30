@@ -12,7 +12,6 @@ async function fetchWithToken(url, options = {}) {
   return fetch(url, {
     ...options,
     headers: {
-      ...options.headers,
       'Content-Type': 'application/json',
       Accept: 'application/json',
       Authorization: `Bearer ${getAccessToken()}`
