@@ -50,7 +50,7 @@ const DetailTourism = () => {
 
         <Card.Body>
           <Card.Title className='d-flex justify-content-center'>
-            <h2>Gallery Toursim</h2>
+            <h2>Gallery Tourism</h2>
           </Card.Title>
           <Container className='d-flex justify-content-center'>
             <Row>
