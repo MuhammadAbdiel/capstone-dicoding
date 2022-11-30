@@ -117,14 +117,14 @@ async function loginAdmin({ email, password }) {
   return { error: false, data: responseJson }
 }
 
-async function registerAdmin({ name, username, email, phone_number, back_account_number, password, password_confirmation }) {
+async function registerAdmin({ name, username, email, phone_number, bank_account_number, password, password_confirmation }) {
   const response = await fetch(`${BASE_URL}/admin/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json'
     },
-    body: JSON.stringify({ name, username, email, phone_number, back_account_number, password, password_confirmation })
+    body: JSON.stringify({ name, username, email, phone_number, bank_account_number, password, password_confirmation })
   })
 
   const responseJson = await response.json()

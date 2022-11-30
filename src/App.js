@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import RegisterAdmin from './pages/RegisterAdmin'
 import NotFoundPage from './pages/NotFoundPage'
 import Profile from './pages/Profile'
 import Dashboard from './pages/Admin/Dashboard'
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/admin/register' element={<RegisterAdmin />} />
         <Route path='/user/profile' element={<Profile />} />
         <Route path='/tourism' element={<Explore />} />
         <Route path='/tourism/detail' element={<DetailTourism />} />
