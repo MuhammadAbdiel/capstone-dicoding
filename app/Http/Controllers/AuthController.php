@@ -26,6 +26,7 @@ class AuthController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'phone_number' => $request->phone_number,
+            'bank_account_number' => $request->bank_account_number,
             'password' => bcrypt($request->password),
         ]);
 
