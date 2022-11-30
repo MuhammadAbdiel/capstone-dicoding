@@ -13,5 +13,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         // 'http://' . env('APP_URL') . '/*',
+        'api/*',
     ];
 }
