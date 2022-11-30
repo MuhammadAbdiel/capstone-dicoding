@@ -2,18 +2,35 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import HeaderComponent from '../components/HeaderComponent'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import FooterStyleComponent from '../components/FooterStyleComponent'
 import useInput from '../components/useInput'
+import { login, putAccessToken } from '../utils/network-data'
 // import FooterComponent from '../components/FooterComponent'
 
 const Login = () => {
+  const navigate = useNavigate()
   const [email, handleEmailChange] = useInput('')
   const [password, handlePasswordChange] = useInput('')
+
   const onSubmitHandler = async (event) => {
     event.preventDefault()
-    console.log('login')
+    const response = await login({ email, password })
+    console.log(response)
+    try {
+      if (!response.error) {
+        putAccessToken(response.data.access_token)
+        navigate('/')
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error
+      })
+    }
   }
+
   return (
     <>
       <HeaderComponent />

@@ -30,7 +30,7 @@ async function updateProfile({ name, username, email, phone_number, back_account
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function changePassword({ old_password, password, password_confirmation }) {
@@ -41,7 +41,7 @@ async function changePassword({ old_password, password, password_confirmation })
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 // User
@@ -58,36 +58,36 @@ async function login({ email, password }) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
-async function register({ name, username, email, phone_number, back_account_number, password, password_confirmation }) {
+async function register({ name, username, email, phone_number, bank_account_number, password, password_confirmation }) {
   const response = await fetch(`${BASE_URL}/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json'
     },
-    body: JSON.stringify({ name, username, email, phone_number, back_account_number, password, password_confirmation })
+    body: JSON.stringify({ name, username, email, phone_number, bank_account_number, password, password_confirmation })
   })
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function getUserLogged() {
   const response = await fetchWithToken(`${BASE_URL}/user`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function getDataAdmin() {
   const response = await fetchWithToken(`${BASE_URL}/admin/data`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function logout() {
@@ -99,7 +99,7 @@ async function logout() {
 
   localStorage.removeItem('accessToken')
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 // Admin
@@ -116,7 +116,7 @@ async function loginAdmin({ email, password }) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function registerAdmin({ name, username, email, phone_number, back_account_number, password, password_confirmation }) {
@@ -131,14 +131,14 @@ async function registerAdmin({ name, username, email, phone_number, back_account
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function getUserLoggedAdmin() {
   const response = await fetchWithToken(`${BASE_URL}/admin/user`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function logoutAdmin() {
@@ -150,7 +150,7 @@ async function logoutAdmin() {
 
   localStorage.removeItem('accessToken')
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 // Category
@@ -164,14 +164,14 @@ async function getAllCategories() {
   })
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function getCategoryById(category_id) {
   const response = await fetchWithToken(`${BASE_URL}/categories/${category_id}`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function createCategory({ name }) {
@@ -182,7 +182,7 @@ async function createCategory({ name }) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function updateCategory({ name }, category_id) {
@@ -193,7 +193,7 @@ async function updateCategory({ name }, category_id) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function deleteCategory(category_id) {
@@ -203,7 +203,7 @@ async function deleteCategory(category_id) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 // Destination
@@ -217,7 +217,7 @@ async function getAllDestinations() {
   })
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function getDestinationById(destination_id) {
@@ -229,7 +229,7 @@ async function getDestinationById(destination_id) {
   })
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function createDestination({ name, open_time, close_time, price, rating, location, description }) {
@@ -240,7 +240,7 @@ async function createDestination({ name, open_time, close_time, price, rating, l
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function updateDestination({ name, open_time, close_time, price, rating, location, description }, destination_id) {
@@ -251,7 +251,7 @@ async function updateDestination({ name, open_time, close_time, price, rating, l
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function deleteDestination(destination_id) {
@@ -261,7 +261,7 @@ async function deleteDestination(destination_id) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 // Destination Gallery
@@ -270,14 +270,14 @@ async function getAllDestinationGalleries() {
   const response = await fetchWithToken(`${BASE_URL}/destination_galleries`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function getDestinationGalleryById(destination_gallery_id) {
   const response = await fetchWithToken(`${BASE_URL}/destination_galleries/${destination_gallery_id}`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function createDestinationGallery({ image, destination_id }) {
@@ -288,7 +288,7 @@ async function createDestinationGallery({ image, destination_id }) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function deleteDestinationGallery(destination_gallery_id) {
@@ -298,7 +298,7 @@ async function deleteDestinationGallery(destination_gallery_id) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 // Article
@@ -312,7 +312,7 @@ async function getAllArticles() {
   })
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function getArticleById(article_id) {
@@ -324,7 +324,7 @@ async function getArticleById(article_id) {
   })
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function createArticle({ title, excerpt, content, category_id }) {
@@ -335,7 +335,7 @@ async function createArticle({ title, excerpt, content, category_id }) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function updateArticle({ title, excerpt, content, category_id }, article_id) {
@@ -346,7 +346,7 @@ async function updateArticle({ title, excerpt, content, category_id }, article_i
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function deleteArticle(article_id) {
@@ -356,7 +356,7 @@ async function deleteArticle(article_id) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 // Article Gallery
@@ -365,14 +365,14 @@ async function getAllArticleGalleries() {
   const response = await fetchWithToken(`${BASE_URL}/article_galleries`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function getArticleGalleryById(article_gallery_id) {
   const response = await fetchWithToken(`${BASE_URL}/article_galleries/${article_gallery_id}`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function createArticleGallery({ image, article_id }) {
@@ -383,7 +383,7 @@ async function createArticleGallery({ image, article_id }) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function deleteArticleGallery(article_gallery_id) {
@@ -393,7 +393,7 @@ async function deleteArticleGallery(article_gallery_id) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 // Transaction
@@ -402,21 +402,21 @@ async function getAllTransactionUsers() {
   const response = await fetchWithToken(`${BASE_URL}/user/transactions`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function getAllTransactions() {
   const response = await fetchWithToken(`${BASE_URL}/transactions`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function getTransactionById(transaction_id) {
   const response = await fetchWithToken(`${BASE_URL}/transactions/${transaction_id}`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function createTransaction({ quantity }, destination_id) {
@@ -427,7 +427,7 @@ async function createTransaction({ quantity }, destination_id) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function updateTransaction({ transaction_status }, transaction_id) {
@@ -438,7 +438,7 @@ async function updateTransaction({ transaction_status }, transaction_id) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 // Article Comment
@@ -447,14 +447,14 @@ async function getAllArticleComments() {
   const response = await fetchWithToken(`${BASE_URL}/comments`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function getArticleCommentById(comment_id) {
   const response = await fetchWithToken(`${BASE_URL}/comments/${comment_id}`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function createArticleComment({ content }, article_id) {
@@ -465,7 +465,7 @@ async function createArticleComment({ content }, article_id) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function deleteArticleComment(comment_id) {
@@ -475,7 +475,7 @@ async function deleteArticleComment(comment_id) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 // Wishlist
@@ -487,14 +487,14 @@ async function createWishlists(destination_id) {
 
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 async function getAllWishlistUsers() {
   const response = await fetchWithToken(`${BASE_URL}/user/wishlists`)
   const responseJson = await response.json()
 
-  return { error: false, data: responseJson.data }
+  return { error: false, data: responseJson }
 }
 
 export {

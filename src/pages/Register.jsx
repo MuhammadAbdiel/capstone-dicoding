@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 // import FooterComponent from '../components/FooterComponent'
 import FooterStyleComponent from '../components/FooterStyleComponent'
 import HeaderComponent from '../components/HeaderComponent'
 import useInput from '../components/useInput'
 import Swal from 'sweetalert2'
 import { IoMdCloseCircle } from 'react-icons/io'
-import { register } from '../utils/network-data'
+import { putAccessToken, register } from '../utils/network-data'
 const Register = () => {
+  const navigate = useNavigate()
   const [fullname, handleFullnameChange] = useInput('')
   const [username, handleUsernameChange] = useInput('')
   const [email, handleEmailChange] = useInput('')
   const [phoneNumber, handlePhoneNumberChange] = useInput('')
+  const [bankAccountNumber, handleBankAccountNumberChange] = useInput('')
   const [password, handlePasswordChange] = useInput('')
   const [repassword, handleRePasswordChange] = useInput('')
   const [isEmailValid, setIsEmailValid] = useState('Not Set')
@@ -70,17 +72,30 @@ const Register = () => {
       })
     }
     if (isEmailValid === true && isBothPasswordMatch === true) {
-      let registerStatus = await register({
+      const response = await register({
         name: fullname,
         username,
         email,
         phone_number: phoneNumber,
-        back_account_number: '415151351123',
+        bank_account_number: bankAccountNumber,
         password,
         password_confirmation: repassword
       })
-      console.log(registerStatus)
-      console.log('registered')
+      console.log(response)
+      try {
+        if (!response.error) {
+          putAccessToken(response.data.access_token)
+          navigate('/')
+        }
+      } catch (e) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: e
+        })
+      }
+      // console.log(registerStatus)
+      // console.log('registered')
     }
   }
 
@@ -118,7 +133,17 @@ const Register = () => {
 
             <Form.Group className='mb-3' controlId='formPhoneNumber'>
               <Form.Label>Phone Number</Form.Label>
-              <Form.Control type='text' placeholder='Enter your full name' value={phoneNumber} onChange={handlePhoneNumberChange} />
+              <Form.Control type='text' placeholder='Enter your phone number' value={phoneNumber} onChange={handlePhoneNumberChange} />
+            </Form.Group>
+
+            <Form.Group className='mb-3' controlId='formBankAccountNumber'>
+              <Form.Label>Bank Account Number</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter your bank account number'
+                value={bankAccountNumber}
+                onChange={handleBankAccountNumberChange}
+              />
             </Form.Group>
 
             <Form.Group
