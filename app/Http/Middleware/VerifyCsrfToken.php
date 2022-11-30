@@ -12,7 +12,6 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        // Remove all routes
-        'http://' . env('APP_URL') . '/*',
+        // 'http://' . env('APP_URL') . '/*',
     ];
 }
