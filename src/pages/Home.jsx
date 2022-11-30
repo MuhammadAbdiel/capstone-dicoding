@@ -17,17 +17,19 @@ const Home = () => {
       {isLoading && <LoadingIndicatorComponent />}
       <div className='jumbotron'>
         <img
-          src='https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80'
-          alt='Pantai'
+          src='https://cdn.wisata.app/diary/f7c0cded-dbf8-46b4-87cd-98ad7a341453.jpg'
+          alt='Pantai tiga warna'
           className='jumbotron-img'
         />
         <div className='jumbotron-text-overlay'>
-          <h1>Lorem ipsum dolor sit amet.</h1>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima odio in officiis debitis recusandae consectetur minus!</p>
+          <h1>Bukit Teletubbies Batu</h1>
+          <p>Nikmati liburan bersama keluarga melihat indah nya pemandangan Bukit Teletubbies Batu</p>
           <button>Start My Trip</button>
         </div>
       </div>
-
+      <div>onProgress</div>
+      <div>onProgress</div>
+      <div>onProgress</div>
       <h1 className='text-center fs-3 mt-3'>Lorem</h1>
       <div className='d-grid container mb-4'>
         <div className='row'>
