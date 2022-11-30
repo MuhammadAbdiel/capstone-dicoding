@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import HeaderComponent from '../components/HeaderComponent'
 import FooterComponent from '../components/FooterComponent'
-import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(false)
-
-  useEffect(() => {
-    window.addEventListener('load', () => {
-      setIsLoading(false)
-    })
-  }, [])
   return (
     <>
       <HeaderComponent />
-      {isLoading && <LoadingIndicatorComponent />}
       <div className='jumbotron'>
         <img
           src='https://cdn.wisata.app/diary/f7c0cded-dbf8-46b4-87cd-98ad7a341453.jpg'
