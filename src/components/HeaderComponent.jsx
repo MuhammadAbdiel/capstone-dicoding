@@ -41,12 +41,15 @@ const HeaderComponent = () => {
       confirmButtonText: 'Yes, logout!'
     }).then(async (result) => {
       if (result.isConfirmed) {
+        setIsLoading(true)
         const response = await logout()
         try {
           if (!response.error) {
-            window.location.href = '/'
+            setIsLoading(false)
+            window.location.href = '/login'
           }
         } catch (e) {
+          setIsLoading(false)
           Swal.fire({
             icon: 'error',
             title: 'Error',
