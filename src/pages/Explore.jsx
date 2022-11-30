@@ -5,11 +5,11 @@ import HeaderComponent from '../components/HeaderComponent'
 
 const Explore = () => {
   return (
-    <div>
+    <>
       <HeaderComponent />
       {/* <CardComponent /> */}
       <FooterComponent />
-    </div>
+    </>
   )
 }
 
