@@ -1,14 +1,15 @@
 import Swal from 'sweetalert2'
 
 const alertIfFoundMissingInput = ({
-  fullname,
-  username,
-  email,
-  phoneNumber,
-  bankAccountNumber,
-  isPhoneNumberValid,
-  isPasswordValid,
-  isBothPasswordMatch
+  fullname = null,
+  username = null,
+  email = null,
+  phoneNumber = null,
+  bankAccountNumber = null,
+  password = null,
+  isPhoneNumberValid = null,
+  isPasswordValid = null,
+  isBothPasswordMatch = null
 }) => {
   if (fullname === '') {
     Swal.fire({
@@ -45,6 +46,12 @@ const alertIfFoundMissingInput = ({
       icon: 'error',
       title: 'Error',
       text: '"Bank Account Number" input field should not empty'
+    })
+  } else if (password === '') {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: '"Password" input field should not empty'
     })
   } else if (isBothPasswordMatch === 'Not Set') {
     Swal.fire({
