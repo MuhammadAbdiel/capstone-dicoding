@@ -1,6 +1,12 @@
 import React from 'react'
 import HeaderComponent from '../components/HeaderComponent'
 import FooterComponent from '../components/FooterComponent'
+import { Card } from 'react-bootstrap'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Travel from '../images/assets/Journey-amico.png'
+import Button from 'react-bootstrap/Button'
 
 const Home = () => {
   return (
@@ -9,7 +15,7 @@ const Home = () => {
       <div className='jumbotron'>
         <img
           src='https://cdn.wisata.app/diary/f7c0cded-dbf8-46b4-87cd-98ad7a341453.jpg'
-          alt='Pantai tiga warna'
+          alt='Bukit Teletubbies Batu'
           className='jumbotron-img'
         />
         <div className='jumbotron-text-overlay'>
@@ -18,10 +24,33 @@ const Home = () => {
           <button>Start My Trip</button>
         </div>
       </div>
+      <div className='mt-5'>
+        <Container>
+          <Row>
+            <Col sm={5}>
+              <div>
+                <Card.Img height={400} width={800} src={Travel} />
+              </div>
+            </Col>
+            <Col sm={5} className='mt-5'>
+              <h2 className='text-center'>Want to Go on Vacation?</h2>
+              <p>
+                Have you ever been confused to find information about interesting tours in Malang? or looking for places that are popular
+                and have never been visited in Malang? .now NAMA is here to solve your problem, at NAMA you can find information about
+                interesting tourism in the Malang area, not only information about tourism, at NAMA there are also travel ticket bookings
+                available which will definitely make it easier for you and your family to visit various tourist attractions in poor. Come
+                on, register your account immediately and order tickets now.
+              </p>
+              <div className='d-flex justify-content-end'>
+                <Button variant='primary'>View</Button>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
       <div>onProgress</div>
       <div>onProgress</div>
-      <div>onProgress</div>
-      <h1 className='text-center fs-3 mt-3'>Lorem</h1>
+      {/* <h1 className='text-center fs-3 mt-3'>Lorem</h1>
       <div className='d-grid container mb-4'>
         <div className='row'>
           <p className='col'>
@@ -37,7 +66,7 @@ const Home = () => {
             dolorem quisquam, esse fuga modi in sint accusantium incidunt ratione ullam possimus eos neque quibusdam.
           </p>
         </div>
-      </div>
+      </div> */}
       <FooterComponent />
     </>
   )
