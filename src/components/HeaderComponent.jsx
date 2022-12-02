@@ -46,6 +46,7 @@ const HeaderComponent = () => {
         try {
           if (!response.error) {
             setIsLoading(false)
+            localStorage.removeItem('accessToken')
             window.location.href = '/login'
           }
         } catch (e) {
@@ -56,7 +57,6 @@ const HeaderComponent = () => {
             text: e
           })
         }
-        localStorage.removeItem('accessToken')
       }
     })
   }
