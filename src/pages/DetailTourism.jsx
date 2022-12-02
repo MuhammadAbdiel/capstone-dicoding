@@ -10,11 +10,12 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { useParams } from 'react-router-dom'
-import { getDestinationById } from '../utils/network-data'
+import { getDestinationById, getUserLogged } from '../utils/network-data'
 
 const DetailTourism = () => {
   const [destination, setDestination] = useState({})
   const [destinationGalleries, setDestinationGalleries] = useState([])
+  const [authedUser, setAuthedUser] = useState(null)
   const { id } = useParams()
 
   useEffect(() => {
@@ -31,6 +32,14 @@ const DetailTourism = () => {
           title: 'Error',
           text: error
         })
+      }
+
+      if (!localStorage.getItem('accessToken')) {
+        setAuthedUser(null)
+      } else {
+        const userLogged = await getUserLogged()
+
+        setAuthedUser(userLogged.data.data)
       }
     }
 
@@ -65,9 +74,15 @@ const DetailTourism = () => {
                     <p>Rating : {destination.rating}</p>
                     <p>Location : {destination.location}</p>
                   </Card.Text>
-                  <Link to='/order'>
-                    <Button>Booking Ticket</Button>
-                  </Link>
+                  {authedUser != null ? (
+                    <Link to='/order'>
+                      <Button>Booking Ticket</Button>
+                    </Link>
+                  ) : (
+                    <Link to='/login'>
+                      <Button>Booking Ticket</Button>
+                    </Link>
+                  )}
                 </Card>
               </Col>
             </Row>
