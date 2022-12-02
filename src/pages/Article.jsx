@@ -37,7 +37,7 @@ const Article = () => {
       <HeaderComponent />
       <h1 className='text-center pt-3'>Articles Tourism</h1>
       {articles.map((article) => (
-        <CardArticlesComponent key={article.id} title={article.title} excerpt={article.excerpt} />
+        <CardArticlesComponent key={article.id} id={article.id} title={article.title} excerpt={article.excerpt} />
       ))}
       <FooterComponent />
     </>

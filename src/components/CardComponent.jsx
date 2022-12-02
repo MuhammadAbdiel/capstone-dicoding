@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import { Link } from 'react-router-dom'
 
-const CardComponent = ({ name, description }) => {
+const CardComponent = ({ name, description, id }) => {
   return (
     <Col className='my-5 '>
       <Card style={{ width: '18rem' }}>
@@ -13,7 +13,7 @@ const CardComponent = ({ name, description }) => {
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text className='descrp'>{description}</Card.Text>
-          <Link to={`/tourism/detail`}>
+          <Link to={`/tourism/${id}`}>
             <Button variant='primary'>Go somewhere</Button>
           </Link>
         </Card.Body>

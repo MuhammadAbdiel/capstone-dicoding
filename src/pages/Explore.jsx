@@ -38,7 +38,7 @@ const Explore = () => {
       <Container>
         <Row>
           {destinations.map((destination) => (
-            <CardComponent key={destination.id} name={destination.name} description={destination.description} />
+            <CardComponent key={destination.id} name={destination.name} description={destination.description} id={destination.id} />
           ))}
         </Row>
       </Container>
