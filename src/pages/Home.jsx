@@ -42,7 +42,9 @@ const Home = () => {
                 on, register your account immediately and order tickets now.
               </p>
               <div className='d-flex justify-content-end'>
-                <Button variant='primary'>View</Button>
+                <Link to='/tourism'>
+                  <Button variant='primary'>View</Button>
+                </Link>
               </div>
             </Col>
           </Row>
