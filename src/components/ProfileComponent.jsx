@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { getUserLogged } from '../utils/network-data'
 import logo from '../images/logo192.png'
+import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom'
+
 const ProfileComponent = () => {
   const [authedUser, setAuthedUser] = useState('')
   useEffect(() => {
@@ -29,6 +32,12 @@ const ProfileComponent = () => {
           <li className='list-group-item'>Email : {authedUser.email}</li>
           <li className='list-group-item'>No.Telp : {authedUser.phone_number}</li>
           <li className='list-group-item'>Bank Account Number : {authedUser.bank_account_number}</li>
+          <div className='position-relative'></div>
+          <div className='d-flex justify-content-center'>
+            <Link to='/user/profile/edit'>
+              <Button variant='warning m-2'>Edit</Button>
+            </Link>
+          </div>
         </ul>
       </div>
     </div>

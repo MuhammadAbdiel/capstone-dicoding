@@ -16,6 +16,7 @@ import DetailArticle from './pages/DetailArticle'
 import Explore from './pages/Explore'
 import Article from './pages/Article'
 import Order from './pages/Order'
+import ProfileEdit from './pages/ProfileEdit'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/register' element={<Register />} />
         <Route path='/admin/register' element={<RegisterAdmin />} />
         <Route path='/user/profile' element={<Profile />} />
+        <Route path='/user/profile/edit' element={<ProfileEdit />} />
         <Route path='/tourism' element={<Explore />} />
         <Route path='/tourism/:id' element={<DetailTourism />} />
         <Route path='/articles' element={<Article />} />
