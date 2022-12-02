@@ -7,14 +7,14 @@ import { Link } from 'react-router-dom'
 
 const CardComponent = ({ name, description, id }) => {
   return (
-    <Col className='my-5 '>
-      <Card style={{ width: '18rem' }}>
+    <Col className='my-5' lg={3} md={4} sm={6}>
+      <Card>
         {/* <Card.Img variant='top' src={destination_galleries} /> */}
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text className='descrp'>{description}</Card.Text>
           <Link to={`/tourism/${id}`}>
-            <Button variant='primary'>Go somewhere</Button>
+            <Button variant='primary'>Show more</Button>
           </Link>
         </Card.Body>
       </Card>

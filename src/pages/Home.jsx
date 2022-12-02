@@ -61,8 +61,8 @@ const Home = () => {
             <Col sm={5} className='mt-5 p-lg-5'>
               <h2 className='text-center'>Latest news about travel</h2>
               <p>
-                Di NAMA juga tersedia halaman artickel yang mempermudah anda untuk mencari tahu berita-berita terupdate seputar pariwisata
-                yang ada di sekitar kabupaten semarang.
+                Di GoWisata juga tersedia halaman artickel yang mempermudah anda untuk mencari tahu berita-berita terupdate seputar
+                pariwisata yang ada di sekitar kabupaten semarang.
               </p>
               <div className='d-flex justify-content-end'>
                 <Link to='/articles'>

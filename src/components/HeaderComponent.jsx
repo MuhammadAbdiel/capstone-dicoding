@@ -68,7 +68,7 @@ const HeaderComponent = () => {
         <Container>
           <Navbar.Brand>
             <Link className='text-decoration-none text-white' to='/'>
-              Navbar
+              GoWisata
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
