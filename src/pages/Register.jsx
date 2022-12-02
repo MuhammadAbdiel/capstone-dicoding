@@ -108,10 +108,17 @@ const Register = () => {
       })
       console.log(response)
       try {
-        if (!response.error) {
+        if (!response.error && !response.data.errors) {
           setIsLoading(false)
           putAccessToken(response.data.access_token)
           navigate('/')
+        } else {
+          setIsLoading(false)
+          Swal.fire({
+            icon: 'error',
+            title: 'Invalid',
+            text: response.data.errors[Object.keys(response.data.errors)[0]]
+          })
         }
       } catch (e) {
         setIsLoading(false)
