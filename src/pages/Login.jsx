@@ -9,6 +9,7 @@ import { login, putAccessToken } from '../utils/network-data'
 import { IoMdCloseCircle } from 'react-icons/io'
 import { alertIfFoundMissingInput } from '../utils/alertMissingInputForm'
 import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
+import Swal from 'sweetalert2'
 // import FooterComponent from '../components/FooterComponent'
 
 const Login = () => {
@@ -49,10 +50,17 @@ const Login = () => {
       const response = await login({ email, password })
       console.log(response)
       try {
-        if (!response.error) {
+        if (!response.error && !response.data.message) {
           setIsLoading(false)
           putAccessToken(response.data.access_token)
           navigate('/')
+        } else {
+          setIsLoading(false)
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Your email address or password is incorrect'
+          })
         }
       } catch (error) {
         setIsLoading(false)
