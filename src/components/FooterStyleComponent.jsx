@@ -6,8 +6,8 @@ const FooterStyleComponent = () => {
   return (
     <footer className='card text-center position-sticky w-100 mt-4'>
       <div className='card-body'>
-        <h5 className='card-title'>Special title treatment</h5>
-        <p className='card-text'>With supporting text below as a natural lead-in to additional content.</p>
+        <h5 className='card-title'>GoWisata</h5>
+        <p className='card-text'>Contact us for further information.</p>
         <a href='#' className='btn mx-1' style={{ backgroundColor: '#0AA1DD' }}>
           <FaInstagram />
         </a>
@@ -18,8 +18,8 @@ const FooterStyleComponent = () => {
           <FaInstagram />
         </a>
       </div>
-      <div className='footer p-2' style={{ backgroundColor: '#0AA1DD' }}>
-        Tiketin Apps
+      <div className='footer p-2 text-white' style={{ backgroundColor: '#0AA1DD' }}>
+        Copyright © 2022. GoWisata, All rights reserved
       </div>
     </footer>
   )
