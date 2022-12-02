@@ -41,8 +41,8 @@ const HeaderComponent = () => {
       confirmButtonText: 'Yes, logout!'
     }).then(async (result) => {
       if (result.isConfirmed) {
-        setIsLoading(true)
         const response = await logout()
+        setIsLoading(true)
         try {
           if (!response.error) {
             setIsLoading(false)

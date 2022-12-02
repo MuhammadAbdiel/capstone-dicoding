@@ -96,7 +96,6 @@ const Register = () => {
       password !== '' &&
       repassword !== ''
     ) {
-      setIsLoading(true)
       const response = await register({
         name: fullname,
         username,
@@ -106,7 +105,7 @@ const Register = () => {
         password,
         password_confirmation: repassword
       })
-      console.log(response)
+      setIsLoading(true)
       try {
         if (!response.error && !response.data.errors) {
           setIsLoading(false)
