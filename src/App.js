@@ -15,6 +15,7 @@ import DetailTourism from './pages/DetailTourism'
 import DetailArticle from './pages/DetailArticle'
 import Explore from './pages/Explore'
 import Article from './pages/Article'
+import Order from './pages/Order'
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
         <Route path='/admin/articles' element={<Articles />} />
         <Route path='/admin/categories' element={<Categories />} />
         <Route path='/admin/tourism' element={<Tourism />} />
+        <Route path='/order' element={<Order />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

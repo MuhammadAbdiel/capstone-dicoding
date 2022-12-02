@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import HeaderComponent from '../components/HeaderComponent'
 import FooterComponent from '../components/FooterComponent'
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 // import logo from '../images/logo192.png'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -63,6 +65,9 @@ const DetailTourism = () => {
                     <p>Rating : {destination.rating}</p>
                     <p>Location : {destination.location}</p>
                   </Card.Text>
+                  <Link to='/order'>
+                    <Button>Booking Ticket</Button>
+                  </Link>
                 </Card>
               </Col>
             </Row>

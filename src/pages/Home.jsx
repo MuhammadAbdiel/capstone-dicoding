@@ -36,10 +36,10 @@ const Home = () => {
               <h2 className='text-center'>Want to Go on Vacation?</h2>
               <p>
                 Have you ever been confused to find information about interesting tours in Malang? or looking for places that are popular
-                and have never been visited in Malang? .now NAMA is here to solve your problem, at NAMA you can find information about
-                interesting tourism in the Malang area, not only information about tourism, at NAMA there are also travel ticket bookings
-                available which will definitely make it easier for you and your family to visit various tourist attractions in poor. Come
-                on, register your account immediately and order tickets now.
+                and have never been visited in Malang? .now GoWisata is here to solve your problem, at GoWisata you can find information
+                about interesting tourism in the Malang area, not only information about tourism, at GoWisata there are also travel ticket
+                bookings available which will definitely make it easier for you and your family to visit various tourist attractions in
+                poor. Come on, register your account immediately and order tickets now.
               </p>
               <div className='d-flex justify-content-end'>
                 <Link to='/tourism'>
