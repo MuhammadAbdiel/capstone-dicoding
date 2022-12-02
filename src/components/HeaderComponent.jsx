@@ -81,7 +81,7 @@ const HeaderComponent = () => {
                 Explore
               </Nav.Link>
               {/* Link explore nih bisa dimanfaatkan sebagai halaman yang memberikan rekomendasi tempat wisata (Semacam pages explore instagram) */}
-              <Nav.Link href='./my-booking' className='mx-3'>
+              <Nav.Link href='/my-booking' className='mx-3'>
                 My Booking
               </Nav.Link>
               {authedUser != null ? (
@@ -94,7 +94,7 @@ const HeaderComponent = () => {
                   <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <Nav.Link href='./login' className='mx-3'>
+                <Nav.Link href='/login' className='mx-3'>
                   Login
                 </Nav.Link>
               )}
