@@ -1,20 +1,18 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
-import logo from '../images/logo192.png'
+// import logo from '../images/logo192.png'
 import Col from 'react-bootstrap/Col'
 import { Link } from 'react-router-dom'
 
-const CardComponent = () => {
+const CardComponent = ({ name, description }) => {
   return (
     <Col className='my-5 '>
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant='top' src={logo} />
+        {/* <Card.Img variant='top' src={destination_galleries} /> */}
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text className='descrp'>
-            Some quick example text to build on the card title and make up the bulk of the card's content.
-          </Card.Text>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text className='descrp'>{description}</Card.Text>
           <Link to={`/tourism/detail`}>
             <Button variant='primary'>Go somewhere</Button>
           </Link>

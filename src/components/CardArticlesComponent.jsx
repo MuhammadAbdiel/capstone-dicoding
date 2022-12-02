@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const CardArticlesComponent = ({ title, excerpt, id }) => {
   return (
-    <Card>
+    <Card className='mx-5'>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text className='descrp'>{excerpt}</Card.Text>
