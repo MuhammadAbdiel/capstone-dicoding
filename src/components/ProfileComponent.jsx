@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getUserLogged } from '../utils/network-data'
-import logo from '../images/logo192.png'
+import logo from '../images/profile/user.png'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import NotFound from './NotFound'

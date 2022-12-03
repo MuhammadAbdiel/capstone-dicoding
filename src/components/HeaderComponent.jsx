@@ -12,6 +12,7 @@ import LoadingIndicatorComponent from './LoadingIndicatorComponent'
 const HeaderComponent = () => {
   const [authedUser, setAuthedUser] = useState(null)
   const [name, setName] = useState('')
+  const [isAdmin, setIsAdmin] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -26,6 +27,10 @@ const HeaderComponent = () => {
 
         setAuthedUser(response.data.data)
         setName(response.data.data.name)
+
+        if (response.data.data.role === 'admin') {
+          setIsAdmin(true)
+        }
       }
 
       fetchData()
@@ -89,7 +94,7 @@ const HeaderComponent = () => {
               {authedUser != null ? (
                 <NavDropdown title={name} id='collasible-nav-dropdown' className='ms-3 header-link'>
                   <NavDropdown.Item href='/user/profile'>Profile</NavDropdown.Item>
-                  <NavDropdown.Item href='/admin'>Admin</NavDropdown.Item>
+                  {isAdmin && <NavDropdown.Item href='/admin'>Admin</NavDropdown.Item>}
                   <NavDropdown.Item href='/user/saved'>Saved</NavDropdown.Item>
                   <NavDropdown.Item href='/user/setting'>Setting</NavDropdown.Item>
                   <NavDropdown.Divider />

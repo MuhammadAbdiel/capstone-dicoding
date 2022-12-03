@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import { InputGroup } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { Row, Col, InputGroup } from 'react-bootstrap'
+import { Link, useNavigate } from 'react-router-dom'
 import FooterStyleComponent from '../components/FooterStyleComponent'
 import HeaderComponent from '../components/HeaderComponent'
 import useInput from '../components/useInput'
@@ -187,9 +187,20 @@ const ProfileEdit = () => {
               />
             </Form.Group>
 
-            <Button style={{ width: '100%', backgroundColor: '#0AA1DD' }} className='mb-3 fw-bold' variant='primary' type='submit'>
-              Simpan
-            </Button>
+            <Row className='justify-content-start'>
+              <Col lg={2}>
+                <Link to='/user/profile'>
+                  <Button style={{ width: '100%', backgroundColor: '##f23030' }} className='mb-3 fw-bold' variant='danger'>
+                    Kembali
+                  </Button>
+                </Link>
+              </Col>
+              <Col lg={2}>
+                <Button style={{ width: '100%', backgroundColor: '#0AA1DD' }} className='mb-3 fw-bold' variant='primary' type='submit'>
+                  Simpan
+                </Button>
+              </Col>
+            </Row>
           </Form>
         </div>
       </div>

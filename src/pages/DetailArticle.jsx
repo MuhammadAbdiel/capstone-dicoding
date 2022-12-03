@@ -5,9 +5,11 @@ import Card from 'react-bootstrap/Card'
 import { useParams } from 'react-router-dom'
 import { getArticleById } from '../utils/network-data'
 import Swal from 'sweetalert2'
+import { Container } from 'react-bootstrap'
 
 const DetailArticle = () => {
   const [article, setArticle] = useState({})
+  const [articleGalleries, setArticleGalleries] = useState([])
   const { id } = useParams()
 
   useEffect(() => {
@@ -16,6 +18,7 @@ const DetailArticle = () => {
       try {
         if (!response.error) {
           setArticle(response.data.data)
+          setArticleGalleries(response.data.data.article_galleries)
         }
       } catch (error) {
         Swal.fire({
@@ -31,18 +34,15 @@ const DetailArticle = () => {
     <div>
       <HeaderComponent />
       <Card>
-        <Card.Body>
-          <Card.Title className='d-flex justify-content-center fw-bold'>
-            <h1>{article.title}</h1>
-          </Card.Title>
-          <Card.Text>{article.content}</Card.Text>
-        </Card.Body>
-        <Card.Body>
-          <Card.Title className='d-flex justify-content-start'>
-            <h2>excerpt</h2>
-          </Card.Title>
-          <Card.Text className='text-center'>{article.excerpt}</Card.Text>
-        </Card.Body>
+        <Container>
+          <Card.Body>
+            <Card.Title className='d-flex justify-content-center fw-bold'>
+              <h1>{article.title}</h1>
+            </Card.Title>
+            <Card.Img className='my-5' variant='top' src={articleGalleries[0].image} />
+            <Card.Text>{article.content}</Card.Text>
+          </Card.Body>
+        </Container>
       </Card>
       <FooterComponent />
     </div>

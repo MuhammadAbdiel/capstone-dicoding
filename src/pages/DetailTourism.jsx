@@ -11,6 +11,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { useParams } from 'react-router-dom'
 import { getDestinationById, getUserLogged } from '../utils/network-data'
+// eslint-disable-next-line no-unused-vars
+import { BsFillHeartFill, BsHeart } from 'react-icons/bs'
 
 const DetailTourism = () => {
   const [destination, setDestination] = useState({})
@@ -50,6 +52,12 @@ const DetailTourism = () => {
     <div>
       <HeaderComponent />
       <Card>
+        <button className='floating'>
+          <BsHeart className='fs-4'></BsHeart>
+        </button>
+        {/* <button className='floating'>
+          <BsFillHeartFill className='fs-4'></BsFillHeartFill>
+        </button> */}
         <Card.Body>
           <Card.Title className='d-flex justify-content-center fw-bold'>
             <h1>{destination.name}</h1>
