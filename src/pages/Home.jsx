@@ -9,6 +9,7 @@ import Travel from '../images/assets/Journey-amico.png'
 import Article from '../images/assets/article-news.jpg'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
+import { FaAngular } from 'react-icons/fa'
 
 const Home = () => {
   return (
@@ -73,22 +74,36 @@ const Home = () => {
           </Row>
         </Container>
       </div>
-      <div>onProgress</div>
-      <h1 className='text-center fs-3 mt-3'>Lorem</h1>
-      <div className='d-grid container mb-4'>
+      <h1 className='text-center fs-3 mt-3'>Apa yang bisa kami bantu?</h1>
+      <div className='d-grid container mb-4 mt-4'>
         <div className='row'>
-          <p className='col'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, necessitatibus libero obcaecati fugit laudantium nulla
-            dolorem quisquam, esse fuga modi in sint accusantium incidunt ratione ullam possimus eos neque quibusdam.
-          </p>
-          <p className='col'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, necessitatibus libero obcaecati fugit laudantium nulla
-            dolorem quisquam, esse fuga modi in sint accusantium incidunt ratione ullam possimus eos neque quibusdam.
-          </p>
-          <p className='col'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, necessitatibus libero obcaecati fugit laudantium nulla
-            dolorem quisquam, esse fuga modi in sint accusantium incidunt ratione ullam possimus eos neque quibusdam.
-          </p>
+          <div className='col'>
+            <div className='d-flex justify-content-center'>
+              <FaAngular />
+            </div>
+            <p style={{ textAlign: 'justify' }}>
+              Aplikasi GoWisata memberikan informasi mengenai artikel tempat liburan, yang mana membuat anda tidak bingung untuk mencari
+              tempat wisata yang ada di kabupaten Malang. (masing bingung logo apa)
+            </p>
+          </div>
+          <div className='col'>
+            <div className='d-flex justify-content-center'>
+              <FaAngular />
+            </div>
+            <p style={{ textAlign: 'justify' }}>
+              Tersedia juga informasi mengenai peraturan masing-masing wisata. Peraturan ini juga dibuat berdasarkan beberapa komplain dari
+              pengunjung lain yang merasa terganggu karena pengunjung lainnya yang meresahkan.
+            </p>
+          </div>
+          <div className='col'>
+            <div className='d-flex justify-content-center'>
+              <FaAngular />
+            </div>
+            <p style={{ textAlign: 'justify' }}>
+              Tersedia fitur pembayaran dengan berbagai macam Bank Account Number yang mana memudahkan anda dalam melakukan proses masuk
+              tanpa membeli tiket secara offline.
+            </p>
+          </div>
         </div>
       </div>
       <FooterComponent />
