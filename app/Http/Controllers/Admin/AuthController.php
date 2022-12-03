@@ -61,8 +61,10 @@ class AuthController extends Controller
 
     public function getUserLoggedIn()
     {
+        $user = User::where('id', auth()->user()->id)->firstOrFail();
+
         return response()->json([
-            'data' => Auth::user(),
+            'data' => $user->load(['wishlists', 'transactions', 'comments']),
         ]);
     }
 
