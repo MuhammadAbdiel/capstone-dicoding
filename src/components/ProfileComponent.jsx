@@ -35,10 +35,9 @@ const ProfileComponent = () => {
           <li className='list-group-item'>Email : {authedUser.email}</li>
           <li className='list-group-item'>No.Telp : {authedUser.phone_number}</li>
           <li className='list-group-item'>Bank Account Number : {authedUser.bank_account_number}</li>
-          <div className='position-relative'></div>
           <div className='d-flex justify-content-center'>
             <Link to='/user/profile/edit'>
-              <Button variant='warning m-2'>Edit</Button>
+              <Button variant='warning m-2 px-5'>Edit</Button>
             </Link>
           </div>
         </ul>
