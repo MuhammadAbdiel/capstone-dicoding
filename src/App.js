@@ -17,6 +17,7 @@ import Explore from './pages/Explore'
 import Article from './pages/Article'
 import Order from './pages/Order'
 import ProfileEdit from './pages/ProfileEdit'
+import AboutUs from './pages/AboutUs'
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
         <Route path='/admin/categories' element={<Categories />} />
         <Route path='/admin/tourism' element={<Tourism />} />
         <Route path='/order' element={<Order />} />
+        <Route path='/about' element={<AboutUs />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
