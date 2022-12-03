@@ -21,10 +21,10 @@ async function fetchWithToken(url, options = {}) {
 
 // Profile
 
-async function updateProfile({ name, username, email, phone_number, back_account_number }) {
+async function updateProfile({ name, username, email, phone_number, bank_account_number }) {
   const response = await fetchWithToken(`${BASE_URL}/user/update`, {
     method: 'PUT',
-    body: JSON.stringify({ name, username, email, phone_number, back_account_number })
+    body: JSON.stringify({ name, username, email, phone_number, bank_account_number })
   })
 
   const responseJson = await response.json()
