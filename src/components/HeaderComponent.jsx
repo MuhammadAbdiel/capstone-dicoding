@@ -81,9 +81,11 @@ const HeaderComponent = () => {
                 Explore
               </Nav.Link>
               {/* Link explore nih bisa dimanfaatkan sebagai halaman yang memberikan rekomendasi tempat wisata (Semacam pages explore instagram) */}
-              <Nav.Link href='/my-booking' className='mx-3'>
-                My Booking
-              </Nav.Link>
+              {authedUser != null && (
+                <Nav.Link href='/my-booking' className='mx-3'>
+                  My Booking
+                </Nav.Link>
+              )}
               {authedUser != null ? (
                 <NavDropdown title={name} id='collasible-nav-dropdown' className='ms-3 header-link'>
                   <NavDropdown.Item href='/user/profile'>Profile</NavDropdown.Item>

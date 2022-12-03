@@ -10,6 +10,7 @@ import Article from '../images/assets/article-news.jpg'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import { FaAngular } from 'react-icons/fa'
+// import FooterStyleComponent from '../components/FooterStyleComponent'
 
 const Home = () => {
   return (
@@ -107,6 +108,7 @@ const Home = () => {
         </div>
       </div>
       <FooterComponent />
+      {/* <FooterStyleComponent /> */}
     </>
   )
 }
