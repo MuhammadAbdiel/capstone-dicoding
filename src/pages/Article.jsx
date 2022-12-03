@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Swal from 'sweetalert2'
 import CardArticlesComponent from '../components/CardArticlesComponent'
-import FooterComponent from '../components/FooterComponent'
+// import FooterComponent from '../components/FooterComponent'
+import FooterStyleComponent from '../components/FooterStyleComponent'
 import HeaderComponent from '../components/HeaderComponent'
 import { getAllArticles } from '../utils/network-data'
 
@@ -45,7 +46,7 @@ const Article = () => {
           excerpt={article.excerpt}
         />
       ))}
-      <FooterComponent />
+      <FooterStyleComponent />
     </>
   )
 }

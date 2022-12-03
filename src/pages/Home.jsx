@@ -9,7 +9,9 @@ import Travel from '../images/assets/Journey-amico.png'
 import Article from '../images/assets/article-news.jpg'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
-import { FaAngular } from 'react-icons/fa'
+import { FaInfoCircle } from 'react-icons/fa'
+import { FaMoneyCheckAlt } from 'react-icons/fa'
+import { FaPencilRuler } from 'react-icons/fa'
 // import FooterStyleComponent from '../components/FooterStyleComponent'
 
 const Home = () => {
@@ -80,7 +82,7 @@ const Home = () => {
         <div className='row'>
           <div className='col'>
             <div className='d-flex justify-content-center'>
-              <FaAngular />
+              <FaInfoCircle className='fs-1 border border-dark border-2 rounded-circle p-1' />
             </div>
             <p style={{ textAlign: 'justify' }}>
               Aplikasi GoWisata memberikan informasi mengenai artikel tempat liburan, yang mana membuat anda tidak bingung untuk mencari
@@ -89,7 +91,7 @@ const Home = () => {
           </div>
           <div className='col'>
             <div className='d-flex justify-content-center'>
-              <FaAngular />
+              <FaPencilRuler className='fs-1 border border-dark border-2 rounded-circle p-1' />
             </div>
             <p style={{ textAlign: 'justify' }}>
               Tersedia juga informasi mengenai peraturan masing-masing wisata. Peraturan ini juga dibuat berdasarkan beberapa komplain dari
@@ -98,7 +100,7 @@ const Home = () => {
           </div>
           <div className='col'>
             <div className='d-flex justify-content-center'>
-              <FaAngular />
+              <FaMoneyCheckAlt className='fs-1 border border-dark border-2 rounded-circle p-1' />
             </div>
             <p style={{ textAlign: 'justify' }}>
               Tersedia fitur pembayaran dengan berbagai macam Bank Account Number yang mana memudahkan anda dalam melakukan proses masuk
