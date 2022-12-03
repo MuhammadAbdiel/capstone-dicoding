@@ -10,7 +10,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { useParams } from 'react-router-dom'
-import { getDestinationById, getUserLogged } from '../utils/network-data'
+import { createWishlists, getDestinationById, getUserLogged } from '../utils/network-data'
 // eslint-disable-next-line no-unused-vars
 import { BsFillHeartFill, BsHeart } from 'react-icons/bs'
 
@@ -18,7 +18,28 @@ const DetailTourism = () => {
   const [destination, setDestination] = useState({})
   const [destinationGalleries, setDestinationGalleries] = useState([])
   const [authedUser, setAuthedUser] = useState(null)
+  const [wishlist, setWishlist] = useState(false)
   const { id } = useParams()
+
+  const handleClickButton = async (event) => {
+    event.preventDefault()
+    const response = await createWishlists(id)
+    try {
+      if (!response.error) {
+        if (wishlist) {
+          setWishlist(false)
+        } else {
+          setWishlist(true)
+        }
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error
+      })
+    }
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,12 +73,9 @@ const DetailTourism = () => {
     <div>
       <HeaderComponent />
       <Card>
-        <button className='floating'>
-          <BsHeart className='fs-4'></BsHeart>
+        <button onClick={handleClickButton} className='floating'>
+          {wishlist ? <BsFillHeartFill className='fs-4'></BsFillHeartFill> : <BsHeart className='fs-4'></BsHeart>}
         </button>
-        {/* <button className='floating'>
-          <BsFillHeartFill className='fs-4'></BsFillHeartFill>
-        </button> */}
         <Card.Body>
           <Card.Title className='d-flex justify-content-center fw-bold'>
             <h1>{destination.name}</h1>
