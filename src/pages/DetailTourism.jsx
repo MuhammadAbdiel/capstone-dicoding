@@ -63,7 +63,7 @@ const DetailTourism = () => {
             <h1>{destination.name}</h1>
           </Card.Title>
           <Container>
-            <Row>
+            <Row className='flex-column flex-lg-row'>
               <Col className='mt-3'>
                 <Card className='p-5'>
                   <Card.Text>
@@ -100,10 +100,10 @@ const DetailTourism = () => {
         <Card.Body>
           <Card.Title className='d-flex justify-content-center'></Card.Title>
           <Container className='d-flex justify-content-center'>
-            <Row>
+            <Row className='flex-column flex-md-row w-100'>
               {destinationGalleries.map((destinationGallery) => (
-                <Col key={destinationGallery.id} xs={6} lg={4} md={6} className='mt-3'>
-                  <Card.Img variant='top' height={250} width={300} src={destinationGallery.image} />
+                <Col key={destinationGallery.id} className='mt-3'>
+                  <Card.Img src={destinationGallery.image} />
                 </Col>
               ))}
             </Row>

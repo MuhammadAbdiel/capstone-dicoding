@@ -91,6 +91,9 @@ const HeaderComponent = () => {
                   My Booking
                 </Nav.Link>
               )}
+              <Nav.Link className='mx-3' href='/about'>
+                About Us
+              </Nav.Link>
               {authedUser != null ? (
                 <NavDropdown title={name} id='collasible-nav-dropdown' className='ms-3 header-link'>
                   <NavDropdown.Item href='/user/profile'>Profile</NavDropdown.Item>
