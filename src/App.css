@@ -38,10 +38,17 @@ input[type='number'] {
   color: #61dafb;
 }
 
+.card-img {
+  height: 200px;
+  object-fit: cover;
+}
+
 .descrp {
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 70px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 @keyframes App-logo-spin {
