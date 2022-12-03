@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -22,7 +22,7 @@ import Wishlists from './pages/Wishlists'
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <main>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
@@ -43,7 +43,7 @@ const App = () => {
         <Route path='/about' element={<AboutUs />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
-    </BrowserRouter>
+    </main>
   )
 }
 

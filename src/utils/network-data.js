@@ -440,6 +440,18 @@ async function updateTransaction({ transaction_status }, transaction_id) {
 
 // Article Comment
 
+async function getArticleCommentsByArticleId(article_id) {
+  const response = await fetch(`${BASE_URL}/comments/${article_id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    }
+  })
+  const responseJson = await response.json()
+
+  return { error: false, data: responseJson }
+}
+
 async function getAllArticleComments() {
   const response = await fetchWithToken(`${BASE_URL}/comments`)
   const responseJson = await response.json()
@@ -536,6 +548,7 @@ export {
   getTransactionById,
   createTransaction,
   updateTransaction,
+  getArticleCommentsByArticleId,
   getAllArticleComments,
   getArticleCommentById,
   createArticleComment,

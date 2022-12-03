@@ -19,6 +19,7 @@ const Login = () => {
   const [isEmailValid, setIsEmailValid] = useState('Not Set')
   const [isPasswordValid, setIsPasswordValid] = useState('Not Set')
   const [isLoading, setIsLoading] = useState(false)
+
   useEffect(() => {
     if (email !== '') {
       if (/\S+@\S+\.\S+/.test(email)) {
