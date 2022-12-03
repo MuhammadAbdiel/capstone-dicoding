@@ -18,6 +18,7 @@ import Article from './pages/Article'
 import Order from './pages/Order'
 import ProfileEdit from './pages/ProfileEdit'
 import AboutUs from './pages/AboutUs'
+import Wishlists from './pages/Wishlists'
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path='/register' element={<Register />} />
         <Route path='/admin/register' element={<RegisterAdmin />} />
         <Route path='/user/profile' element={<Profile />} />
+        <Route path='/user/saved' element={<Wishlists />} />
         <Route path='/user/profile/edit' element={<ProfileEdit />} />
         <Route path='/tourism' element={<Explore />} />
         <Route path='/tourism/:id' element={<DetailTourism />} />

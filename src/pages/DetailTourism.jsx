@@ -28,8 +28,22 @@ const DetailTourism = () => {
       if (!response.error) {
         if (wishlist) {
           setWishlist(false)
+          localStorage.setItem(
+            'wishlist',
+            JSON.stringify({
+              destination_id: id,
+              is_wishlist: false
+            })
+          )
         } else {
           setWishlist(true)
+          localStorage.setItem(
+            'wishlist',
+            JSON.stringify({
+              destination_id: id,
+              is_wishlist: true
+            })
+          )
         }
       }
     } catch (error) {
@@ -74,7 +88,11 @@ const DetailTourism = () => {
       <HeaderComponent />
       <Card>
         <button onClick={handleClickButton} className='floating'>
-          {wishlist ? <BsFillHeartFill className='fs-4'></BsFillHeartFill> : <BsHeart className='fs-4'></BsHeart>}
+          {JSON.parse(localStorage.getItem('wishlist')).is_wishlist ? (
+            <BsFillHeartFill className='fs-4'></BsFillHeartFill>
+          ) : (
+            <BsHeart className='fs-4'></BsHeart>
+          )}
         </button>
         <Card.Body>
           <Card.Title className='d-flex justify-content-center fw-bold'>
