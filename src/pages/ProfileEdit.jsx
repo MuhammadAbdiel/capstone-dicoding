@@ -9,7 +9,7 @@ import useInput from '../components/useInput'
 import Swal from 'sweetalert2'
 import { alertIfFoundMissingInput } from '../utils/alertMissingInputForm'
 import { IoMdCloseCircle } from 'react-icons/io'
-import { putAccessToken, updateProfile } from '../utils/network-data'
+import { updateProfile } from '../utils/network-data'
 import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
 import NotFound from '../components/NotFound'
 import { getUserLogged } from '../utils/network-data'
@@ -89,8 +89,7 @@ const ProfileEdit = () => {
       try {
         if (!response.error && !response.data.errors) {
           setIsLoading(false)
-          putAccessToken(response.data.access_token)
-          navigate('/')
+          navigate('/user/profile')
         } else {
           setIsLoading(false)
           Swal.fire({
@@ -109,7 +108,7 @@ const ProfileEdit = () => {
       }
     }
   }
-  console.log(authedUser)
+
   if (authedUser === null) {
     return <NotFound />
   }

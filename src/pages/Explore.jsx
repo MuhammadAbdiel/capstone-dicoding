@@ -13,6 +13,7 @@ const Explore = () => {
   const initData = () => {
     const fetchData = async () => {
       const response = await getAllDestinations()
+      console.log(response)
       try {
         if (!response.error) {
           setDestinations(response.data.data)
@@ -35,10 +36,16 @@ const Explore = () => {
   return (
     <>
       <HeaderComponent />
-      <Container>
+      <Container className='my-4'>
         <Row>
           {destinations.map((destination) => (
-            <CardComponent key={destination.id} name={destination.name} description={destination.description} id={destination.id} />
+            <CardComponent
+              key={destination.id}
+              name={destination.name}
+              description={destination.description}
+              id={destination.id}
+              image={destination.destination_galleries[0].image}
+            />
           ))}
         </Row>
       </Container>
