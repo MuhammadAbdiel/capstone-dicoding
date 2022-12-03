@@ -18,6 +18,7 @@ const ProfileComponent = () => {
       fetchData()
     }
   }, [])
+
   if (authedUser === null) {
     return <NotFound />
   }
