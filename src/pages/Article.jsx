@@ -36,7 +36,7 @@ const Article = () => {
   return (
     <>
       <HeaderComponent />
-      <h1 className='text-center pt-3'>Articles Tourism</h1>
+      <h1 className='text-center py-3'>Articles Tourism</h1>
       {articles.map((article) => (
         <CardArticlesComponent
           key={article.id}

@@ -4,12 +4,11 @@ import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
 
 const CardArticlesComponent = ({ image_article, title, excerpt, id }) => {
-  console.log(image_article.image)
   return (
-    <Card className='mx-5' style={{ width: '25rem' }}>
+    <Card className='mx-5'>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
-        <img src={image_article.image} className='card-img-top' alt='' />
+        <img src={image_article.image} className='card-img-top my-3' alt='' />
         <Card.Text className='descrp'>{excerpt}</Card.Text>
         <div className='d-flex justify-content-end'>
           <Link to={`/articles/${id}`}>
