@@ -852,6 +852,24 @@ https://capstone-backend-production-7544.up.railway.app/api
 
 ## Article Comment
 
+### Get Article Comments by Article ID
+
+- URL :
+
+  - #### `/comments/{article_id}`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
 ### Get All Article Comments (Admin)
 
 - URL :

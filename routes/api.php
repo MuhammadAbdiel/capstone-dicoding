@@ -38,6 +38,9 @@ Route::get('categories', [CategoryController::class, 'index']);
 Route::get('destinations', [DestinationController::class, 'index']);
 Route::get('destinations/{destination}', [DestinationController::class, 'show']);
 
+// Route get Comments based on Article ID
+Route::get('/comments/{article}', [UserController::class, 'getComments']);
+
 // Prefix admin, namespace Admin
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 

@@ -83,6 +83,16 @@ class UserController extends Controller
         ]);
     }
 
+    public function getComments(Article $article)
+    {
+        $articleComments = Comment::where('article_id', $article->id)->get();
+
+        return response()->json([
+            'message' => 'success',
+            'comments' => $articleComments->load(['user', 'article']),
+        ]);
+    }
+
     public function getTransactions()
     {
         $user = auth()->user();
