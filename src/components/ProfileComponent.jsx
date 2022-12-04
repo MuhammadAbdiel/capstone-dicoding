@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import NotFound from './NotFound'
 
 const ProfileComponent = () => {
-  const [authedUser, setAuthedUser] = useState(null)
+  const [authedUser, setAuthedUser] = useState('Not Set')
   useEffect(() => {
     if (!localStorage.getItem('accessToken')) {
       setAuthedUser(null)

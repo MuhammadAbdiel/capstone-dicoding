@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Row, Col, InputGroup } from 'react-bootstrap'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import FooterStyleComponent from '../components/FooterStyleComponent'
 import HeaderComponent from '../components/HeaderComponent'
 import useInput from '../components/useInput'
@@ -15,7 +15,6 @@ import NotFound from '../components/NotFound'
 import { getUserLogged } from '../utils/network-data'
 
 const ProfileEdit = () => {
-  const navigate = useNavigate()
   const [username, handleUsernameChange] = useInput('')
   const [email, handleEmailChange] = useInput('')
   const [fullname, handleFullnameChange] = useInput('')
@@ -24,7 +23,7 @@ const ProfileEdit = () => {
   const [isEmailValid, setIsEmailValid] = useState('Not Set')
   const [isPhoneNumberValid, setIsPhoneNumberValid] = useState('Not Set')
   const [isLoading, setIsLoading] = useState(false)
-  const [authedUser, setAuthedUser] = useState(null)
+  const [authedUser, setAuthedUser] = useState('Not Set')
   useEffect(() => {
     if (!localStorage.getItem('accessToken')) {
       setAuthedUser(null)
@@ -89,7 +88,6 @@ const ProfileEdit = () => {
       try {
         if (!response.error && !response.data.errors) {
           setIsLoading(false)
-          navigate('/user/profile')
         } else {
           setIsLoading(false)
           Swal.fire({
@@ -169,7 +167,7 @@ const ProfileEdit = () => {
                 <Form.Control
                   type='number'
                   placeholder='Enter your phone number'
-                  value={phoneNumber || authedUser.phone_number.slice(3)}
+                  value={phoneNumber || (authedUser === 'Not Set' ? undefined : authedUser.phone_number.slice(3))}
                   min='0'
                   onChange={handlePhoneNumberChange}
                   className={isPhoneNumberValid === false && 'invalid'}
@@ -190,7 +188,7 @@ const ProfileEdit = () => {
             <Row className='justify-content-start'>
               <Col lg={2}>
                 <Link to='/user/profile'>
-                  <Button style={{ width: '100%', backgroundColor: '##f23030' }} className='mb-3 fw-bold' variant='danger'>
+                  <Button style={{ width: '100%', backgroundColor: '#f23030' }} className='mb-3 fw-bold' variant='danger'>
                     Kembali
                   </Button>
                 </Link>
