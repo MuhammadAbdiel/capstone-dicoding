@@ -105,6 +105,23 @@ class UserController extends Controller
         ]);
     }
 
+    public function checkWishlist(Destination $destination)
+    {
+        $userLogin = auth()->user();
+
+        $wishlist = false;
+        $userWishlist = Wishlist::where('user_id', $userLogin->id)->where('destination_id', $destination->id)->first();
+
+        if (!empty($userWishlist)) {
+            $wishlist = true;
+        }
+
+        return response()->json([
+            'message' => 'success',
+            'wishlist' => $wishlist,
+        ]);
+    }
+
     public function updateProfile(UpdateProfileRequest $request)
     {
         $user = User::where('id', auth()->user()->id)->first();

@@ -110,6 +110,9 @@ Route::middleware('auth:sanctum')->group(function () {
   // Route put Wishlists
   Route::put('/wishlists/{destination}', [UserController::class, 'wishlist']);
 
+  // Route get Check Wishlists
+  Route::get('/wishlists/{destination}', [UserController::class, 'checkWishlist']);
+
   // Route put Comments
   Route::put('/comments/{article}', [UserController::class, 'comment']);
 
