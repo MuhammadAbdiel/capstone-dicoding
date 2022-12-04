@@ -26,6 +26,7 @@ const DetailArticle = () => {
           title: 'Success',
           text: 'Comment has been created!'
         })
+        setArticleComments([...articleComments, response.data.comment])
       }
     } catch (error) {
       Swal.fire({
