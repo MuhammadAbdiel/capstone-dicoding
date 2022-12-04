@@ -88,7 +88,7 @@ const HeaderComponent = () => {
               </Link>
               {/* Link explore nih bisa dimanfaatkan sebagai halaman yang memberikan rekomendasi tempat wisata (Semacam pages explore instagram) */}
               {authedUser != null && (
-                <Link to='/my-booking' className='nav-link mx-3'>
+                <Link to='/user/booking' className='nav-link mx-3'>
                   My Booking
                 </Link>
               )}

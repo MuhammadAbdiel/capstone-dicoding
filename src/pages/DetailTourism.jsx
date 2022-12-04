@@ -117,7 +117,7 @@ const DetailTourism = () => {
                     <p>
                       Time : {destination.open_time} - {destination.close_time}
                     </p>
-                    <p>Ticket Price : {destination.price}</p>
+                    <p>Ticket Price : Rp. {destination.price}</p>
                     <p>Location : {destination.location}</p>
                   </Card.Text>
                   {authedUser != null ? (
