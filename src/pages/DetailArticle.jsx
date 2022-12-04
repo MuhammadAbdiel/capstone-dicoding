@@ -83,10 +83,12 @@ const DetailArticle = () => {
       <Card>
         <Container>
           <Card.Body>
-            <Card.Title className='d-flex justify-content-center fw-bold'>
+            <Card.Title className='text-center fw-bold'>
               <h1>{article.title}</h1>
             </Card.Title>
-            <Card.Img className='my-5' variant='top' src={articleGalleries.image} />
+            <div className='text-center'>
+              <Card.Img className='my-5' variant='top' src={articleGalleries.image} style={{ width: '700px' }} />
+            </div>
             <Card.Text className='pb-5'>{article.content}</Card.Text>
             <h3>Comments</h3>
             {articleComments.map((articleComment) => (
