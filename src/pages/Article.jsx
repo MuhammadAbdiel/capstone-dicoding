@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Container, Row } from 'react-bootstrap'
 import Swal from 'sweetalert2'
 import CardArticlesComponent from '../components/CardArticlesComponent'
 // import FooterComponent from '../components/FooterComponent'
@@ -35,16 +36,20 @@ const Article = () => {
   return (
     <>
       <HeaderComponent />
-      <h1 className='text-center py-3'>Articles Tourism</h1>
-      {articles.map((article) => (
-        <CardArticlesComponent
-          key={article.id}
-          id={article.id}
-          image_article={article.article_galleries[0]}
-          title={article.title}
-          excerpt={article.excerpt}
-        />
-      ))}
+      <h1 className='text-center pt-3'>Articles Tourism</h1>
+      <Container className='my-4'>
+        <Row>
+          {articles.map((article) => (
+            <CardArticlesComponent
+              key={article.id}
+              id={article.id}
+              image_article={article.article_galleries[0]}
+              title={article.title}
+              excerpt={article.excerpt}
+            />
+          ))}
+        </Row>
+      </Container>
       <FooterStyleComponent />
     </>
   )
