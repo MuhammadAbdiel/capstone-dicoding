@@ -56,7 +56,6 @@ const DetailArticle = () => {
       try {
         if (!getComments.error) {
           setArticleComments(getComments.data.comments)
-          console.log(getComments.data.comments)
         }
       } catch (error) {
         Swal.fire({

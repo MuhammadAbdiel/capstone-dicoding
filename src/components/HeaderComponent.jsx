@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 // import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { getUserLogged, logout } from '../utils/network-data'
 import LoadingIndicatorComponent from './LoadingIndicatorComponent'
 
@@ -14,6 +14,7 @@ const HeaderComponent = () => {
   const [name, setName] = useState('')
   const [isAdmin, setIsAdmin] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (!localStorage.getItem('accessToken')) {
@@ -52,7 +53,7 @@ const HeaderComponent = () => {
           if (!response.error) {
             setIsLoading(false)
             localStorage.removeItem('accessToken')
-            window.location.href = '/login'
+            navigate('/login')
           }
         } catch (e) {
           setIsLoading(false)
@@ -79,34 +80,46 @@ const HeaderComponent = () => {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='ms-auto header-link'>
-              <Nav.Link className='mx-3' href='/articles'>
+              <Link className='nav-link mx-3' to='/articles'>
                 Article
-              </Nav.Link>
-              <Nav.Link className='mx-3' href='/tourism'>
+              </Link>
+              <Link className='nav-link mx-3' to='/tourism'>
                 Explore
-              </Nav.Link>
+              </Link>
               {/* Link explore nih bisa dimanfaatkan sebagai halaman yang memberikan rekomendasi tempat wisata (Semacam pages explore instagram) */}
               {authedUser != null && (
-                <Nav.Link href='/my-booking' className='mx-3'>
+                <Link to='/my-booking' className='nav-link mx-3'>
                   My Booking
-                </Nav.Link>
+                </Link>
               )}
-              <Nav.Link className='mx-3' href='/about'>
+              <Link className='nav-link mx-3' to='/about'>
                 About Us
-              </Nav.Link>
+              </Link>
               {authedUser != null ? (
                 <NavDropdown title={name} id='collasible-nav-dropdown' className='ms-3 header-link'>
-                  <NavDropdown.Item href='/user/profile'>Profile</NavDropdown.Item>
-                  {isAdmin && <NavDropdown.Item href='/admin'>Admin</NavDropdown.Item>}
-                  <NavDropdown.Item href='/user/saved'>Saved</NavDropdown.Item>
-                  <NavDropdown.Item href='/user/setting'>Setting</NavDropdown.Item>
+                  <Link className='dropdown-item' to='/user/profile'>
+                    Profile
+                  </Link>
+                  {isAdmin && (
+                    <Link className='dropdown-item' to='/admin'>
+                      Admin
+                    </Link>
+                  )}
+                  <Link className='dropdown-item' to='/user/saved'>
+                    Saved
+                  </Link>
+                  <Link className='dropdown-item' to='/user/setting'>
+                    Setting
+                  </Link>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+                  <Link className='dropdown-item' onClick={handleLogout}>
+                    Logout
+                  </Link>
                 </NavDropdown>
               ) : (
-                <Nav.Link href='/login' className='mx-3'>
+                <Link to='/login' className='nav-link mx-3'>
                   Login
-                </Nav.Link>
+                </Link>
               )}
             </Nav>
           </Navbar.Collapse>

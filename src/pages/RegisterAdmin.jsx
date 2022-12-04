@@ -81,7 +81,6 @@ const RegisterAdmin = () => {
         password,
         password_confirmation: repassword
       })
-      console.log(response)
       try {
         if (!response.error) {
           putAccessToken(response.data.access_token)

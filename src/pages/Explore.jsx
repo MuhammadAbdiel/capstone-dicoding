@@ -13,7 +13,6 @@ const Explore = () => {
   const initData = () => {
     const fetchData = async () => {
       const response = await getAllDestinations()
-      console.log(response)
       try {
         if (!response.error) {
           setDestinations(response.data.data)

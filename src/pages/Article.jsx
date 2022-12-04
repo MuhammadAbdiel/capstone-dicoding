@@ -23,7 +23,6 @@ const Article = () => {
           text: error
         })
       }
-      console.log(response)
     }
 
     fetchData()

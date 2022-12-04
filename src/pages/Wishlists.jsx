@@ -15,7 +15,6 @@ const Wishlists = () => {
       try {
         if (!response.error) {
           setUserWishlists(response.data.wishlists)
-          console.log(response.data.wishlists)
         }
       } catch (error) {
         Swal.fire({
