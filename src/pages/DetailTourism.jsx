@@ -121,7 +121,7 @@ const DetailTourism = () => {
                     <p>Location : {destination.location}</p>
                   </Card.Text>
                   {authedUser != null ? (
-                    <Link to='/order'>
+                    <Link to={`/order/${id}`}>
                       <Button>Booking Ticket</Button>
                     </Link>
                   ) : (
