@@ -1,10 +1,17 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
+import FooterComponent from '../components/FooterComponent'
+import HeaderComponent from '../components/HeaderComponent'
 
 const Order = () => {
   return (
-    <div>
-      <h1>Order</h1>
-    </div>
+    <>
+      <HeaderComponent />
+      <Container className='my-3'>
+        <h1>Order</h1>
+      </Container>
+      <FooterComponent />
+    </>
   )
 }
 
