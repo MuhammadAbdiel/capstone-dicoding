@@ -145,8 +145,6 @@ async function logoutAdmin() {
 
   const responseJson = await response.json()
 
-  localStorage.removeItem('accessToken')
-
   return { error: false, data: responseJson }
 }
 
@@ -499,6 +497,14 @@ async function createWishlists(destination_id) {
   return { error: false, data: responseJson }
 }
 
+async function checkWishlist(destination_id) {
+  const response = await fetchWithToken(`${BASE_URL}/wishlists/${destination_id}`)
+
+  const responseJson = await response.json()
+
+  return { error: false, data: responseJson }
+}
+
 async function getAllWishlistUsers() {
   const response = await fetchWithToken(`${BASE_URL}/user/wishlists`)
   const responseJson = await response.json()
@@ -554,5 +560,6 @@ export {
   createArticleComment,
   deleteArticleComment,
   createWishlists,
+  checkWishlist,
   getAllWishlistUsers
 }

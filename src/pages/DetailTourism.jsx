@@ -10,9 +10,10 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { useParams } from 'react-router-dom'
-import { createWishlists, getDestinationById, getUserLogged } from '../utils/network-data'
+import { checkWishlist, createWishlists, getDestinationById, getUserLogged } from '../utils/network-data'
 // eslint-disable-next-line no-unused-vars
 import { BsFillHeartFill, BsHeart } from 'react-icons/bs'
+import { FaStar } from 'react-icons/fa'
 
 const DetailTourism = () => {
   const [destination, setDestination] = useState({})
@@ -28,22 +29,8 @@ const DetailTourism = () => {
       if (!response.error) {
         if (wishlist) {
           setWishlist(false)
-          localStorage.setItem(
-            'wishlist',
-            JSON.stringify({
-              destination_id: id,
-              is_wishlist: false
-            })
-          )
         } else {
           setWishlist(true)
-          localStorage.setItem(
-            'wishlist',
-            JSON.stringify({
-              destination_id: id,
-              is_wishlist: true
-            })
-          )
         }
       }
     } catch (error) {
@@ -71,6 +58,19 @@ const DetailTourism = () => {
         })
       }
 
+      const responseWishlist = await checkWishlist(id)
+      try {
+        if (!responseWishlist.error) {
+          setWishlist(responseWishlist.data.wishlist)
+        }
+      } catch (error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error
+        })
+      }
+
       if (!localStorage.getItem('accessToken')) {
         setAuthedUser(null)
       } else {
@@ -87,35 +87,37 @@ const DetailTourism = () => {
     <div>
       <HeaderComponent />
       <Card>
-        <button onClick={handleClickButton} className='floating'>
-          {JSON.parse(localStorage.getItem('wishlist')).is_wishlist ? (
-            <BsFillHeartFill className='fs-4'></BsFillHeartFill>
-          ) : (
-            <BsHeart className='fs-4'></BsHeart>
-          )}
-        </button>
+        {authedUser != null ? (
+          <button onClick={handleClickButton} className='floating'>
+            {wishlist ? <BsFillHeartFill className='fs-4'></BsFillHeartFill> : <BsHeart className='fs-4'></BsHeart>}
+          </button>
+        ) : (
+          <Link to='/login'>
+            <button className='floating'>
+              <BsHeart className='fs-4'></BsHeart>
+            </button>
+          </Link>
+        )}
         <Card.Body>
           <Card.Title className='d-flex justify-content-center fw-bold'>
             <h1>{destination.name}</h1>
           </Card.Title>
+          <Card.Text>
+            <h3 className='d-flex align-items-center justify-content-center'>
+              <FaStar style={{ width: '28px', color: '#fcba03' }} />
+              &nbsp; {destination.rating}
+            </h3>
+          </Card.Text>
           <Container>
             <Row className='flex-column flex-lg-row'>
               <Col className='mt-3'>
                 <Card className='p-5'>
                   <Card.Text>
-                    <h3>Description :</h3>
                     <p>{destination.description}</p>
-                  </Card.Text>
-                </Card>
-              </Col>
-              <Col className='mt-3'>
-                <Card className='p-5'>
-                  <Card.Text>
-                    <p>Name : {destination.name}</p>
-                    <p>Open Time : {destination.open_time}</p>
-                    <p>Close Time : {destination.close_time}</p>
+                    <p>
+                      Time : {destination.open_time} - {destination.close_time}
+                    </p>
                     <p>Ticket Price : {destination.price}</p>
-                    <p>Rating : {destination.rating}</p>
                     <p>Location : {destination.location}</p>
                   </Card.Text>
                   {authedUser != null ? (
