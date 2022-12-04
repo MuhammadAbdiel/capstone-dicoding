@@ -64,16 +64,16 @@ input[type='number'] {
 }
 
 /* custom css start from here */
-#root {
+#root main {
   min-height: 100vh;
 }
 
-.header-link>a {
+.header-link > a {
   color: white;
   transition: none;
 }
 
-.header-link>a:hover {
+.header-link > a:hover {
   background-color: #0b8fc4;
   border-radius: 10px;
   color: white;
@@ -130,7 +130,7 @@ footer {
   width: 70%;
 }
 
-.not-found>* {
+.not-found > * {
   margin: 0;
 }
 
@@ -255,8 +255,8 @@ header {
   height: 60px;
   bottom: 40px;
   right: 40px;
-  background-color: #0AA1DD;
-  color: #FFF;
+  background-color: #0aa1dd;
+  color: #fff;
   border-radius: 50px;
   text-align: center;
   box-shadow: 2px 2px 3px #999;
