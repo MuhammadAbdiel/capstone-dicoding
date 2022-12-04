@@ -79,8 +79,8 @@ const Home = () => {
       </div>
       <h1 className='text-center fs-3 mt-3'>Apa yang bisa kami bantu?</h1>
       <div className='d-grid container mb-4 mt-4'>
-        <div className='row'>
-          <div className='col'>
+        <div className='row flex-column flex-md-row'>
+          <div className='col mt-2'>
             <div className='d-flex justify-content-center'>
               <FaInfoCircle className='fs-1 border border-dark border-2 rounded-circle p-1' />
             </div>
@@ -89,7 +89,7 @@ const Home = () => {
               tempat wisata yang ada di kabupaten Malang. (masing bingung logo apa)
             </p>
           </div>
-          <div className='col'>
+          <div className='col mt-2'>
             <div className='d-flex justify-content-center'>
               <FaPencilRuler className='fs-1 border border-dark border-2 rounded-circle p-1' />
             </div>
@@ -98,7 +98,7 @@ const Home = () => {
               pengunjung lain yang merasa terganggu karena pengunjung lainnya yang meresahkan.
             </p>
           </div>
-          <div className='col'>
+          <div className='col mt-2'>
             <div className='d-flex justify-content-center'>
               <FaMoneyCheckAlt className='fs-1 border border-dark border-2 rounded-circle p-1' />
             </div>
