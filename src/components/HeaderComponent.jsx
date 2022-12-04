@@ -70,7 +70,7 @@ const HeaderComponent = () => {
   return (
     <>
       {isLoading && <LoadingIndicatorComponent />}
-      <Navbar collapseOnSelect expand='md' style={{ backgroundColor: '#0AA1DD' }} variant='dark' className='py-3'>
+      <Navbar collapseOnSelect expand='lg' style={{ backgroundColor: '#0AA1DD' }} variant='dark' className='py-3'>
         <Container>
           <Navbar.Brand>
             <Link className='text-decoration-none text-white' to='/'>
