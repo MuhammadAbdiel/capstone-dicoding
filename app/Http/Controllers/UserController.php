@@ -67,7 +67,7 @@ class UserController extends Controller
 
         return response()->json([
             'message' => 'success',
-            'comment' => $comment,
+            'comment' => $comment->load(['user', 'article']),
         ]);
     }
 
