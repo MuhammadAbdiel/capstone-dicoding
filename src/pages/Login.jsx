@@ -47,8 +47,8 @@ const Login = () => {
   const onSubmitHandler = async (event) => {
     event.preventDefault()
     if (email !== '' && password !== '' && isEmailValid && isPasswordValid) {
-      const response = await login({ email, password })
       setIsLoading(true)
+      const response = await login({ email, password })
       try {
         if (!response.error && !response.data.message) {
           setIsLoading(false)

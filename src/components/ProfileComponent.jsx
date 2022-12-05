@@ -4,6 +4,7 @@ import logo from '../images/profile/user.png'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import NotFound from './NotFound'
+import Swal from 'sweetalert2'
 
 const ProfileComponent = () => {
   const [authedUser, setAuthedUser] = useState('Not Set')
@@ -13,7 +14,17 @@ const ProfileComponent = () => {
     } else {
       const fetchData = async () => {
         const response = await getUserLogged()
-        setAuthedUser(response.data.data)
+        try {
+          if (!response.error) {
+            setAuthedUser(response.data.data)
+          }
+        } catch (error) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: error
+          })
+        }
       }
       fetchData()
     }

@@ -30,7 +30,17 @@ const ProfileEdit = () => {
     } else {
       const fetchData = async () => {
         const response = await getUserLogged()
-        setAuthedUser(response.data.data)
+        try {
+          if (!response.error) {
+            setAuthedUser(response.data.data)
+          }
+        } catch (error) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: error
+          })
+        }
       }
       fetchData()
     }
@@ -77,6 +87,7 @@ const ProfileEdit = () => {
       phoneNumber !== '' &&
       bankAccountNumber !== ''
     ) {
+      setIsLoading(true)
       const response = await updateProfile({
         name: fullname,
         username,
@@ -84,7 +95,6 @@ const ProfileEdit = () => {
         phone_number: `+62${phoneNumber}`,
         bank_account_number: bankAccountNumber
       })
-      setIsLoading(true)
       try {
         if (!response.error && !response.data.errors) {
           setIsLoading(false)

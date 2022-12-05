@@ -23,11 +23,23 @@ const HeaderComponent = () => {
       setIsLoading(false)
     } else {
       const fetchData = async () => {
+        setIsLoading(true)
         const response = await getUserLogged()
-        setIsLoading(false)
+        try {
+          if (!response.error) {
+            setIsLoading(false)
 
-        setAuthedUser(response.data.data)
-        setName(response.data.data.name)
+            setAuthedUser(response.data.data)
+            setName(response.data.data.name)
+          }
+        } catch (error) {
+          setIsLoading(false)
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: error
+          })
+        }
 
         if (response.data.data.role === 'admin') {
           setIsAdmin(true)
@@ -47,8 +59,8 @@ const HeaderComponent = () => {
       confirmButtonText: 'Yes, logout!'
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const response = await logout()
         setIsLoading(true)
+        const response = await logout()
         try {
           if (!response.error) {
             setIsLoading(false)

@@ -20,6 +20,8 @@ import ProfileEdit from './pages/ProfileEdit'
 import AboutUs from './pages/AboutUs'
 import Wishlists from './pages/Wishlists'
 import Booking from './pages/Booking'
+import CategoryAdd from './pages/Admin/CategoryAdd'
+import CategoryEdit from './pages/Admin/CategoryEdit'
 
 const App = () => {
   return (
@@ -40,6 +42,8 @@ const App = () => {
         <Route path='/admin/' element={<Dashboard />} />
         <Route path='/admin/articles' element={<Articles />} />
         <Route path='/admin/categories' element={<Categories />} />
+        <Route path='/admin/categories/add' element={<CategoryAdd />} />
+        <Route path='/admin/categories/:id/edit' element={<CategoryEdit />} />
         <Route path='/admin/tourism' element={<Tourism />} />
         <Route path='/order/:id' element={<Order />} />
         <Route path='/about' element={<AboutUs />} />

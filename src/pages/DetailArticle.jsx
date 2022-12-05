@@ -71,7 +71,17 @@ const DetailArticle = () => {
       } else {
         const userLogged = await getUserLogged()
 
-        setAuthedUser(userLogged.data.data)
+        try {
+          if (!userLogged.error) {
+            setAuthedUser(userLogged.data.data)
+          }
+        } catch (error) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: error
+          })
+        }
       }
     }
 
