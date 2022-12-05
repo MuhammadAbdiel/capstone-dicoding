@@ -73,11 +73,11 @@ const Order = () => {
     <>
       <HeaderComponent />
       <Container className='my-3 pb-5'>
-        <div className='text-center mb-5'>
+        <div className='text-center mb-2'>
           <h1>Order</h1>
         </div>
         <Row>
-          <Col lg={6} md={12}>
+          <Col lg={6} md={12} className='mt-3'>
             <Card className='p-3'>
               <Card.Title className='text-center'>
                 <h3>{destination.name}</h3>
@@ -85,7 +85,7 @@ const Order = () => {
               <Card.Img src={destinationGallery.image} />
             </Card>
           </Col>
-          <Col lg={6} md={12}>
+          <Col lg={6} md={12} className='mt-3'>
             <Card className='p-3'>
               <Card.Body>
                 <p>{destination.description}</p>
