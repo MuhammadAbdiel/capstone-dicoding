@@ -24,6 +24,8 @@ class DestinationSeeder extends Seeder
                 'location' => 'Jl. Graha Kencana Utara V, Karanglo, Banjararum, Kec. Singosari, Kabupaten Malang, Jawa Timur',
                 'description' => '
                                     Hawai Waterpark merupakah salah satu waterpark terbaik di Indonesia.Dibangun di lahan seluas 28.000 meter persegi dan terletak di Perumahan Graha Kencana Jl. Balearjosari Malang. Hawai Waterpark memiliki berbagai macam wahana air dan wahana kering dengan sistem keamaan tinggi dan lifeguard bersertifikat Internasional. Beberapa wahana yang dikenal luas di masyarakat antara lain Kolam Ombak Tsunami dengan ombak tertinggi di Indonesia, Jet Coaster Water Slide dengan tower tertinggi di Indonesia, serta kolam arus dengan 8 tema yang berbeda.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'FLORA WISATA Santerra De Laponte',
@@ -38,6 +40,8 @@ class DestinationSeeder extends Seeder
                                     Flora Wisata San Terra didirikan pada tahun 2019. Flora Wisata San Terra dibangun dengan konsep taman bunga, spot foto instagramable, wahana permainan dan kuliner ala garden. Wisata ini sangat cocok untuk segala usia dari anak, remaja, dewasa, maupun lansia. Terdapat ratusan jenis tanaman bunga hias, juga melayani penjualan tanaman bunga hias dalam pot.
 
                                     Wisata yang berdiri diatas tanah dengan luas 5 hektar ini mulai dibuka pukul 08.00-17.00 WIB. Harga Tiket Masuk (HTM) sangat terjangkau yaitu Weekday 25.000 dan Weekend/Libur Nasional 30.000 per orang. Dengan biaya tiket yang terjangkau sudah dapat menikmati semua spot foto tanpa berbayar lagi, kecuali untuk wahana permainan akan dikenai tiket bermain. Flora Wisata San Terra juga terdapat Gedung serbaguna yang dapat digunakan untuk acara gathering, rapat, wedding, dan prewedding.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Batu Flower Garden',
@@ -49,7 +53,9 @@ class DestinationSeeder extends Seeder
                 'description' => '
                                     Batu Flower Garden merupakan Wana Wisata Buatan yang terletak di dalam Kawasan Wana Wisata Coban Rais. Wisata Batu Flower Garden mengusung konsep Wisata Selfie. Jumlah spot selfie yang ada di wisata ini yaitu 34 spot. Di setiap spot telah disediakan crew foto (tanpa biaya) dan wisatawan bisa langsung berfoto ria sesuai arahan ataupun gaya sendiri.
 
-                                    Batu Flower Garden cocok sebagai tujuan destinasi semua kalangan. Pada Tahun 2017 BFG meraih penghargaan Juara 1 Wisata Alam Buatan Terbaik di JATIM. Selain wisata selfie, di Batu Flower Garden juga menyediakan paket OutBound, Praweeding, Edukasi Hidroponik dan Family Gathering.'
+                                    Batu Flower Garden cocok sebagai tujuan destinasi semua kalangan. Pada Tahun 2017 BFG meraih penghargaan Juara 1 Wisata Alam Buatan Terbaik di JATIM. Selain wisata selfie, di Batu Flower Garden juga menyediakan paket OutBound, Praweeding, Edukasi Hidroponik dan Family Gathering.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Jawa Timur Park 3',
@@ -61,7 +67,9 @@ class DestinationSeeder extends Seeder
                 'description' => '
                                     Dari wahana sebelumnya yaitu Jatim Park 1 yang menawarkan permainan, pengetahuan hingga hiburan dan Jatim Park 2 dengan kemegahan dari Museum Satwa serta Secret Zoonya, Jatim Park kini menghadirkan wahana menarik buatan berupa replika Dinosaurus.
 
-                                    Jatim Park 3 berada di desa Beji, Kecamatan Junrejo, Kota Batu. Jatim Park 3 mengusung konsep taman bermain sekaligus edukasi mengenai hewan-hewan purbakala termasuk Dinosaurus di area Dinopark dan area spot foto patung lilin yang lengkap dengan nuansa berbagai negara serta terdapat taman lampu yang luas diarea The Legend Stars serta terdapat 3 lokasi lain yaitu Museum Musik Dunia , Funtech Plaza, dan Milenial Glow Garden. Taman Wisata Jatim Park 3 juga dilengkapi dengan food court di tiap area yang menyajikan aneka masakan tradisional, eropa, jajanan ringan dan minuman segar.'
+                                    Jatim Park 3 berada di desa Beji, Kecamatan Junrejo, Kota Batu. Jatim Park 3 mengusung konsep taman bermain sekaligus edukasi mengenai hewan-hewan purbakala termasuk Dinosaurus di area Dinopark dan area spot foto patung lilin yang lengkap dengan nuansa berbagai negara serta terdapat taman lampu yang luas diarea The Legend Stars serta terdapat 3 lokasi lain yaitu Museum Musik Dunia , Funtech Plaza, dan Milenial Glow Garden. Taman Wisata Jatim Park 3 juga dilengkapi dengan food court di tiap area yang menyajikan aneka masakan tradisional, eropa, jajanan ringan dan minuman segar.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Jawa Timur Park 2',
@@ -77,7 +85,9 @@ class DestinationSeeder extends Seeder
 
                                     Jatim Park begitu terkenal di telinga kita entah itu yang bertempat di provinsi Jawa Timur maupun luar provinsi tersebut. Saking terkenalnya, hampir setiap hari akan ditemukan pengunjung lebih dari 1000. Pada hari tertentu, pengunjung bisa mencapai 3000 lebih atau sampai 5000. Seperti pada hari libur atau natal.
 
-                                    Jumlah yang tidak sedikit itu, patut kita acungi jempol. Sebab dengan jumlah tersebut, sudah cukup membuktikan bahwa Jatim Park memang wisata yang wajib Anda kunjungi.Dan meskipun ia diresmikan pada tahun 2008 lalu, hal yang harus kita banggakan adalah,sampai sekarang Jatim Park 2 terus selalu melakukan pengembangan. Tak ayal, kualitas wisata ini dari hari ke hari pun makin baik.'
+                                    Jumlah yang tidak sedikit itu, patut kita acungi jempol. Sebab dengan jumlah tersebut, sudah cukup membuktikan bahwa Jatim Park memang wisata yang wajib Anda kunjungi.Dan meskipun ia diresmikan pada tahun 2008 lalu, hal yang harus kita banggakan adalah,sampai sekarang Jatim Park 2 terus selalu melakukan pengembangan. Tak ayal, kualitas wisata ini dari hari ke hari pun makin baik.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Jawa Timur Park 1',
@@ -89,7 +99,9 @@ class DestinationSeeder extends Seeder
                 'description' => '
                                     Jatim Park adalah sebuah tempat rekreasi dan taman belajar yang terdapat di Kota Batu, Jawa Timur. Objek wisata ini berada sekitar 20 km barat Kota Malang, dan kini menjadi salah satu icon wisata Jawa Timur. Objek wisata ini memiliki 36 wahana, di antaranya kolam renang raksasa (dengan latar belakang patung Ken Dedes, Ken Arok, dan Mpu Gandring), spinning coaster, dan drop zone. Wahana pendidikan yang menjadi pusat perhatian di antaranya adalah Volcano dan Galeri Nusantara yang juga terdapat tanaman agro, diorama binatang langka, dan miniatur candi-candi. Jatim Park 1 beralamat di Jalan Kartika no. 2, yang berdekatan dengan Klub Bunga
 
-                                    Jatim Park 1 dinobatkan sebagai juara 1 kategori wisata buatan berskala besar tingkat nasional yang dianugerahkan Menteri Pariwisata dan Ekonomi Kreatif, Mari Elka Pangestu, Jumat (27/9/2013), di Jakarta. “Saya tidak menyangka Kota Wisata Batu sedemikian indah. Kita tidak perlu ke Disneyland, Ancol, cukup disini (Batu, Red),” kata Mari Elka Pengestu di Klub Bunga dalam acara Galadinner bersama Muspida Malang Raya, Rabu (2/5/2013).'
+                                    Jatim Park 1 dinobatkan sebagai juara 1 kategori wisata buatan berskala besar tingkat nasional yang dianugerahkan Menteri Pariwisata dan Ekonomi Kreatif, Mari Elka Pangestu, Jumat (27/9/2013), di Jakarta. “Saya tidak menyangka Kota Wisata Batu sedemikian indah. Kita tidak perlu ke Disneyland, Ancol, cukup disini (Batu, Red),” kata Mari Elka Pengestu di Klub Bunga dalam acara Galadinner bersama Muspida Malang Raya, Rabu (2/5/2013).',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Malang Night Paradise',
@@ -99,7 +111,9 @@ class DestinationSeeder extends Seeder
                 'rating' => 4.4,
                 'location' => 'Jl. Graha Kencana Raya Jl. Raya Karanglo No.66, Karanglo, Balearjosari, Kec. Blimbing, Kota Malang, Jawa Timur',
                 'description' => '
-                                    Taman dengan sejuta gemerlap lampu LED. Malang Night Paradise merupakan wisata malam terbesar di Jawa Timur yang menawarkan keindahan gemerlap taman lampu LED dan taman lampion, dan merupakan satu-satunya tempat foto dengan standar internasional. Malang Night Paradise dibangun dengan kualitas taman bermain yang mampu memanjakan mata dan membuat Anda untuk segera mengabadikan moment tersebut. Terdapat banyak wahana permainan yang dapat digunakan oleh semua umur, wahana yang dicari oleh pengunjung antara lain : Magic Journey 2, Roemah 147, Adventure land, dan Museum Ganesya.'
+                                    Taman dengan sejuta gemerlap lampu LED. Malang Night Paradise merupakan wisata malam terbesar di Jawa Timur yang menawarkan keindahan gemerlap taman lampu LED dan taman lampion, dan merupakan satu-satunya tempat foto dengan standar internasional. Malang Night Paradise dibangun dengan kualitas taman bermain yang mampu memanjakan mata dan membuat Anda untuk segera mengabadikan moment tersebut. Terdapat banyak wahana permainan yang dapat digunakan oleh semua umur, wahana yang dicari oleh pengunjung antara lain : Magic Journey 2, Roemah 147, Adventure land, dan Museum Ganesya.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Taman Rekreasi Selecta',
@@ -111,7 +125,9 @@ class DestinationSeeder extends Seeder
                 'description' => '
                                     Selecta terkenal dengan Kolam renang dengan Air yang jernih yang membuat wisatawan pasti ingin berlama lama disini, selain bermain bersama keluarga disini jug aada  Water Park dan Area Anak – anak. Sepeda udara yang menyajikan pemandangan natural yang apik di Taman Rekreasi Selecta, Udara yang sejuk dan Bunga bunga di kiri kanan mata akan memanjakan Anda dan keluarga.
                 
-                                    Rasakan keseruan dan petualangan bersepeda mengayuh bersama dikolam air yang jernih dan asri. Selecta menyediakan Bioskop 4 Dimensi untuk anda nikmati, Bioskop dengan teknologi terkini ini siap menjadi salah satu Andalan dari Taman rekreasi Selecta,tidak hanya Visual tapi juga Motion dihadirkan dalam Bioskop iniSelecta juga menyediakan Arena Flying Fox bagi anda yang bernyali tinggi, tentu saja akan ada nuansa berbeda saat anda Mencobanya karena Suasana alam yang Masih natural akan membuat Flying Fox menjadi semakin Asyik dan seru. Tidak ada yang lebih asyik dari Melihat pemandangan Wisata Selecta dari ketinggian, Nikamti Alam yang masih bersih dan sejuk Di Taman Rekreasi Selecta.'
+                                    Rasakan keseruan dan petualangan bersepeda mengayuh bersama dikolam air yang jernih dan asri. Selecta menyediakan Bioskop 4 Dimensi untuk anda nikmati, Bioskop dengan teknologi terkini ini siap menjadi salah satu Andalan dari Taman rekreasi Selecta,tidak hanya Visual tapi juga Motion dihadirkan dalam Bioskop iniSelecta juga menyediakan Arena Flying Fox bagi anda yang bernyali tinggi, tentu saja akan ada nuansa berbeda saat anda Mencobanya karena Suasana alam yang Masih natural akan membuat Flying Fox menjadi semakin Asyik dan seru. Tidak ada yang lebih asyik dari Melihat pemandangan Wisata Selecta dari ketinggian, Nikamti Alam yang masih bersih dan sejuk Di Taman Rekreasi Selecta.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Museum Angkut',
@@ -125,7 +141,9 @@ class DestinationSeeder extends Seeder
 
                                     Selain mobil-mobil kuno, salah satu koleksi terbarunya adalah Mobil listrik Tucuxi milik mantan menteri Dahlan Iskan yang sebelumnya pernah mengalami kecelakaan di sebuah lereng gunung di Magetan saat baru diujicobakan. Di museum ini juga terdapat wahana Flight Simulator yang terletak di lantai 3 gedung museum.
 
-                                    Museum Angkut dikelola oleh Jawa Timur Park Group yang sebelumnya juga membangun Batu Secret Zoo, Batu Night Spectacular (BNS), Eco Green Park dan Museum Satwa. Museum ini didirikan pada 9 Maret 2014.'
+                                    Museum Angkut dikelola oleh Jawa Timur Park Group yang sebelumnya juga membangun Batu Secret Zoo, Batu Night Spectacular (BNS), Eco Green Park dan Museum Satwa. Museum ini didirikan pada 9 Maret 2014.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Taman Langit Gunung Banyak',
@@ -141,7 +159,9 @@ class DestinationSeeder extends Seeder
 
                                     Pemandangan indah dari ketinggian menjadi latar belakang utama foto-foto yang akan Anda dapatkan. Ditemani hawa sejuk dan dingin ala pegunungan akan membuat Anda betah berlama-lama bermain di Taman Langit.
 
-                                    Dengan segala keindahan dan spot berfoto yang ada di Taman Langit, menjadikan tempat ini salah satu spot favorit untuk berfoto. Jangan lewatkan kesempatan Anda mendapatkan foto terbaik saat berkunjung ke Taman Langit Malang.'
+                                    Dengan segala keindahan dan spot berfoto yang ada di Taman Langit, menjadikan tempat ini salah satu spot favorit untuk berfoto. Jangan lewatkan kesempatan Anda mendapatkan foto terbaik saat berkunjung ke Taman Langit Malang.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Wisata Paralayang',
@@ -165,7 +185,9 @@ class DestinationSeeder extends Seeder
 
                                     Karena kegiatan uji nyali ini sangat bergantung pada cuaca dan angin, tidak setiap saat anda dapat terbang. Hanya ketika cuaca cerah dan angin berhembus ke arah yang tepat aktivitas ini dilakukan.
 
-                                    Puncak kegiatan paralayang di daerah ini berlangsung antara Bulan Juni Hingga Oktober. Di bulan-bulan ini, sering pula diadakan kejuaraan paralayang mulai tingkat regional hingga internasional.'
+                                    Puncak kegiatan paralayang di daerah ini berlangsung antara Bulan Juni Hingga Oktober. Di bulan-bulan ini, sering pula diadakan kejuaraan paralayang mulai tingkat regional hingga internasional.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Wisata Agro Wonosari',
@@ -179,7 +201,9 @@ class DestinationSeeder extends Seeder
 
                                     Layaknya seperti sebuah alternative objek wisata Kebun Teh Bogor. Masyarakat sudah merasakan seperti tempat wisata kebun teh Bogor. Kebun teh yang terbentang sangat luas, jika kamu mengunjungi tempat ini kamu akan disuguhkan hamparan hijau dari tanaman teh yang tertata rapi.
 
-                                    Wisata ini sangat cocok untuk kamu kunjungi bersama keluarga. Karena tempatnya yang sejuk, dingin dan asri sangat layak kamu coba kunjungi.'
+                                    Wisata ini sangat cocok untuk kamu kunjungi bersama keluarga. Karena tempatnya yang sejuk, dingin dan asri sangat layak kamu coba kunjungi.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Bukit Teletubbies Batu',
@@ -195,7 +219,9 @@ class DestinationSeeder extends Seeder
 
                                     Hamparan bukit hijau yang ini letaknya berada disebelah Sekolah Luar Biasa Negeri (SLBN) Kota Batu. Tepatnya dengan jarak sekitar 200 meter dari arah Balai Desa Bumiaji, Kecamatan Bumiaji.
 
-                                    Tempat ini juga menjadi salah satu unggulan desa wisata yang sering direkomendasikan untuk wisatawan yang hendak berlibur menghindar kebisingan kota.'
+                                    Tempat ini juga menjadi salah satu unggulan desa wisata yang sering direkomendasikan untuk wisatawan yang hendak berlibur menghindar kebisingan kota.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Kampoeng Heritage Kajoetangan',
@@ -213,7 +239,9 @@ class DestinationSeeder extends Seeder
 
                                     Banyak pula rumah yang dibangun dalam kurun 1920-1940 dengan model atap pelana atau biasa disebut rumah jengki. Warga juga menyiapkan rumah mereka sebagai titik swafoto bagi pengunjung.
 
-                                    Dari seluruh rumah bergaya arsitektur Belanda, terdapat 25 rumah siap menerima wisatawan dengan menyediakan berbagai properti untuk pengunjung berfoto sembari pemiliknya tetap beraktivitas seperti biasa.'
+                                    Dari seluruh rumah bergaya arsitektur Belanda, terdapat 25 rumah siap menerima wisatawan dengan menyediakan berbagai properti untuk pengunjung berfoto sembari pemiliknya tetap beraktivitas seperti biasa.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Batu Night Spectacular',
@@ -225,7 +253,9 @@ class DestinationSeeder extends Seeder
                 'description' => '
                                     Jelajahi Batu Night Spectacular, pasar malam penuh warna yang cocok untuk seluruh keluarga! Dari wahana ramah anak sampai yang menguji nyali, serta tempat-tempat berfoto unik, semua dapat Anda nikmati di sini ditemani udara pegunungan yang segar.
 
-                                    Buka dari pukul 3 sore hingga tengah malam, taman ini menawarkan berbagai macam hiburan untuk semua orang. Nikmati beragam wahana yang menguji adrenalin dan menghibur untuk keluarga, seperti Flying Swinger, Rumah Hantu, dan VR Ride. Masuki taman lampion untuk mengabadikan pemandangan lampion berwarna-warni. Jangan lewatkan juga kesempatan menyaksikan pertunjukan air mancur yang spektakuler diikuti pertunjukan multimedia, di mana Anda dapat melihat air mancur menari dengan indah mengikuti alunan musik.'
+                                    Buka dari pukul 3 sore hingga tengah malam, taman ini menawarkan berbagai macam hiburan untuk semua orang. Nikmati beragam wahana yang menguji adrenalin dan menghibur untuk keluarga, seperti Flying Swinger, Rumah Hantu, dan VR Ride. Masuki taman lampion untuk mengabadikan pemandangan lampion berwarna-warni. Jangan lewatkan juga kesempatan menyaksikan pertunjukan air mancur yang spektakuler diikuti pertunjukan multimedia, di mana Anda dapat melihat air mancur menari dengan indah mengikuti alunan musik.',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
         ];
 
