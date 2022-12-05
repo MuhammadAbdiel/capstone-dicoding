@@ -966,6 +966,24 @@ https://capstone-backend-production-7544.up.railway.app/api
 
   - #### `Authorization` : `Bearer <accessToken>`
 
+### Check Wishlist
+
+- URL :
+
+  - #### `/wishlists/{destination_id}`
+
+- Method :
+
+  - #### `GET`
+
+- Headers :
+
+  - #### `Content-Type` : `application/json`
+
+  - #### `Accept` : `application/json`
+
+  - #### `Authorization` : `Bearer <accessToken>`
+
 ### Get All Wishlists by User Logged In
 
 - URL :

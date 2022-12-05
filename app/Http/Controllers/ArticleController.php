@@ -13,6 +13,7 @@ use App\Http\Requests\UpdateArticleRequest;
 use App\Http\Resources\ArticleGalleryResource;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\StoreArticleGalleryRequest;
+use Illuminate\Support\Facades\Validator;
 
 class ArticleController extends Controller
 {
@@ -119,15 +120,34 @@ class ArticleController extends Controller
         ]);
     }
 
-    // public function upload_image(StoreArticleGalleryRequest $request, Article $article)
+    // public function upload_image(Request $request, Article $article)
     // {
-    //     abort_if(Gate::denies('create-article-gallery', $article), Response::HTTP_FORBIDDEN, '403 Forbidden');
+    // abort_if(Gate::denies('create-article-gallery', $article), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-    //     $validatedData = $request->validated();
-    //     $validatedData['article_id'] = $article->id;
-    //     $validatedData['image'] = $request->file('image')->store('article_galleries');
+    // $validatedData = $request->validated();
+    // $validatedData['article_id'] = $article->id;
+    // $validatedData['image'] = $request->file('image')->store('article_galleries');
 
-    //     $articleGallery = ArticleGallery::create($validatedData);
+    // $articleGallery = ArticleGallery::create($validatedData);
+
+    //     $validator = Validator::make($request->all(), [
+    //         'image' => ['required', 'image', 'file', 'mimes:jpeg,png,jpg,gif,svg', 'max:5120'],
+    //     ]);
+
+    //     if ($validator->fails()) {
+    //         return response()->json([
+    //             'message' => 'error',
+    //             'errors' => $validator->errors(),
+    //         ], Response::HTTP_UNPROCESSABLE_ENTITY);
+    //     }
+
+    //     $image = $request->file('image');
+    //     $image->store('article_galleries');
+
+    //     $articleGallery = ArticleGallery::create([
+    //         'article_id' => $article->id,
+    //         'image' => 'storage/article_galleries/' . $image->hashName(),
+    //     ]);
 
     //     return (new ArticleGalleryResource($articleGallery->load('article')))->response()->setStatusCode(Response::HTTP_CREATED);
     // }
