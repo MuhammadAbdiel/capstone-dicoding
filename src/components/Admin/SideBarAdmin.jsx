@@ -7,8 +7,8 @@ const SideBarAdmin = ({ active }) => {
       style={{ backgroundColor: '#0AA1DD' }}
       className={active ? 'sidebar_active vertical-nav bg-white' : 'vertical-nav bg-white sidebar'}
     >
-      <div className='py-4 px-3 mb-4' style={{ backgroundColor: '#0AA1DD' }}>
-        <div className='media d-flex align-items-center'>
+      <div className='py-3 px-3 mb-4' style={{ backgroundColor: '#0AA1DD' }}>
+        <div className='media d-flex align-items-center' style={{ height: '38px' }}>
           <div className='media-body text-white'>
             <h4 className='m-0'>Admin Name</h4>
           </div>
@@ -39,7 +39,7 @@ const SideBarAdmin = ({ active }) => {
       <ul className='nav flex-column bg-white mb-0'>
         <li className='nav-item'>
           <Link className='nav-link text-dark' to='/admin/tourism'>
-            Toursim
+            Tourism
           </Link>
         </li>
       </ul>
