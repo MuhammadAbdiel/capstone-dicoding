@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Container } from 'react-bootstrap'
-import CardWishlistsComponent from '../components/CardWishlistsComponent'
+import { Container, Row } from 'react-bootstrap'
 import FooterComponent from '../components/FooterComponent'
 import HeaderComponent from '../components/HeaderComponent'
 import { getAllWishlistUsers } from '../utils/network-data'
 import Swal from 'sweetalert2'
+import CardComponent from '../components/CardComponent'
 
 const Wishlists = () => {
   const [userWishlists, setUserWishlists] = useState([])
@@ -33,14 +33,17 @@ const Wishlists = () => {
       <HeaderComponent />
       <Container>
         <h1 className='text-center py-3'>Wishlists</h1>
-        {userWishlists.map((wishlist) => (
-          <CardWishlistsComponent
-            key={wishlist.id}
-            name={wishlist.destination.name}
-            description={wishlist.destination.description}
-            id={wishlist.destination.id}
-          />
-        ))}
+        <Row>
+          {userWishlists.map((wishlist) => (
+            <CardComponent
+              key={wishlist.id}
+              name={wishlist.destination.name}
+              description={wishlist.destination.description}
+              id={wishlist.destination.id}
+              image={wishlist.destination.destination_galleries[0].image}
+            />
+          ))}
+        </Row>
       </Container>
       <FooterComponent />
     </>
