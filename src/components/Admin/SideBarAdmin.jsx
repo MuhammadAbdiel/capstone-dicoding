@@ -66,6 +66,20 @@ const SideBarAdmin = ({ active }) => {
         </ul>
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
+            <Link className='nav-link text-dark' to='#'>
+              Article Gallery
+            </Link>
+          </li>
+        </ul>
+        <ul className='nav flex-column bg-white mb-0'>
+          <li className='nav-item'>
+            <Link className='nav-link text-dark' to='#'>
+              Article Comment
+            </Link>
+          </li>
+        </ul>
+        <ul className='nav flex-column bg-white mb-0'>
+          <li className='nav-item'>
             <Link className='nav-link text-dark' to='/admin/categories'>
               Category
             </Link>
@@ -75,6 +89,20 @@ const SideBarAdmin = ({ active }) => {
           <li className='nav-item'>
             <Link className='nav-link text-dark' to='/admin/tourism'>
               Tourism
+            </Link>
+          </li>
+        </ul>
+        <ul className='nav flex-column bg-white mb-0'>
+          <li className='nav-item'>
+            <Link className='nav-link text-dark' to='#'>
+              Tourism Gallery
+            </Link>
+          </li>
+        </ul>
+        <ul className='nav flex-column bg-white mb-0'>
+          <li className='nav-item'>
+            <Link className='nav-link text-dark' to='#'>
+              Transaction
             </Link>
           </li>
         </ul>
