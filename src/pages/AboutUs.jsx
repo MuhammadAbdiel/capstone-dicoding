@@ -47,6 +47,9 @@ const AboutUs = () => {
               </div>
             </Col>
           </Row>
+
+          <h2 className='text-center p-5'>Developer Team</h2>
+
           <Row>
             <Col className='my-2' lg={3} md={4} sm={6}>
               <Card className='h-100'>
@@ -71,7 +74,7 @@ const AboutUs = () => {
               <Card className='h-100'>
                 <Card.Img variant='top' src={Logo} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
-                  <Card.Title className='text-center'>Developer 1</Card.Title>
+                  <Card.Title className='text-center'>Developer 2</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly'>
                     <i>
                       <BsGithub size={30} />
@@ -90,7 +93,7 @@ const AboutUs = () => {
               <Card className='h-100'>
                 <Card.Img variant='top' src={Logo} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
-                  <Card.Title className='text-center'>Developer 1</Card.Title>
+                  <Card.Title className='text-center'>Developer 3</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly'>
                     <i>
                       <BsGithub size={30} />
@@ -109,7 +112,7 @@ const AboutUs = () => {
               <Card className='h-100'>
                 <Card.Img variant='top' src={Logo} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
-                  <Card.Title className='text-center'>Developer 1</Card.Title>
+                  <Card.Title className='text-center'>Developer 4</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly'>
                     <i>
                       <BsGithub size={30} />
@@ -133,23 +136,3 @@ const AboutUs = () => {
 }
 
 export default AboutUs
-
-// <Col className='m-1'>
-//   <Card>
-//     <Card.Img variant='top' src={Logo} />
-//     <Card.Body>
-//       <Card.Title className='text-center'>Developer 4</Card.Title>
-//       <Card.Text className='d-flex justify-content-evenly'>
-//         <i>
-//           <BsGithub size={30} />
-//         </i>
-//         <i>
-//           <BsLinkedin size={30} color='#00A0DC' />
-//         </i>
-//         <i>
-//           <BsInstagram size={30} color='#CE5614' />
-//         </i>
-//       </Card.Text>
-//     </Card.Body>
-//   </Card>
-// </Col>
