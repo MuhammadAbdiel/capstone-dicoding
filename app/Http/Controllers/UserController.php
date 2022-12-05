@@ -101,7 +101,7 @@ class UserController extends Controller
 
         return response()->json([
             'message' => 'success',
-            'transactions' => $transactions->load(['user', 'detail_transactions.destination']),
+            'transactions' => $transactions->load(['user', 'detail_transactions.destination.destination_galleries']),
         ]);
     }
 
