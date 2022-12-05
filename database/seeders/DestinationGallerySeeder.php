@@ -174,6 +174,8 @@ class DestinationGallerySeeder extends Seeder
             [
                 'destination_id' => 9,
                 'image' => 'https://www.mldspot.com/storage/generated/June2021/Review-Museum-Angkut-Malang-Tiket5.jpg',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'destination_id' => 10,
