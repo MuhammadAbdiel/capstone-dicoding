@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { getUserLogged } from '../../utils/network-data'
 
 const SideBarAdmin = ({ active }) => {
+  const [authedUser, setAuthedUser] = useState({})
+
+  useEffect(() => {
+    if (!localStorage.getItem('accessToken')) {
+      setAuthedUser(null)
+    } else {
+      const fetchData = async () => {
+        const response = await getUserLogged()
+
+        setAuthedUser(response.data.data)
+      }
+
+      fetchData()
+    }
+  }, [])
+
   return (
     <div
       style={{ backgroundColor: '#0AA1DD' }}
@@ -10,7 +27,7 @@ const SideBarAdmin = ({ active }) => {
       <div className='py-3 px-3 mb-4' style={{ backgroundColor: '#0AA1DD' }}>
         <div className='media d-flex align-items-center' style={{ height: '38px' }}>
           <div className='media-body text-white'>
-            <h4 className='m-0'>Admin Name</h4>
+            <h4 className='m-0'>{authedUser.name}</h4>
           </div>
         </div>
       </div>
