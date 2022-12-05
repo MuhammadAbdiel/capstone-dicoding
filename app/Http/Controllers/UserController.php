@@ -79,7 +79,7 @@ class UserController extends Controller
 
         return response()->json([
             'message' => 'success',
-            'wishlists' => $wishlists->load(['user', 'destination']),
+            'wishlists' => $wishlists->load(['user', 'destination.destination_galleries']),
         ]);
     }
 
@@ -101,7 +101,7 @@ class UserController extends Controller
 
         return response()->json([
             'message' => 'success',
-            'transactions' => $transactions->load(['user', 'detail_transactions']),
+            'transactions' => $transactions->load(['user', 'detail_transactions.destination']),
         ]);
     }
 
