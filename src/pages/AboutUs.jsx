@@ -53,7 +53,7 @@ const AboutUs = () => {
                 <Card.Img variant='top' src={Logo} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 1</Card.Title>
-                  <Card.Text>
+                  <Card.Text className='d-flex justify-content-evenly'>
                     <i>
                       <BsGithub size={30} />
                     </i>
@@ -72,7 +72,7 @@ const AboutUs = () => {
                 <Card.Img variant='top' src={Logo} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 1</Card.Title>
-                  <Card.Text>
+                  <Card.Text className='d-flex justify-content-evenly'>
                     <i>
                       <BsGithub size={30} />
                     </i>
@@ -91,7 +91,7 @@ const AboutUs = () => {
                 <Card.Img variant='top' src={Logo} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 1</Card.Title>
-                  <Card.Text>
+                  <Card.Text className='d-flex justify-content-evenly'>
                     <i>
                       <BsGithub size={30} />
                     </i>
@@ -110,7 +110,7 @@ const AboutUs = () => {
                 <Card.Img variant='top' src={Logo} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 1</Card.Title>
-                  <Card.Text>
+                  <Card.Text className='d-flex justify-content-evenly'>
                     <i>
                       <BsGithub size={30} />
                     </i>
