@@ -6,7 +6,8 @@
   align-items: center;
   position: fixed;
   top: 0;
-  z-index: 1;
+  left: 0;
+  z-index: 3;
 }
 .dots {
   width: 100vw;
