@@ -73,11 +73,12 @@ const SideBarAdmin = ({ active }) => {
         className={active ? 'sidebar_active vertical-nav bg-white' : 'vertical-nav bg-white sidebar'}
       >
         <div className='py-3 px-3 mb-4' style={{ backgroundColor: '#0AA1DD' }}>
-          <div className='media d-flex align-items-center' style={{ height: '38px' }}>
+          <div className='media d-flex align-items-center' style={{ height: '40.4px' }}>
             <div className='media-body text-white'>{authedAdmin !== null && <h4 className='m-0'>{authedAdmin.name}</h4>}</div>
           </div>
         </div>
         <p className='text-grey fw-bold text-uppercase px-3 small py-4 mb-0'>dashboard</p>
+        <hr />
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
             <Link className='nav-link text-dark' to='/admin/'>
@@ -134,6 +135,7 @@ const SideBarAdmin = ({ active }) => {
             </Link>
           </li>
         </ul>
+        <hr />
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
             <Link className='nav-link text-dark' onClick={handleLogout}>

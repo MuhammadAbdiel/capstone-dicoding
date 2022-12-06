@@ -1,4 +1,4 @@
-const BASE_URL = 'https://capstone-backend-production-1b8f.up.railway.app/api'
+const BASE_URL = 'https://capstone-backend-production-f91c.up.railway.app/api'
 
 function getAccessToken() {
   return localStorage.getItem('accessToken')
@@ -345,13 +345,11 @@ async function updateArticle({ title, excerpt, content, category_id }, article_i
 }
 
 async function deleteArticle(article_id) {
-  const response = await fetchWithToken(`${BASE_URL}/articles/${article_id}`, {
+  await fetchWithToken(`${BASE_URL}/articles/${article_id}`, {
     method: 'DELETE'
   })
 
-  const responseJson = await response.json()
-
-  return { error: false, data: responseJson }
+  return { error: false }
 }
 
 // Article Gallery

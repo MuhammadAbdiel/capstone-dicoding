@@ -7,7 +7,7 @@ import placeholderImage from '../../images/assets/banner.jpg'
 import Swal from 'sweetalert2'
 import { deleteArticle } from '../../utils/network-data'
 
-const CardArticlesAdmin = ({ article }) => {
+const CardArticlesAdmin = ({ article, refreshArticle }) => {
   const handleDelete = async (id) => {
     Swal.fire({
       title: 'Are you sure you want to delete this following article?',
@@ -17,11 +17,9 @@ const CardArticlesAdmin = ({ article }) => {
       confirmButtonText: 'Delete'
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const response = await deleteArticle(id)
+        await deleteArticle(id)
         try {
-          if (!response.error) {
-            refreshArticle()
-          }
+          refreshArticle()
         } catch (e) {
           Swal.fire({
             icon: 'error',

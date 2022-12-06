@@ -10,7 +10,9 @@ const Articles = () => {
   const [articles, setArticles] = useState([])
   const [isModalNewArticle, setIsModalNewArticle] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+
   const handleCloseModal = () => setIsModalNewArticle(false)
+
   const initData = () => {
     const fetchData = async () => {
       setIsLoading(true)
