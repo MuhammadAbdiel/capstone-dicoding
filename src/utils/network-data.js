@@ -192,13 +192,11 @@ async function updateCategory({ name }, category_id) {
 }
 
 async function deleteCategory(category_id) {
-  const response = await fetchWithToken(`${BASE_URL}/categories/${category_id}`, {
+  await fetchWithToken(`${BASE_URL}/categories/${category_id}`, {
     method: 'DELETE'
   })
 
-  const responseJson = await response.json()
-
-  return { error: false, data: responseJson }
+  return { error: false }
 }
 
 // Destination
@@ -250,13 +248,11 @@ async function updateDestination({ name, open_time, close_time, price, rating, l
 }
 
 async function deleteDestination(destination_id) {
-  const response = await fetchWithToken(`${BASE_URL}/destinations/${destination_id}`, {
+  await fetchWithToken(`${BASE_URL}/destinations/${destination_id}`, {
     method: 'DELETE'
   })
 
-  const responseJson = await response.json()
-
-  return { error: false, data: responseJson }
+  return { error: false }
 }
 
 // Destination Gallery
@@ -287,13 +283,11 @@ async function createDestinationGallery({ image, destination_id }) {
 }
 
 async function deleteDestinationGallery(destination_gallery_id) {
-  const response = await fetchWithToken(`${BASE_URL}/destination_galleries/${destination_gallery_id}`, {
+  await fetchWithToken(`${BASE_URL}/destination_galleries/${destination_gallery_id}`, {
     method: 'DELETE'
   })
 
-  const responseJson = await response.json()
-
-  return { error: false, data: responseJson }
+  return { error: false }
 }
 
 // Article
@@ -380,13 +374,11 @@ async function createArticleGallery({ image, article_id }) {
 }
 
 async function deleteArticleGallery(article_gallery_id) {
-  const response = await fetchWithToken(`${BASE_URL}/article_galleries/${article_gallery_id}`, {
+  await fetchWithToken(`${BASE_URL}/article_galleries/${article_gallery_id}`, {
     method: 'DELETE'
   })
 
-  const responseJson = await response.json()
-
-  return { error: false, data: responseJson }
+  return { error: false }
 }
 
 // Transaction
@@ -474,13 +466,11 @@ async function createArticleComment({ content }, article_id) {
 }
 
 async function deleteArticleComment(comment_id) {
-  const response = await fetchWithToken(`${BASE_URL}/comments/${comment_id}`, {
+  await fetchWithToken(`${BASE_URL}/comments/${comment_id}`, {
     method: 'DELETE'
   })
 
-  const responseJson = await response.json()
-
-  return { error: false, data: responseJson }
+  return { error: false }
 }
 
 // Wishlist

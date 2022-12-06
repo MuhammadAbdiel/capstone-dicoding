@@ -6,6 +6,7 @@ import CreateArticleModal from '../../components/Admin/CreateArticleModal'
 import { getAllArticles } from '../../utils/network-data'
 import Swal from 'sweetalert2'
 import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
+import { Container } from 'react-bootstrap'
 const Articles = () => {
   const [articles, setArticles] = useState([])
   const [isModalNewArticle, setIsModalNewArticle] = useState(false)
@@ -40,7 +41,7 @@ const Articles = () => {
   }, [])
 
   return (
-    <>
+    <Container>
       {isLoading && <LoadingIndicatorComponent />}
       <LayoutAdmin />
       <h1 className='text-center'>Articles</h1>
@@ -70,7 +71,7 @@ const Articles = () => {
           Submit
         </Button>
       </Form> */}
-    </>
+    </Container>
   )
 }
 

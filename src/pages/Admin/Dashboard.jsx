@@ -1,11 +1,14 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 import LayoutAdmin from '../../components/Admin/LayoutAdmin'
 
 const Dashboard = () => {
   return (
     <div>
       <LayoutAdmin />
-      <h1>Dashboard admin</h1>
+      <Container>
+        <h1 className='text-center'>Dashboard Admin</h1>
+      </Container>
     </div>
   )
 }
