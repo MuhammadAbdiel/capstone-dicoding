@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Logo from '../images/logo192.png'
-import HowUse from '../images/assets/step_by_step_ilustration.png'
+import HowUse from '../images/assets/step_by_step_ilustration.webp'
 // import CardGroup from 'react-bootstrap/CardGroup'
 import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs'
 
