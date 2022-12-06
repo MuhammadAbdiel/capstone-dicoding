@@ -121,7 +121,7 @@ const LoginAdmin = () => {
             Login
           </Button>
           <p className='text-center'>
-            Don't have an account? <Link to='/register'> Register here</Link>
+            Don't have an account? <Link to='/admin/register'> Register here</Link>
           </p>
         </Form>
       </div>
