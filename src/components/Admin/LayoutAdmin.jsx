@@ -4,7 +4,7 @@ import SideBarAdmin from './SideBarAdmin'
 import HeaderAdmin from './HeaderAdmin'
 
 const LayoutAdmin = () => {
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
 
   return (
     <div>
