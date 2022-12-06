@@ -9,7 +9,7 @@ const CardComponent = ({ name, description, id, image }) => {
   return (
     <Col className='my-2' lg={3} md={4} sm={6}>
       <Card className='h-100'>
-        <Card.Img variant='top' src={image} className='img-card-tourism' />
+        <Card.Img variant='top' loading='lazy' src={image} className='img-card-tourism' />
         <Card.Body className='d-flex flex-column justify-content-between'>
           <Card.Title>{name}</Card.Title>
           <Card.Text className='descrp'>{description}</Card.Text>
