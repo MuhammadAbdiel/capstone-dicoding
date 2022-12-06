@@ -30,6 +30,7 @@ const CardArticlesAdmin = ({ handleShowModalEdit, article, refreshArticle }) => 
       }
     })
   }
+
   return (
     <Col className='my-3 px-3' lg={4} md={4} sm={6}>
       <Card className='h-100'>

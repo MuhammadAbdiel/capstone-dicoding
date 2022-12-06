@@ -1,10 +1,17 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
+import LayoutAdmin from '../../components/Admin/LayoutAdmin'
+import { AiFillFileAdd } from 'react-icons/ai'
 
 const DestinationGalleries = () => {
   return (
-    <div>
-      <h1>Destination Gallery</h1>
-    </div>
+    <Container>
+      <LayoutAdmin />
+      <h1 className='text-center'>Destination Gallery</h1>
+      <button className='floating'>
+        <AiFillFileAdd size={30} />
+      </button>
+    </Container>
   )
 }
 

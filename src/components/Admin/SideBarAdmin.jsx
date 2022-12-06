@@ -95,14 +95,14 @@ const SideBarAdmin = ({ active }) => {
         </ul>
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
-            <Link className='nav-link text-dark' to='#'>
+            <Link className='nav-link text-dark' to='/admin/article_galleries'>
               Article Gallery
             </Link>
           </li>
         </ul>
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
-            <Link className='nav-link text-dark' to='#'>
+            <Link className='nav-link text-dark' to='/admin/article_comments'>
               Article Comment
             </Link>
           </li>
@@ -123,14 +123,14 @@ const SideBarAdmin = ({ active }) => {
         </ul>
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
-            <Link className='nav-link text-dark' to='#'>
+            <Link className='nav-link text-dark' to='/admin/tourism_galleries'>
               Tourism Gallery
             </Link>
           </li>
         </ul>
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
-            <Link className='nav-link text-dark' to='#'>
+            <Link className='nav-link text-dark' to='/admin/transactions'>
               Transaction
             </Link>
           </li>

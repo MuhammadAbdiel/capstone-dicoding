@@ -363,8 +363,8 @@ async function getArticleGalleryById(article_gallery_id) {
 }
 
 async function createArticleGallery({ image, article_id }) {
-  const response = await fetchWithToken(`${BASE_URL}/galleries/${article_id}`, {
-    method: 'PUT',
+  const response = await fetchWithToken(`${BASE_URL}/article_galleries`, {
+    method: 'POST',
     body: JSON.stringify({ image, article_id })
   })
 
