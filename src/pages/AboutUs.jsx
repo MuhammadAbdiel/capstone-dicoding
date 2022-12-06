@@ -57,15 +57,17 @@ const AboutUs = () => {
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 1</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly mt-3'>
-                    <i>
-                      <BsGithub size={30} />
-                    </i>
-                    <i>
+                    <a href=''>
+                      <BsGithub size={30} color='#000000' />
+                    </a>
+
+                    <a href=''>
                       <BsLinkedin size={30} color='#00A0DC' />
-                    </i>
-                    <i>
+                    </a>
+
+                    <a href=''>
                       <BsInstagram size={30} color='#CE5614' />
-                    </i>
+                    </a>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -76,21 +78,17 @@ const AboutUs = () => {
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 2</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly mt-3'>
-                    <i>
-                      <a href=''>
-                        <BsGithub size={30} />
-                      </a>
-                    </i>
-                    <i>
-                      <a href=''>
-                        <BsLinkedin size={30} color='#00A0DC' />
-                      </a>
-                    </i>
-                    <i>
-                      <a href=''>
-                        <BsInstagram size={30} color='#CE5614' />
-                      </a>
-                    </i>
+                    <a href=''>
+                      <BsGithub size={30} color='#000000' />
+                    </a>
+
+                    <a href=''>
+                      <BsLinkedin size={30} color='#00A0DC' />
+                    </a>
+
+                    <a href=''>
+                      <BsInstagram size={30} color='#CE5614' />
+                    </a>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -101,21 +99,17 @@ const AboutUs = () => {
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 3</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly mt-3'>
-                    <i>
-                      <a href=''>
-                        <BsGithub size={30} />
-                      </a>
-                    </i>
-                    <i>
-                      <a href=''>
-                        <BsLinkedin size={30} color='#00A0DC' />
-                      </a>
-                    </i>
-                    <i>
-                      <a href=''>
-                        <BsInstagram size={30} color='#CE5614' />
-                      </a>
-                    </i>
+                    <a href=''>
+                      <BsGithub size={30} color='#000000' />
+                    </a>
+
+                    <a href=''>
+                      <BsLinkedin size={30} color='#00A0DC' />
+                    </a>
+
+                    <a href=''>
+                      <BsInstagram size={30} color='#CE5614' />
+                    </a>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -126,21 +120,17 @@ const AboutUs = () => {
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 4</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly mt-3'>
-                    <i>
-                      <a href=''>
-                        <BsGithub size={30} />
-                      </a>
-                    </i>
-                    <i>
-                      <a href=''>
-                        <BsLinkedin size={30} color='#00A0DC' />
-                      </a>
-                    </i>
-                    <i>
-                      <a href=''>
-                        <BsInstagram size={30} color='#CE5614' />
-                      </a>
-                    </i>
+                    <a href=''>
+                      <BsGithub size={30} color='#000000' />
+                    </a>
+
+                    <a href=''>
+                      <BsLinkedin size={30} color='#00A0DC' />
+                    </a>
+
+                    <a href=''>
+                      <BsInstagram size={30} color='#CE5614' />
+                    </a>
                   </Card.Text>
                 </Card.Body>
               </Card>
