@@ -21,6 +21,10 @@ import AboutUs from './pages/AboutUs'
 import Wishlists from './pages/Wishlists'
 import Booking from './pages/Booking'
 import LoginAdmin from './pages/Admin/LoginAdmin'
+import ArticleGalleries from './pages/Admin/ArticleGalleries'
+import ArticleComments from './pages/Admin/ArticleComments'
+import DestinationGalleries from './pages/Admin/DestinationGalleries'
+import Transactions from './pages/Admin/Transactions'
 const App = () => {
   return (
     <main>
@@ -40,8 +44,12 @@ const App = () => {
         <Route path='/articles/:id' element={<DetailArticle />} />
         <Route path='/admin/' element={<Dashboard />} />
         <Route path='/admin/articles' element={<Articles />} />
+        <Route path='/admin/article_galleries' element={<ArticleGalleries />} />
+        <Route path='/admin/article_comments' element={<ArticleComments />} />
         <Route path='/admin/categories' element={<Categories />} />
         <Route path='/admin/tourism' element={<Tourism />} />
+        <Route path='/admin/tourism_galleries' element={<DestinationGalleries />} />
+        <Route path='/admin/transactions' element={<Transactions />} />
         <Route path='/order/:id' element={<Order />} />
         <Route path='/about' element={<AboutUs />} />
         <Route path='*' element={<NotFoundPage />} />
