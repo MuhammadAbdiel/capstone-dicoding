@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { InputGroup } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import useInput from '../../components/useInput'
 import Swal from 'sweetalert2'
 import { alertIfFoundMissingInput } from '../../utils/alertMissingInputForm'
@@ -12,7 +12,7 @@ import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponen
 import FooterComponent from '../../components/FooterComponent'
 import LayoutAdmin from '../../components/Admin/LayoutAdmin'
 const Register = () => {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const [fullname, handleFullnameChange] = useInput('')
   const [username, handleUsernameChange] = useInput('')
   const [email, handleEmailChange] = useInput('')
