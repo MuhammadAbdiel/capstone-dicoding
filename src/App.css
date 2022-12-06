@@ -212,12 +212,13 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  transition: all 0.4s ease;
 }
 
 .page-content {
   width: calc(100%-17rem);
   margin-left: 17rem;
-  transition: all 0.4s;
+  transition: all 0.4s ease;
 }
 
 .sidebar_active {
