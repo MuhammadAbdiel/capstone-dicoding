@@ -58,13 +58,19 @@ const AboutUs = () => {
                   <Card.Title className='text-center'>Developer 1</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly'>
                     <i>
-                      <BsGithub size={30} />
+                      <a href=''>
+                        <BsGithub size={30} />
+                      </a>
                     </i>
                     <i>
-                      <BsLinkedin size={30} color='#00A0DC' />
+                      <a href=''>
+                        <BsLinkedin size={30} color='#00A0DC' />
+                      </a>
                     </i>
                     <i>
-                      <BsInstagram size={30} color='#CE5614' />
+                      <a href=''>
+                        <BsInstagram size={30} color='#CE5614' />
+                      </a>
                     </i>
                   </Card.Text>
                 </Card.Body>
@@ -77,13 +83,19 @@ const AboutUs = () => {
                   <Card.Title className='text-center'>Developer 2</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly'>
                     <i>
-                      <BsGithub size={30} />
+                      <a href=''>
+                        <BsGithub size={30} />
+                      </a>
                     </i>
                     <i>
-                      <BsLinkedin size={30} color='#00A0DC' />
+                      <a href=''>
+                        <BsLinkedin size={30} color='#00A0DC' />
+                      </a>
                     </i>
                     <i>
-                      <BsInstagram size={30} color='#CE5614' />
+                      <a href=''>
+                        <BsInstagram size={30} color='#CE5614' />
+                      </a>
                     </i>
                   </Card.Text>
                 </Card.Body>
@@ -96,13 +108,19 @@ const AboutUs = () => {
                   <Card.Title className='text-center'>Developer 3</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly'>
                     <i>
-                      <BsGithub size={30} />
+                      <a href=''>
+                        <BsGithub size={30} />
+                      </a>
                     </i>
                     <i>
-                      <BsLinkedin size={30} color='#00A0DC' />
+                      <a href=''>
+                        <BsLinkedin size={30} color='#00A0DC' />
+                      </a>
                     </i>
                     <i>
-                      <BsInstagram size={30} color='#CE5614' />
+                      <a href=''>
+                        <BsInstagram size={30} color='#CE5614' />
+                      </a>
                     </i>
                   </Card.Text>
                 </Card.Body>
@@ -115,13 +133,19 @@ const AboutUs = () => {
                   <Card.Title className='text-center'>Developer 4</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly'>
                     <i>
-                      <BsGithub size={30} />
+                      <a href=''>
+                        <BsGithub size={30} />
+                      </a>
                     </i>
                     <i>
-                      <BsLinkedin size={30} color='#00A0DC' />
+                      <a href=''>
+                        <BsLinkedin size={30} color='#00A0DC' />
+                      </a>
                     </i>
                     <i>
-                      <BsInstagram size={30} color='#CE5614' />
+                      <a href=''>
+                        <BsInstagram size={30} color='#CE5614' />
+                      </a>
                     </i>
                   </Card.Text>
                 </Card.Body>
