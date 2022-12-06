@@ -3,24 +3,35 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Modal from 'react-bootstrap/Modal'
 import { FaSave } from 'react-icons/fa'
-import { createArticle, getAllCategories } from '../../utils/network-data'
-import useInput from '../useInput'
+import { getAllCategories, getArticleById, updateArticle } from '../../utils/network-data'
 import Swal from 'sweetalert2'
 
-const CreateArticleModal = ({ handleClose, fetchNewArticle }) => {
+const EditArticleModal = ({ id, handleClose, fetchNewArticle }) => {
   const [categories, setCategories] = useState([])
-  const [title, handleTitleChange] = useInput('')
-  const [excerpt, handleExcerptChange] = useInput('')
-  const [content, handleContentChange] = useInput('')
+  const [title, setTitle] = useState('')
+  const [excerpt, setExceprt] = useState('')
+  const [content, setContent] = useState('')
   const [categoryValue, setCategoryValue] = useState('')
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value)
+  }
+
+  const handleExcerptChange = (e) => {
+    setExceprt(e.target.value)
+  }
+
+  const handleContentChange = (e) => {
+    setContent(e.target.value)
+  }
 
   const handleCategoryValue = (e) => {
     setCategoryValue(e.target.value)
   }
-  const handleCreateArticle = async (event) => {
+  const handleUpdateArticle = async (event) => {
     event.preventDefault()
     if (title !== '' && excerpt !== '' && content !== '' && categoryValue != '') {
-      const response = await createArticle({ title, excerpt, content, category_id: categoryValue })
+      const response = await updateArticle({ title, excerpt, content, category_id: categoryValue }, id)
       try {
         if (!response.error && !response.data.message) {
           fetchNewArticle()
@@ -62,9 +73,27 @@ const CreateArticleModal = ({ handleClose, fetchNewArticle }) => {
           text: error
         })
       }
+
+      const responseArticle = await getArticleById(id)
+      try {
+        if (!responseArticle.error) {
+          setTitle(responseArticle.data.data.title)
+          setExceprt(responseArticle.data.data.excerpt)
+          setContent(responseArticle.data.data.content)
+          setCategoryValue(responseArticle.data.data.category_id)
+        }
+      } catch (error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error
+        })
+      }
     }
+
     fetchCategories()
   }
+
   const autoHeightTextarea = (e) => {
     e.target.style.height = 'inherit'
     e.target.style.height = `${e.target.scrollHeight}px`
@@ -77,13 +106,19 @@ const CreateArticleModal = ({ handleClose, fetchNewArticle }) => {
     <>
       <Modal show={true} onHide={handleClose} backdrop='static' keyboard={false} size='xl' scrollable={true} centered={true}>
         <Modal.Header closeButton>
-          <Modal.Title>Create New Article</Modal.Title>
+          <Modal.Title>Update Article</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form className='px-5'>
             <Form.Group className='mb-3' controlId='formArticleTitle'>
               <Form.Label>Title</Form.Label>
-              <Form.Control type='text' placeholder='Enter article title' style={{ fontWeight: '600' }} onChange={handleTitleChange} />
+              <Form.Control
+                type='text'
+                placeholder='Enter article title'
+                style={{ fontWeight: '600' }}
+                onChange={handleTitleChange}
+                value={title}
+              />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formArticleExcerpt'>
               <Form.Label>Excerpt</Form.Label>
@@ -92,6 +127,7 @@ const CreateArticleModal = ({ handleClose, fetchNewArticle }) => {
                 placeholder='Enter article excerpt'
                 onKeyDown={autoHeightTextarea}
                 onChange={handleExcerptChange}
+                value={excerpt}
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formArticleContent'>
@@ -101,6 +137,7 @@ const CreateArticleModal = ({ handleClose, fetchNewArticle }) => {
                 placeholder='Enter article content'
                 onKeyDown={autoHeightTextarea}
                 onChange={handleContentChange}
+                value={content}
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formBasicCheckbox'>
@@ -119,9 +156,9 @@ const CreateArticleModal = ({ handleClose, fetchNewArticle }) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant='primary' className='d-flex' onClick={handleCreateArticle}>
+          <Button variant='success' className='d-flex' onClick={handleUpdateArticle}>
             <FaSave size={25} className='pe-2' />
-            Save
+            Update
           </Button>
         </Modal.Footer>
       </Modal>
@@ -129,4 +166,4 @@ const CreateArticleModal = ({ handleClose, fetchNewArticle }) => {
   )
 }
 
-export default CreateArticleModal
+export default EditArticleModal

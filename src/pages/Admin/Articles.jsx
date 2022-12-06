@@ -7,12 +7,21 @@ import { getAllArticles } from '../../utils/network-data'
 import Swal from 'sweetalert2'
 import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import { Container } from 'react-bootstrap'
+import EditArticleModal from '../../components/Admin/EditArticleModal'
 const Articles = () => {
   const [articles, setArticles] = useState([])
+  const [idArticle, setIdArticle] = useState(0)
   const [isModalNewArticle, setIsModalNewArticle] = useState(false)
+  const [isModalEditArticle, setIsModalEditArticle] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleCloseModal = () => setIsModalNewArticle(false)
+  const handleCloseModalNewArticle = () => setIsModalNewArticle(false)
+  const handleCloseModalEditArticle = () => setIsModalEditArticle(false)
+
+  const handleShowModalEditArticle = (id) => {
+    setIsModalEditArticle(true)
+    setIdArticle(id)
+  }
 
   const initData = () => {
     const fetchData = async () => {
@@ -47,30 +56,14 @@ const Articles = () => {
       <h1 className='text-center'>Articles</h1>
       <div className='my-articles d-flex px-3 pb-5 flex-wrap'>
         {articles.map((article) => (
-          <Article key={article.id} article={article} refreshArticle={initData} />
+          <Article key={article.id} handleShowModalEdit={handleShowModalEditArticle} article={article} refreshArticle={initData} />
         ))}
       </div>
       <button className='floating' onClick={() => setIsModalNewArticle(true)}>
         <AiFillFileAdd size={30} />
       </button>
-      {isModalNewArticle && <CreateArticleModal handleClose={handleCloseModal} fetchNewArticle={initData} />}
-      {/* <Form className='px-5'>
-        <Form.Group className='mb-3' controlId='formArticleTitle'>
-          <Form.Label>Title</Form.Label>
-          <Form.Control type='text' placeholder='Enter article title' />
-        </Form.Group>
-
-        <Form.Group className='mb-3' controlId='formArticleContent'>
-          <Form.Label>Content</Form.Label>
-          <Form.Control type='text' placeholder='Password' />
-        </Form.Group>
-        <Form.Group className='mb-3' controlId='formBasicCheckbox'>
-          <Form.Check type='checkbox' label='Check me out' />
-        </Form.Group>
-        <Button variant='primary' type='submit'>
-          Submit
-        </Button>
-      </Form> */}
+      {isModalNewArticle && <CreateArticleModal handleClose={handleCloseModalNewArticle} fetchNewArticle={initData} />}
+      {isModalEditArticle && <EditArticleModal id={idArticle} handleClose={handleCloseModalEditArticle} fetchNewArticle={initData} />}
     </Container>
   )
 }

@@ -7,10 +7,10 @@ import placeholderImage from '../../images/assets/banner.jpg'
 import Swal from 'sweetalert2'
 import { deleteArticle } from '../../utils/network-data'
 
-const CardArticlesAdmin = ({ handleShowModalEdit, article, refreshArticle }) => {
+const CardDestinationAdmin = ({ article, refreshDestination }) => {
   const handleDelete = async (id) => {
     Swal.fire({
-      title: 'Are you sure you want to delete this following article?',
+      title: 'Are you sure you want to delete this destination?',
       text: article.title,
       icon: 'warning',
       showCancelButton: true,
@@ -19,7 +19,7 @@ const CardArticlesAdmin = ({ handleShowModalEdit, article, refreshArticle }) => 
       if (result.isConfirmed) {
         await deleteArticle(id)
         try {
-          refreshArticle()
+          refreshDestination()
         } catch (e) {
           Swal.fire({
             icon: 'error',
@@ -42,10 +42,10 @@ const CardArticlesAdmin = ({ handleShowModalEdit, article, refreshArticle }) => 
           />
           <Card.Text className='descrp'>{article.excerpt}</Card.Text>
           <div className='d-flex justify-content-end'>
-            <Button variant='secondary' type='button' className='mx-3' onClick={() => handleShowModalEdit(article.id)}>
+            <Button variant='secondary' className='mx-3'>
               <AiFillEdit color='white' />
             </Button>
-            <Button variant='danger' type='button' onClick={() => handleDelete(article.id)}>
+            <Button variant='danger' onClick={() => handleDelete(article.id)}>
               <AiFillDelete color='white' />
             </Button>
           </div>
@@ -55,4 +55,4 @@ const CardArticlesAdmin = ({ handleShowModalEdit, article, refreshArticle }) => 
   )
 }
 
-export default CardArticlesAdmin
+export default CardDestinationAdmin
