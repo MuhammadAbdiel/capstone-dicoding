@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class StoreDestinationGalleryRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class StoreDestinationGalleryRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return Gate::allows('create-destination-gallery');
     }
 
     /**
@@ -24,7 +25,8 @@ class StoreDestinationGalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'destination_id' => ['required', 'integer'],
+            'image' => ['required', 'string', 'max:255'],
         ];
     }
 }

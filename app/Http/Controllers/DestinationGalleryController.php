@@ -43,7 +43,11 @@ class DestinationGalleryController extends Controller
      */
     public function store(StoreDestinationGalleryRequest $request)
     {
-        // 
+        abort_if(Gate::denies('create-destination-gallery'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $destinationGallery = DestinationGallery::create($request->validated());
+
+        return (new DestinationGalleryResource($destinationGallery))->response()->setStatusCode(Response::HTTP_CREATED);
     }
 
     /**

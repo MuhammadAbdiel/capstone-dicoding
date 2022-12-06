@@ -80,11 +80,8 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
   // Route resource Destinations
   Route::resource('destinations', DestinationController::class)->except(['index', 'create', 'show', 'edit']);
 
-  // Route put Destination Galleries via Link
-  Route::put('galleries/{destination}', [DestinationController::class, 'store_image']);
-
   // Route resource Destination Galleries
-  Route::resource('destination_galleries', DestinationGalleryController::class)->except(['create', 'store', 'edit', 'update']);
+  Route::resource('destination_galleries', DestinationGalleryController::class)->except(['create', 'edit', 'update']);
 
   // Route resource Transactions
   Route::resource('transactions', TransactionController::class)->except(['create', 'store', 'edit', 'destroy']);

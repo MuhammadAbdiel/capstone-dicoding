@@ -136,19 +136,4 @@ class DestinationController extends Controller
             'data' => $transaction->load(['user', 'detail_transactions']),
         ]);
     }
-
-    public function store_image(Request $request, Destination $destination)
-    {
-        abort_if(Gate::denies('create-destination-gallery'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
-        $destinationGallery = DestinationGallery::create([
-            'destination_id' => $destination->id,
-            'image' => $request->image,
-        ]);
-
-        return response()->json([
-            'message' => 'success',
-            'destination_gallery' => $destinationGallery->load('destination'),
-        ]);
-    }
 }
