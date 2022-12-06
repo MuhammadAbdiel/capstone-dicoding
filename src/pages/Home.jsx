@@ -27,7 +27,9 @@ const Home = () => {
         <div className='jumbotron-text-overlay'>
           <h1>Bukit Teletubbies Batu</h1>
           <p>Nikmati liburan bersama keluarga melihat indah nya pemandangan Bukit Teletubbies Batu</p>
-          <button>Start My Trip</button>
+          <Link to='/tourism'>
+            <button>Start My Trip</button>
+          </Link>
         </div>
       </div>
       <div className='mt-5 '>
