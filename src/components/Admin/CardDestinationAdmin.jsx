@@ -5,19 +5,19 @@ import Card from 'react-bootstrap/Card'
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai'
 import placeholderImage from '../../images/assets/banner.jpg'
 import Swal from 'sweetalert2'
-import { deleteArticle } from '../../utils/network-data'
+import { deleteDestination } from '../../utils/network-data'
 
-const CardDestinationAdmin = ({ article, refreshDestination }) => {
+const CardDestinationAdmin = ({ handleShowModalEdit, destination, refreshDestination }) => {
   const handleDelete = async (id) => {
     Swal.fire({
       title: 'Are you sure you want to delete this destination?',
-      text: article.title,
+      text: destination.name,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Delete'
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await deleteArticle(id)
+        await deleteDestination(id)
         try {
           refreshDestination()
         } catch (e) {
@@ -30,22 +30,23 @@ const CardDestinationAdmin = ({ article, refreshDestination }) => {
       }
     })
   }
+
   return (
-    <Col className='my-3 px-3' lg={4} md={4} sm={6}>
+    <Col className='my-3 px-3' lg={3} md={4} sm={6}>
       <Card className='h-100'>
+        <Card.Img
+          variant='top'
+          src={destination.destination_galleries.length === 0 ? placeholderImage : destination.destination_galleries[0].image}
+          className='img-card-tourism'
+        />
         <Card.Body className='d-flex flex-column justify-content-between'>
-          <Card.Title className='text-center'>{article.title}</Card.Title>
-          <img
-            src={article.article_galleries.length === 0 ? placeholderImage : article.article_galleries[0].image}
-            className='card-img-top my-3'
-            alt='article.title'
-          />
-          <Card.Text className='descrp'>{article.excerpt}</Card.Text>
+          <Card.Title>{destination.name}</Card.Title>
+          <Card.Text className='descrp'>{destination.description}</Card.Text>
           <div className='d-flex justify-content-end'>
-            <Button variant='secondary' className='mx-3'>
+            <Button variant='secondary' type='button' className='mx-3' onClick={() => handleShowModalEdit(destination.id)}>
               <AiFillEdit color='white' />
             </Button>
-            <Button variant='danger' onClick={() => handleDelete(article.id)}>
+            <Button variant='danger' type='button' onClick={() => handleDelete(destination.id)}>
               <AiFillDelete color='white' />
             </Button>
           </div>
