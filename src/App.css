@@ -78,7 +78,22 @@ input[type='number'] {
   border-radius: 10px;
   color: white;
 }
+.nav-link-admin button {
+  color: white;
+  background-color: transparent;
+  transition: none;
+  border: none;
+}
 
+.nav-link-admin button:hover {
+  background-color: #0b8fc4;
+  border-radius: 10px;
+  color: white;
+}
+#collasible-nav-dropdown {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+}
 footer {
   background-color: #e8f9fd;
   top: 100%;

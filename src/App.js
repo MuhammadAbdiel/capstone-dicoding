@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import RegisterAdmin from './pages/RegisterAdmin'
+import RegisterAdmin from './pages/Admin/RegisterAdmin'
 import NotFoundPage from './pages/NotFoundPage'
 import Profile from './pages/Profile'
 import Dashboard from './pages/Admin/Dashboard'
@@ -22,7 +22,7 @@ import Wishlists from './pages/Wishlists'
 import Booking from './pages/Booking'
 import CategoryAdd from './pages/Admin/CategoryAdd'
 import CategoryEdit from './pages/Admin/CategoryEdit'
-
+import LoginAdmin from './pages/Admin/LoginAdmin'
 const App = () => {
   return (
     <main>
@@ -31,6 +31,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/admin/register' element={<RegisterAdmin />} />
+        <Route path='/admin/login' element={<LoginAdmin />} />
         <Route path='/user/profile' element={<Profile />} />
         <Route path='/user/booking' element={<Booking />} />
         <Route path='/user/saved' element={<Wishlists />} />
