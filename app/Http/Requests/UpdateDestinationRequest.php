@@ -26,6 +26,9 @@ class UpdateDestinationRequest extends FormRequest
     {
         return [
             'name' => ['string', 'max:255'],
+            'open_time' => ['date_format:H:i:s'],
+            'close_time' => ['date_format:H:i:s'],
+            'price' => ['numeric', 'min:0'],
             'rating' => ['numeric', 'min:0', 'max:5'],
             'location' => ['string', 'max:255'],
             'description' => ['string'],

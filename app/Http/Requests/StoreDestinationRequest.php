@@ -26,6 +26,9 @@ class StoreDestinationRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
+            'open_time' => ['required', 'date_format:H:i:s'],
+            'close_time' => ['required', 'date_format:H:i:s'],
+            'price' => ['required', 'numeric', 'min:0'],
             'rating' => ['required', 'numeric', 'min:0', 'max:5'],
             'location' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
