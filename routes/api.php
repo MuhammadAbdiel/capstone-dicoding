@@ -64,14 +64,11 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
   // Route resource Articles
   Route::resource('articles', ArticleController::class)->except(['index', 'create', 'show', 'edit']);
 
-  // Route put Article Galleries via Link
-  Route::put('galleries/{article}', [ArticleController::class, 'store_image']);
-
   // Route put Article Galleries via Upload File
   // Route::post('galleries/{article}/upload', [ArticleController::class, 'upload_image']);
 
   // Route resource Article Galleries
-  Route::resource('article_galleries', ArticleGalleryController::class)->except(['create', 'store', 'edit', 'update']);
+  Route::resource('article_galleries', ArticleGalleryController::class)->except(['create', 'edit', 'update']);
 
   // Route resource Categories
   Route::resource('categories', CategoryController::class)->except(['index', 'create', 'edit']);

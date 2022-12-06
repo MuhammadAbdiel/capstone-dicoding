@@ -41,7 +41,11 @@ class ArticleGalleryController extends Controller
      */
     public function store(StoreArticleGalleryRequest $request)
     {
-        //
+        abort_if(Gate::denies('create-article-gallery'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $articleGallery = ArticleGallery::create($request->validated());
+
+        return (new ArticleGalleryResource($articleGallery))->response()->setStatusCode(Response::HTTP_CREATED);
     }
 
     /**

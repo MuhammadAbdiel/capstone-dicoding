@@ -25,6 +25,7 @@ class StoreArticleGalleryRequest extends FormRequest
     public function rules()
     {
         return [
+            'article_id' => ['required', 'integer'],
             'image' => ['required', 'image', 'file', 'mimes:jpeg,png,jpg,gif,svg', 'max:5120'],
         ];
     }

@@ -712,11 +712,11 @@ https://capstone-backend-production-7544.up.railway.app/api
 
 - URL :
 
-  - #### `/galleries/{article_id}`
+  - #### `/article_galleries`
 
 - Method :
 
-  - #### `PUT`
+  - #### `POST`
 
 - Headers :
 
