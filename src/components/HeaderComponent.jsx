@@ -92,23 +92,23 @@ const HeaderComponent = () => {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='ms-auto header-link'>
-              <Link className='nav-link mx-3' to='/articles'>
+              <Link className='nav-link mx-3 px-3' to='/articles'>
                 Article
               </Link>
-              <Link className='nav-link mx-3' to='/tourism'>
+              <Link className='nav-link mx-3 px-3' to='/tourism'>
                 Explore
               </Link>
               {/* Link explore nih bisa dimanfaatkan sebagai halaman yang memberikan rekomendasi tempat wisata (Semacam pages explore instagram) */}
               {authedUser != null && (
-                <Link to='/user/booking' className='nav-link mx-3'>
+                <Link to='/user/booking' className='nav-link mx-3 px-3'>
                   My Booking
                 </Link>
               )}
-              <Link className='nav-link mx-3' to='/about'>
+              <Link className='nav-link mx-3 px-3' to='/about'>
                 About Us
               </Link>
               {authedUser != null ? (
-                <NavDropdown title={name} id='collasible-nav-dropdown' className='ms-3 header-link'>
+                <NavDropdown title={name} id='collasible-nav-dropdown' className='header-link'>
                   <Link className='dropdown-item' to='/user/profile'>
                     Profile
                   </Link>
@@ -129,7 +129,7 @@ const HeaderComponent = () => {
                   </Link>
                 </NavDropdown>
               ) : (
-                <Link to='/login' className='nav-link mx-3'>
+                <Link to='/login' className='nav-link mx-3 px-3'>
                   Login
                 </Link>
               )}
