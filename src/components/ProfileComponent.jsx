@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import NotFound from './NotFound'
 import Swal from 'sweetalert2'
+import { Col, Row } from 'react-bootstrap'
 
 const ProfileComponent = () => {
   const [authedUser, setAuthedUser] = useState('Not Set')
@@ -34,7 +35,7 @@ const ProfileComponent = () => {
     return <NotFound />
   }
   return (
-    <div>
+    <>
       <div className='card' style={{ width: '20rem', margin: '25px auto' }}>
         <div className='card-header'>
           <img src={logo} className='card-img-top' alt='...' />
@@ -47,14 +48,23 @@ const ProfileComponent = () => {
           <li className='list-group-item'>Email : {authedUser.email}</li>
           <li className='list-group-item'>No.Telp : {authedUser.phone_number}</li>
           <li className='list-group-item'>Bank Account Number : {authedUser.bank_account_number}</li>
-          <div className='d-flex justify-content-center'>
-            <Link to='/user/profile/edit'>
-              <Button variant='warning m-2 px-5'>Edit</Button>
-            </Link>
-          </div>
+          <br />
+          <Row className='text-center'>
+            <Col sm={5}>
+              <Link to='/user/profile/edit'>
+                <Button variant='warning'>Edit Profile</Button>
+              </Link>
+            </Col>
+            <Col sm={7}>
+              <Link to='/user/profile/change-password'>
+                <Button variant='success'>Change Password</Button>
+              </Link>
+            </Col>
+          </Row>
+          <br />
         </ul>
       </div>
-    </div>
+    </>
   )
 }
 

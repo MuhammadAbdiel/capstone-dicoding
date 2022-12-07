@@ -24,6 +24,7 @@ const ProfileEdit = () => {
   const [isPhoneNumberValid, setIsPhoneNumberValid] = useState('Not Set')
   const [isLoading, setIsLoading] = useState(false)
   const [authedUser, setAuthedUser] = useState('Not Set')
+
   useEffect(() => {
     if (!localStorage.getItem('accessToken')) {
       setAuthedUser(null)
@@ -45,6 +46,7 @@ const ProfileEdit = () => {
       fetchData()
     }
   }, [])
+
   useEffect(() => {
     if (email !== '') {
       if (/\S+@\S+\.\S+/.test(email)) {
