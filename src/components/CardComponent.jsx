@@ -20,7 +20,7 @@ const CardComponent = ({ name, description, id, image }) => {
           <Card.Title>{name}</Card.Title>
           <Card.Text className='descrp'>{description}</Card.Text>
           <Link to={`/tourism/${id}`}>
-            <Button variant='primary'>Show more</Button>
+            <Button variant='primary'>Lihat detail</Button>
           </Link>
         </Card.Body>
       </Card>

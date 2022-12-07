@@ -35,8 +35,8 @@ const CreateCategoryModal = ({ handleClose, fetchNewCategory }) => {
     } else if (name === '') {
       Swal.fire({
         icon: 'error',
-        title: 'There is empty input field',
-        text: 'Please fill all input fields'
+        title: 'Ada input yang kosong',
+        text: 'Silahkan isi input yang kosong!'
       })
     }
   }
@@ -45,20 +45,20 @@ const CreateCategoryModal = ({ handleClose, fetchNewCategory }) => {
     <>
       <Modal show={true} onHide={handleClose} backdrop='static' keyboard={false} size='xl' scrollable={true} centered={true}>
         <Modal.Header closeButton>
-          <Modal.Title>Create New Category</Modal.Title>
+          <Modal.Title>Tambahkan Kategori Baru</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form className='px-5'>
             <Form.Group className='mb-3' controlId='formArticleName'>
-              <Form.Label>Name</Form.Label>
-              <Form.Control type='text' placeholder='Enter category Name' style={{ fontWeight: '600' }} onChange={handleNameChange} />
+              <Form.Label>Nama</Form.Label>
+              <Form.Control type='text' placeholder='Masukkan nama kategori' style={{ fontWeight: '600' }} onChange={handleNameChange} />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant='primary' className='d-flex' onClick={handleCreateCategory}>
             <FaSave size={25} className='pe-2' />
-            Save
+            Simpan
           </Button>
         </Modal.Footer>
       </Modal>

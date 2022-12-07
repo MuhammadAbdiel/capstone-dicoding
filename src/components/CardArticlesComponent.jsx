@@ -20,7 +20,7 @@ const CardArticlesComponent = ({ image_article, title, excerpt, id }) => {
           <Card.Text className='descrp'>{excerpt}</Card.Text>
           <div className='d-flex justify-content-end'>
             <Link to={`/articles/${id}`}>
-              <Button variant='primary'>View More</Button>
+              <Button variant='primary'>Lihat detail</Button>
             </Link>
           </div>
         </Card.Body>

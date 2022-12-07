@@ -10,11 +10,12 @@ import { deleteDestination } from '../../utils/network-data'
 const CardDestinationAdmin = ({ handleShowModalEdit, destination, refreshDestination }) => {
   const handleDelete = async (id) => {
     Swal.fire({
-      title: 'Are you sure you want to delete this destination?',
+      title: 'Apakah Anda yakin ingin menghapus destinasi ini?',
       text: destination.name,
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Delete'
+      confirmButtonText: 'Hapus',
+      cancelButtonText: 'Batal'
     }).then(async (result) => {
       if (result.isConfirmed) {
         await deleteDestination(id)

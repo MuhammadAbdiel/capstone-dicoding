@@ -34,18 +34,19 @@ const HeaderAdmin = ({ active, setActive }) => {
 
   const handleLogout = async () => {
     Swal.fire({
-      title: 'Are you sure?',
-      text: 'You will be logged out!',
+      title: 'Apakah Anda yakin?',
+      text: 'Anda akan keluar dari akun ini!',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes, logout!'
+      confirmButtonText: 'Ya, keluar!',
+      cancelButtonText: 'Tidak'
     }).then(async (result) => {
       if (result.isConfirmed) {
         const response = await logoutAdmin()
         try {
           if (!response.error) {
             localStorage.removeItem('accessToken')
-            navigate('/admin/login')
+            navigate('/')
           }
         } catch (e) {
           Swal.fire({

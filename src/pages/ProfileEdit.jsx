@@ -129,10 +129,10 @@ const ProfileEdit = () => {
         <div className=' d-flex justify-content-center my-5 '>
           <Form style={{ width: '80%' }} onSubmit={onSubmitHandler} className='register-form'>
             <Form.Group className='mb-3' controlId='formFullname'>
-              <Form.Label>Full Name</Form.Label>
+              <Form.Label>Nama Lengkap</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter your full name'
+                placeholder='Masukkan nama lengkap Anda'
                 value={fullname || authedUser.name}
                 onChange={handleFullnameChange}
               />
@@ -141,7 +141,7 @@ const ProfileEdit = () => {
               <Form.Label>Username</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter your username'
+                placeholder='Masukkan username Anda'
                 value={username || authedUser.username}
                 onChange={handleUsernameChange}
               />
@@ -150,15 +150,15 @@ const ProfileEdit = () => {
             <Form.Group
               className='mb-3'
               controlId='formEmail'
-              title={isEmailValid === false ? 'Please enter valid email address' : undefined}
+              title={isEmailValid === false ? 'Masukkan alamat email Anda yang valid' : undefined}
             >
               <Form.Label>
-                Email address
+                Alamat email
                 {isEmailValid === false && <IoMdCloseCircle color='red' />}
               </Form.Label>
               <Form.Control
                 type='email'
-                placeholder='Enter your email'
+                placeholder='Masukkan alamat email Anda'
                 value={email || authedUser.email}
                 onChange={handleEmailChange}
                 className={isEmailValid === false && 'invalid'}
@@ -168,17 +168,17 @@ const ProfileEdit = () => {
             <Form.Group
               className='mb-3'
               controlId='formPhoneNumber'
-              title={isPhoneNumberValid === false ? 'Phone number must contain at least 10 digit number' : undefined}
+              title={isPhoneNumberValid === false ? 'Nomor telepon harus berisi setidaknya 10 digit' : undefined}
             >
               <Form.Label>
-                Phone Number
+                No.Telepon
                 {isPhoneNumberValid === false && <IoMdCloseCircle color='red' />}
               </Form.Label>
               <InputGroup className='mb-3'>
                 <InputGroup.Text id='basic-addon1'>+62</InputGroup.Text>
                 <Form.Control
                   type='number'
-                  placeholder='Enter your phone number'
+                  placeholder='Masukkan nomor telepon Anda'
                   value={phoneNumber || (authedUser === 'Not Set' ? undefined : authedUser.phone_number.slice(3))}
                   min='0'
                   onChange={handlePhoneNumberChange}
@@ -188,10 +188,10 @@ const ProfileEdit = () => {
             </Form.Group>
 
             <Form.Group className='mb-3' controlId='formBankAccountNumber'>
-              <Form.Label>Bank Account Number</Form.Label>
+              <Form.Label>No.Rekening</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter your bank account number'
+                placeholder='Masukkan nomor rekening Anda'
                 value={bankAccountNumber || authedUser.bank_account_number}
                 onChange={handleBankAccountNumberChange}
               />

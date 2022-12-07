@@ -41,7 +41,7 @@ const Payment = () => {
       {isLoading && <LoadingIndicatorComponent />}
       <HeaderComponent />
       <Container>
-        <h1 className='my-3 text-center'>Payment</h1>
+        <h1 className='my-3 text-center'>Pembayaran</h1>
         <div className='alert alert-success'>
           Silahkan melakukan pembayaran ke nomor rekening <b>{dataAdmin.bank_account_number}</b> a/n <b>{dataAdmin.name}</b>. Kemudian,
           kirim bukti pembayaran ke nomor <b>{dataAdmin.phone_number}</b>.

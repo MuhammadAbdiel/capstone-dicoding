@@ -87,8 +87,8 @@ const EditDestinationModal = ({ id, handleClose, fetchNewDestination }) => {
     ) {
       Swal.fire({
         icon: 'error',
-        title: 'There is empty input field',
-        text: 'Please fill all input fields'
+        title: 'Ada input yang kosong',
+        text: 'Silahkan isi input yang kosong!'
       })
     }
   }
@@ -131,51 +131,51 @@ const EditDestinationModal = ({ id, handleClose, fetchNewDestination }) => {
     <>
       <Modal show={true} onHide={handleClose} backdrop='static' keyboard={false} size='xl' scrollable={true} centered={true}>
         <Modal.Header closeButton>
-          <Modal.Title>Update Destination</Modal.Title>
+          <Modal.Title>Perbarui Destinasi</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form className='px-5'>
             <Form.Group className='mb-3' controlId='formDestinationName'>
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Nama</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter destination name'
+                placeholder='Masukkan nama destinasi'
                 style={{ fontWeight: '600' }}
                 onChange={handleNameChange}
                 value={name}
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formDestinationOpenTime'>
-              <Form.Label>Open Time</Form.Label>
-              <Form.Control type='text' placeholder='Enter destination open time' onChange={handleOpenTimeChange} value={openTime} />
+              <Form.Label>Waktu Buka</Form.Label>
+              <Form.Control type='text' placeholder='Masukkan waktu buka destinasi' onChange={handleOpenTimeChange} value={openTime} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formDestinationCloseTime'>
-              <Form.Label>Close Time</Form.Label>
-              <Form.Control type='text' placeholder='Enter destination close time' onChange={handleCloseTimeChange} value={closeTime} />
+              <Form.Label>Waktu Tutup</Form.Label>
+              <Form.Control type='text' placeholder='Masukkan waktu tutup destinasi' onChange={handleCloseTimeChange} value={closeTime} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formDestinationPrice'>
-              <Form.Label>Price</Form.Label>
-              <Form.Control type='number' placeholder='Enter destination price' onChange={handlePriceChange} value={price} />
+              <Form.Label>Harga</Form.Label>
+              <Form.Control type='number' placeholder='Masukkan harga tiket destinasi' onChange={handlePriceChange} value={price} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formDestinationRating'>
               <Form.Label>Rating</Form.Label>
-              <Form.Control type='number' placeholder='Enter destination rating' onChange={handleRatingChange} value={rating} />
+              <Form.Control type='number' placeholder='Masukkan rating' onChange={handleRatingChange} value={rating} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formDestinationLocation'>
-              <Form.Label>Location</Form.Label>
+              <Form.Label>Lokasi</Form.Label>
               <Form.Control
                 as='textarea'
-                placeholder='Enter article location'
+                placeholder='Masukkan lokasi destinasi'
                 onKeyDown={autoHeightTextarea}
                 onChange={handleLocationChange}
                 value={location}
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formDestinationDescription'>
-              <Form.Label>Description</Form.Label>
+              <Form.Label>Deskripsi</Form.Label>
               <Form.Control
                 as='textarea'
-                placeholder='Enter article description'
+                placeholder='Masukkan deskripsi destinasi'
                 onKeyDown={autoHeightTextarea}
                 onChange={handleDescriptionChange}
                 value={description}
@@ -186,7 +186,7 @@ const EditDestinationModal = ({ id, handleClose, fetchNewDestination }) => {
         <Modal.Footer>
           <Button variant='success' className='d-flex' onClick={handleUpdateDestination}>
             <FaSave size={25} className='pe-2' />
-            Update
+            Perbarui
           </Button>
         </Modal.Footer>
       </Modal>

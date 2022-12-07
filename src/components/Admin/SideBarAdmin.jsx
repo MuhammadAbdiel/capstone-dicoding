@@ -38,11 +38,12 @@ const SideBarAdmin = ({ active }) => {
 
   const handleLogout = async () => {
     Swal.fire({
-      title: 'Are you sure?',
-      text: 'You will be logged out!',
+      title: 'Apakah Anda yakin?',
+      text: 'Anda akan keluar dari akun ini!',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes, logout!'
+      confirmButtonText: 'Ya, keluar!',
+      cancelButtonText: 'Tidak'
     }).then(async (result) => {
       if (result.isConfirmed) {
         setIsLoading(true)
@@ -51,7 +52,7 @@ const SideBarAdmin = ({ active }) => {
           if (!response.error) {
             setIsLoading(false)
             localStorage.removeItem('accessToken')
-            navigate('/admin/login')
+            navigate('/')
           }
         } catch (e) {
           setIsLoading(false)
@@ -82,56 +83,56 @@ const SideBarAdmin = ({ active }) => {
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
             <Link className='nav-link text-dark' to='/admin/'>
-              Dashboard Admin
+              Admin Dashboard
             </Link>
           </li>
         </ul>
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
             <Link className='nav-link text-dark' to='/admin/articles'>
-              Article
+              Artikel
             </Link>
           </li>
         </ul>
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
             <Link className='nav-link text-dark' to='/admin/article_galleries'>
-              Article Gallery
+              Galeri Artikel
             </Link>
           </li>
         </ul>
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
             <Link className='nav-link text-dark' to='/admin/article_comments'>
-              Article Comment
+              Komentar Artikel
             </Link>
           </li>
         </ul>
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
             <Link className='nav-link text-dark' to='/admin/categories'>
-              Category
+              Kategori
             </Link>
           </li>
         </ul>
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
             <Link className='nav-link text-dark' to='/admin/tourism'>
-              Tourism
+              Destinasi Wisata
             </Link>
           </li>
         </ul>
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
             <Link className='nav-link text-dark' to='/admin/tourism_galleries'>
-              Tourism Gallery
+              Galeri Destinasi Wisata
             </Link>
           </li>
         </ul>
         <ul className='nav flex-column bg-white mb-0'>
           <li className='nav-item'>
             <Link className='nav-link text-dark' to='/admin/transactions'>
-              Transaction
+              Transaksi
             </Link>
           </li>
         </ul>

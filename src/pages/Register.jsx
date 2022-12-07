@@ -137,26 +137,26 @@ const Register = () => {
         <div className=' d-flex justify-content-center my-5 '>
           <Form style={{ width: '80%' }} onSubmit={onSubmitHandler} className='register-form'>
             <Form.Group className='mb-3' controlId='formFullname'>
-              <Form.Label>Full Name</Form.Label>
-              <Form.Control type='text' placeholder='Enter your full name' value={fullname} onChange={handleFullnameChange} />
+              <Form.Label>Nama Lengkap</Form.Label>
+              <Form.Control type='text' placeholder='Masukkan nama lengkap Anda' value={fullname} onChange={handleFullnameChange} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formUsername'>
               <Form.Label>Username</Form.Label>
-              <Form.Control type='text' placeholder='Enter your username' value={username} onChange={handleUsernameChange} />
+              <Form.Control type='text' placeholder='Masukkan username Anda' value={username} onChange={handleUsernameChange} />
             </Form.Group>
 
             <Form.Group
               className='mb-3'
               controlId='formEmail'
-              title={isEmailValid === false ? 'Please enter valid email address' : undefined}
+              title={isEmailValid === false ? 'Masukkan alamat email Anda yang valid' : undefined}
             >
               <Form.Label>
-                Email address
+                Alamat email
                 {isEmailValid === false && <IoMdCloseCircle color='red' />}
               </Form.Label>
               <Form.Control
                 type='email'
-                placeholder='Enter your email'
+                placeholder='Masukkan alamat email Anda'
                 value={email}
                 onChange={handleEmailChange}
                 className={isEmailValid === false && 'invalid'}
@@ -166,17 +166,17 @@ const Register = () => {
             <Form.Group
               className='mb-3'
               controlId='formPhoneNumber'
-              title={isPhoneNumberValid === false ? 'Phone number must contain at least 10 digit number' : undefined}
+              title={isPhoneNumberValid === false ? 'Nomor telepon harus berisi setidaknya 10 digit' : undefined}
             >
               <Form.Label>
-                Phone Number
+                No.Telepon
                 {isPhoneNumberValid === false && <IoMdCloseCircle color='red' />}
               </Form.Label>
               <InputGroup className='mb-3'>
                 <InputGroup.Text id='basic-addon1'>+62</InputGroup.Text>
                 <Form.Control
                   type='number'
-                  placeholder='Enter your phone number'
+                  placeholder='Masukkan nomor telepon Anda'
                   value={phoneNumber}
                   min='0'
                   onChange={handlePhoneNumberChange}
@@ -186,10 +186,10 @@ const Register = () => {
             </Form.Group>
 
             <Form.Group className='mb-3' controlId='formBankAccountNumber'>
-              <Form.Label>Bank Account Number</Form.Label>
+              <Form.Label>No.Rekening</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter your bank account number'
+                placeholder='Masukkan nomor rekening Anda'
                 value={bankAccountNumber}
                 onChange={handleBankAccountNumberChange}
               />
@@ -200,27 +200,27 @@ const Register = () => {
               controlId='formPassword'
               value={password}
               onChange={handlePasswordChange}
-              title={isPasswordValid === false ? 'Your password must containt at least 8 characters' : undefined}
+              title={isPasswordValid === false ? 'Kata sandi Anda harus berisi setidaknya 8 karakter' : undefined}
             >
               <Form.Label>
-                Password
+                Kata Sandi
                 {isPasswordValid === false && <IoMdCloseCircle color='red' />}
               </Form.Label>
-              <Form.Control type='password' placeholder='Enter your Password' className={isPasswordValid === false && 'invalid'} />
+              <Form.Control type='password' placeholder='Masukkan Kata Sandi Anda' className={isPasswordValid === false && 'invalid'} />
             </Form.Group>
 
             <Form.Group
               className='mb-3 '
               controlId='formRePassword'
-              title={isBothPasswordMatch === false ? 'The confirmation password does not match' : undefined}
+              title={isBothPasswordMatch === false ? 'Konfirmasi kata sandi tidak sesuai' : undefined}
             >
               <Form.Label>
-                Reenter Password
+                Konfirmasi Kata Sandi
                 {isBothPasswordMatch === false && <IoMdCloseCircle color='red' />}
               </Form.Label>
               <Form.Control
                 type='password'
-                placeholder='Enter your Reenter Password'
+                placeholder='Masukkan Konfirmasi Kata Sandi Anda'
                 value={repassword}
                 onChange={handleRePasswordChange}
                 className={isBothPasswordMatch === false && 'invalid'}
@@ -228,10 +228,10 @@ const Register = () => {
             </Form.Group>
 
             <Button style={{ width: '100%', backgroundColor: '#0AA1DD' }} className='mb-3 fw-bold' variant='primary' type='submit'>
-              Register
+              Daftar
             </Button>
             <p className='text-center'>
-              Already have an account? <Link to='/login'> Login here</Link>
+              Sudah mempunyai akun? <Link to='/login'> Login disini</Link>
             </p>
           </Form>
         </div>

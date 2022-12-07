@@ -59,7 +59,7 @@ const LoginAdmin = () => {
           Swal.fire({
             icon: 'error',
             title: 'Error',
-            text: 'Your email address or password is incorrect'
+            text: 'Email atau password salah!'
           })
         }
       } catch (error) {
@@ -84,15 +84,15 @@ const LoginAdmin = () => {
           <Form.Group
             className='mb-3'
             controlId='formEmail'
-            title={isEmailValid === false ? 'Please enter valid email address' : undefined}
+            title={isEmailValid === false ? 'Masukkan alamat email Anda yang valid' : undefined}
           >
             <Form.Label>
-              Email address
+              Alamat email
               {isEmailValid === false && <IoMdCloseCircle color='red' />}
             </Form.Label>
             <Form.Control
               type='email'
-              placeholder='Enter your email'
+              placeholder='Masukkan alamat email Anda'
               value={email}
               onChange={handleEmailChange}
               className={isEmailValid === false && 'invalid'}
@@ -102,15 +102,15 @@ const LoginAdmin = () => {
           <Form.Group
             className='mb-3'
             controlId='formPassword'
-            title={isPasswordValid === false ? 'Your password must containt at least 8 characters' : undefined}
+            title={isPasswordValid === false ? 'Kata sandi harus berisi setidaknya 8 karakter' : undefined}
           >
             <Form.Label>
-              Password
+              Kata Sandi
               {isPasswordValid === false && <IoMdCloseCircle color='red' />}
             </Form.Label>
             <Form.Control
               type='password'
-              placeholder='Enter your Password'
+              placeholder='Masukkan Kata Sandi Anda'
               value={password}
               onChange={handlePasswordChange}
               className={isPasswordValid === false && 'invalid'}
@@ -121,7 +121,7 @@ const LoginAdmin = () => {
             Login
           </Button>
           <p className='text-center'>
-            Don't have an account? <Link to='/admin/register'> Register here</Link>
+            Tidak punya akun? <Link to='/admin/register'> Daftar disini</Link>
           </p>
         </Form>
       </div>

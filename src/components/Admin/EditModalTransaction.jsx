@@ -63,15 +63,15 @@ const EditModalTransaction = ({ id, handleClose, fetchTransaction }) => {
     <>
       <Modal show={true} onHide={handleClose} backdrop='static' keyboard={false} size='xl' scrollable={true} centered={true}>
         <Modal.Header closeButton>
-          <Modal.Title>Update Category</Modal.Title>
+          <Modal.Title>Perbarui Status Transaksi</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form className='px-5'>
             <Form.Group className='mb-3' controlId='formBasicCheckbox'>
-              <Form.Label>Transaction Status</Form.Label>
+              <Form.Label>Status Transaksi</Form.Label>
               <Form.Select value={transactionStatus} onChange={handleTransactionStatusChange}>
                 <option value='' disabled={true}>
-                  --Select Status--
+                  --Pilih Status--
                 </option>
                 <option value={0}>Dibatalkan</option>
                 <option value={1}>Belum dibayar</option>
@@ -83,7 +83,7 @@ const EditModalTransaction = ({ id, handleClose, fetchTransaction }) => {
         <Modal.Footer>
           <Button variant='success' className='d-flex' onClick={handleUpdateTransaction}>
             <FaSave size={25} className='pe-2' />
-            Update
+            Perbarui
           </Button>
         </Modal.Footer>
       </Modal>

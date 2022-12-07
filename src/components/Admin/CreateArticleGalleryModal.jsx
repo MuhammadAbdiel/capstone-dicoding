@@ -41,8 +41,8 @@ const CreateArticleGalleryModal = ({ handleClose, fetchNewArticleGallery }) => {
     } else if (image === '') {
       Swal.fire({
         icon: 'error',
-        title: 'There is empty input field',
-        text: 'Please fill all input fields'
+        title: 'Ada input yang kosong',
+        text: 'Silahkan isi input yang kosong!'
       })
     }
   }
@@ -74,19 +74,19 @@ const CreateArticleGalleryModal = ({ handleClose, fetchNewArticleGallery }) => {
     <>
       <Modal show={true} onHide={handleClose} backdrop='static' keyboard={false} size='xl' scrollable={true} centered={true}>
         <Modal.Header closeButton>
-          <Modal.Title>Create New Image</Modal.Title>
+          <Modal.Title>Tambahkan Gambar Baru</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form className='px-5'>
             <Form.Group className='mb-3' controlId='formArticleGalleryImage'>
-              <Form.Label>Image</Form.Label>
-              <Form.Control type='text' placeholder='Enter image link' style={{ fontWeight: '600' }} onChange={handleImageChange} />
+              <Form.Label>Gambar</Form.Label>
+              <Form.Control type='text' placeholder='Masukkan tautan gambar' style={{ fontWeight: '600' }} onChange={handleImageChange} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formBasicCheckbox'>
-              <Form.Label>Article</Form.Label>
+              <Form.Label>Artikel</Form.Label>
               <Form.Select value={articleValue} onChange={handleArticleValue}>
                 <option value='' disabled={true}>
-                  --Select Article--
+                  --Pilih Artikel--
                 </option>
                 {articles.map((article) => (
                   <option key={article.id} value={article.id}>
@@ -100,7 +100,7 @@ const CreateArticleGalleryModal = ({ handleClose, fetchNewArticleGallery }) => {
         <Modal.Footer>
           <Button variant='primary' className='d-flex' onClick={handleCreateArticleGallery}>
             <FaSave size={25} className='pe-2' />
-            Save
+            Simpan
           </Button>
         </Modal.Footer>
       </Modal>

@@ -53,8 +53,8 @@ const EditArticleModal = ({ id, handleClose, fetchNewArticle }) => {
     } else if (title === '' || excerpt === '' || content === '' || categoryValue == '') {
       Swal.fire({
         icon: 'error',
-        title: 'There is empty input field',
-        text: 'Please fill all input fields'
+        title: 'Ada input yang kosong',
+        text: 'Silahkan isi input yang kosong!'
       })
     }
   }
@@ -106,45 +106,45 @@ const EditArticleModal = ({ id, handleClose, fetchNewArticle }) => {
     <>
       <Modal show={true} onHide={handleClose} backdrop='static' keyboard={false} size='xl' scrollable={true} centered={true}>
         <Modal.Header closeButton>
-          <Modal.Title>Update Article</Modal.Title>
+          <Modal.Title>Perbarui Artikel</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form className='px-5'>
             <Form.Group className='mb-3' controlId='formArticleTitle'>
-              <Form.Label>Title</Form.Label>
+              <Form.Label>Judul</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter article title'
+                placeholder='Masukkan judul artikel'
                 style={{ fontWeight: '600' }}
                 onChange={handleTitleChange}
                 value={title}
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formArticleExcerpt'>
-              <Form.Label>Excerpt</Form.Label>
+              <Form.Label>Kutipan</Form.Label>
               <Form.Control
                 as='textarea'
-                placeholder='Enter article excerpt'
+                placeholder='Masukkan kutipan artikel'
                 onKeyDown={autoHeightTextarea}
                 onChange={handleExcerptChange}
                 value={excerpt}
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formArticleContent'>
-              <Form.Label>Content</Form.Label>
+              <Form.Label>Isi</Form.Label>
               <Form.Control
                 as='textarea'
-                placeholder='Enter article content'
+                placeholder='Masukkan isi artikel'
                 onKeyDown={autoHeightTextarea}
                 onChange={handleContentChange}
                 value={content}
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formBasicCheckbox'>
-              <Form.Label>Category</Form.Label>
+              <Form.Label>Kategori</Form.Label>
               <Form.Select value={categoryValue} onChange={handleCategoryValue}>
                 <option value='' disabled={true}>
-                  --Select category--
+                  --Pilih Kategori--
                 </option>
                 {categories.map((category) => (
                   <option key={category.id} value={category.id}>
@@ -158,7 +158,7 @@ const EditArticleModal = ({ id, handleClose, fetchNewArticle }) => {
         <Modal.Footer>
           <Button variant='success' className='d-flex' onClick={handleUpdateArticle}>
             <FaSave size={25} className='pe-2' />
-            Update
+            Perbarui
           </Button>
         </Modal.Footer>
       </Modal>

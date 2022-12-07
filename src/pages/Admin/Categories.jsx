@@ -27,11 +27,12 @@ const Categories = () => {
 
   const handleDelete = async (category) => {
     Swal.fire({
-      title: 'Are you sure you want to delete this category?',
+      title: 'Apakah Anda yakin ingin menghapus kategori ini?',
       text: category.name,
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Delete'
+      confirmButtonText: 'Ya, hapus!',
+      cancelButtonText: 'Tidak'
     }).then(async (result) => {
       if (result.isConfirmed) {
         await deleteCategory(category.id)
@@ -78,7 +79,7 @@ const Categories = () => {
     <Container>
       {isLoading && <LoadingIndicatorComponent />}
       <LayoutAdmin />
-      <h1 className='text-center'>Categories</h1>
+      <h1 className='text-center'>Kategori</h1>
       <button className='floating' onClick={() => setIsModalNewCategory(true)}>
         <AiFillFileAdd size={30} />
       </button>
@@ -87,8 +88,8 @@ const Categories = () => {
           <thead>
             <tr>
               <th>No</th>
-              <th>Category</th>
-              <th>Action</th>
+              <th>Nama Kategori</th>
+              <th>Aksi</th>
             </tr>
           </thead>
           <tbody>

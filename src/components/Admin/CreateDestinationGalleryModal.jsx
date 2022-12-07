@@ -41,8 +41,8 @@ const CreateDestinationGalleryModal = ({ handleClose, fetchNewDestinationGallery
     } else if (image === '') {
       Swal.fire({
         icon: 'error',
-        title: 'There is empty input field',
-        text: 'Please fill all input fields'
+        title: 'Ada input yang kosong',
+        text: 'Silahkan isi input yang kosong!'
       })
     }
   }
@@ -74,19 +74,19 @@ const CreateDestinationGalleryModal = ({ handleClose, fetchNewDestinationGallery
     <>
       <Modal show={true} onHide={handleClose} backdrop='static' keyboard={false} size='xl' scrollable={true} centered={true}>
         <Modal.Header closeButton>
-          <Modal.Title>Create New Image</Modal.Title>
+          <Modal.Title>Tambahkan Gambar Baru</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form className='px-5'>
             <Form.Group className='mb-3' controlId='formArticleGalleryImage'>
-              <Form.Label>Image</Form.Label>
-              <Form.Control type='text' placeholder='Enter image link' style={{ fontWeight: '600' }} onChange={handleImageChange} />
+              <Form.Label>Gambar</Form.Label>
+              <Form.Control type='text' placeholder='Masukkan tautan gambar' style={{ fontWeight: '600' }} onChange={handleImageChange} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formBasicCheckbox'>
-              <Form.Label>Destination</Form.Label>
+              <Form.Label>Destinasi</Form.Label>
               <Form.Select value={destinationValue} onChange={handleDestinationValue}>
                 <option value='' disabled={true}>
-                  --Select Destination--
+                  --Pilih Destinasi--
                 </option>
                 {destinations.map((destination) => (
                   <option key={destination.id} value={destination.id}>
@@ -100,7 +100,7 @@ const CreateDestinationGalleryModal = ({ handleClose, fetchNewDestinationGallery
         <Modal.Footer>
           <Button variant='primary' className='d-flex' onClick={handleCreateDestinationGallery}>
             <FaSave size={25} className='pe-2' />
-            Save
+            Simpan
           </Button>
         </Modal.Footer>
       </Modal>

@@ -15,61 +15,61 @@ const alertIfFoundMissingInput = ({
     Swal.fire({
       icon: 'error',
       title: 'Error',
-      text: '"Full Name" input field should not empty'
+      text: 'Kolom input "Nama Lengkap" tidak boleh kosong'
     })
   } else if (username === '') {
     Swal.fire({
       icon: 'error',
       title: 'Error',
-      text: '"Username" input field should not empty'
+      text: 'Kolom input "Username" tidak boleh kosong'
     })
   } else if (email === '') {
     Swal.fire({
       icon: 'error',
       title: 'Error',
-      text: '"Email Address" input field should not empty'
+      text: 'Kolom input "Alamat Email" tidak boleh kosong'
     })
   } else if (phoneNumber === '') {
     Swal.fire({
       icon: 'error',
       title: 'Error',
-      text: '"Phone Number" input field should not empty'
+      text: 'Kolom input "No.Telepon" tidak boleh kosong'
     })
   } else if (isPhoneNumberValid === false) {
     Swal.fire({
       icon: 'error',
       title: 'Error',
-      text: 'The phone number is invalid. Please check your input!'
+      text: 'Nomor telepon tidak valid. Silahkan cek masukan Anda!'
     })
   } else if (bankAccountNumber === '') {
     Swal.fire({
       icon: 'error',
       title: 'Error',
-      text: '"Bank Account Number" input field should not empty'
+      text: 'Kolom input "No.Rekening" tidak boleh kosong'
     })
   } else if (password === '') {
     Swal.fire({
       icon: 'error',
       title: 'Error',
-      text: '"Password" input field should not empty'
+      text: 'Kolom input "Kata Sandi" tidak boleh kosong'
     })
   } else if (isBothPasswordMatch === 'Not Set') {
     Swal.fire({
       icon: 'error',
       title: 'Error',
-      text: 'Please enter your password and confirmation password!'
+      text: 'Masukkan kata sandi dan konfirmasi kata sandi Anda!'
     })
   } else if (isPasswordValid === false) {
     Swal.fire({
       icon: 'error',
       title: 'Error',
-      text: 'Your password must contain at least 8 characters'
+      text: 'Kata sandi harus berisi setidaknya 8 karakter'
     })
   } else if (isBothPasswordMatch === false) {
     Swal.fire({
       icon: 'error',
       title: 'Error',
-      text: 'The confirmation password does not match'
+      text: 'Konfirmasi kata sandi tidak sesuai'
     })
   }
 }

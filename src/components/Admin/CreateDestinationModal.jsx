@@ -57,8 +57,8 @@ const CreateDestinationModal = ({ handleClose, fetchNewDestination }) => {
     ) {
       Swal.fire({
         icon: 'error',
-        title: 'There is empty input field',
-        text: 'Please fill all input fields'
+        title: 'Ada input yang kosong',
+        text: 'Silahkan isi input yang kosong!'
       })
     }
   }
@@ -72,44 +72,44 @@ const CreateDestinationModal = ({ handleClose, fetchNewDestination }) => {
     <>
       <Modal show={true} onHide={handleClose} backdrop='static' keyboard={false} size='xl' scrollable={true} centered={true}>
         <Modal.Header closeButton>
-          <Modal.Title>Create New Destination</Modal.Title>
+          <Modal.Title>Tambahkan Destinasi Baru</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form className='px-5'>
             <Form.Group className='mb-3' controlId='formDestinationName'>
-              <Form.Label>Name</Form.Label>
-              <Form.Control type='text' placeholder='Enter destination name' style={{ fontWeight: '600' }} onChange={handleNameChange} />
+              <Form.Label>Nama</Form.Label>
+              <Form.Control type='text' placeholder='Masukkan nama destinasi' style={{ fontWeight: '600' }} onChange={handleNameChange} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formDestinationOpenTime'>
-              <Form.Label>Open Time</Form.Label>
-              <Form.Control type='text' placeholder='Enter destination open time' onChange={handleOpenTimeChange} />
+              <Form.Label>Waktu Buka</Form.Label>
+              <Form.Control type='text' placeholder='Masukkan waktu buka destinasi' onChange={handleOpenTimeChange} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formDestinationCloseTime'>
-              <Form.Label>Close Time</Form.Label>
-              <Form.Control type='text' placeholder='Enter destination close time' onChange={handleCloseTimeChange} />
+              <Form.Label>Waktu Tutup</Form.Label>
+              <Form.Control type='text' placeholder='Masukkan waktu tutup destinasi' onChange={handleCloseTimeChange} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formDestinationPrice'>
-              <Form.Label>Price</Form.Label>
-              <Form.Control type='number' placeholder='Enter destination price' onChange={handlePriceChange} />
+              <Form.Label>Harga</Form.Label>
+              <Form.Control type='number' placeholder='Masukkan harga tiket destinasi' onChange={handlePriceChange} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formDestinationRating'>
               <Form.Label>Rating</Form.Label>
-              <Form.Control type='number' placeholder='Enter destination rating' onChange={handleRatingChange} />
+              <Form.Control type='number' placeholder='Masukkan rating' onChange={handleRatingChange} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formDestinationLocation'>
-              <Form.Label>Location</Form.Label>
+              <Form.Label>Lokasi</Form.Label>
               <Form.Control
                 as='textarea'
-                placeholder='Enter article location'
+                placeholder='Masukkan lokasi destinasi'
                 onKeyDown={autoHeightTextarea}
                 onChange={handleLocationChange}
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formDestinationDescription'>
-              <Form.Label>Description</Form.Label>
+              <Form.Label>Deskripsi</Form.Label>
               <Form.Control
                 as='textarea'
-                placeholder='Enter article description'
+                placeholder='Masukkan deskripsi destinasi'
                 onKeyDown={autoHeightTextarea}
                 onChange={handleDescriptionChange}
               />
@@ -119,7 +119,7 @@ const CreateDestinationModal = ({ handleClose, fetchNewDestination }) => {
         <Modal.Footer>
           <Button variant='primary' className='d-flex' onClick={handleCreateDestination}>
             <FaSave size={25} className='pe-2' />
-            Save
+            Simpan
           </Button>
         </Modal.Footer>
       </Modal>

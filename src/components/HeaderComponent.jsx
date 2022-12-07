@@ -52,11 +52,12 @@ const HeaderComponent = () => {
 
   const handleLogout = async () => {
     Swal.fire({
-      title: 'Are you sure?',
-      text: 'You will be logged out!',
+      title: 'Apakah anda yakin ?',
+      text: 'Anda akan keluar dari akun Anda!',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes, logout!'
+      confirmButtonText: 'Ya, keluar!',
+      cancelButtonText: 'Tidak, batalkan!'
     }).then(async (result) => {
       if (result.isConfirmed) {
         setIsLoading(true)

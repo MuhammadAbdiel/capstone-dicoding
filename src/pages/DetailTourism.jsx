@@ -125,18 +125,18 @@ const DetailTourism = () => {
                   <Card.Text>
                     <p>{destination.description}</p>
                     <p>
-                      Time : {destination.open_time} - {destination.close_time}
+                      Waktu buka : {destination.open_time} - {destination.close_time}
                     </p>
-                    <p>Ticket Price : Rp. {destination.price}</p>
-                    <p>Location : {destination.location}</p>
+                    <p>Harga Tiket : Rp. {destination.price}</p>
+                    <p>Lokasi : {destination.location}</p>
                   </Card.Text>
                   {authedUser != null ? (
                     <Link to={`/order/${id}`}>
-                      <Button>Booking Ticket</Button>
+                      <Button>Beli Tiket</Button>
                     </Link>
                   ) : (
                     <Link to='/login'>
-                      <Button>Booking Ticket</Button>
+                      <Button>Beli Tiket</Button>
                     </Link>
                   )}
                 </Card>

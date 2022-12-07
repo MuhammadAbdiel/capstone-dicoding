@@ -53,7 +53,7 @@ const Articles = () => {
     <Container>
       {isLoading && <LoadingIndicatorComponent />}
       <LayoutAdmin />
-      <h1 className='text-center'>Articles</h1>
+      <h1 className='text-center'>Artikel</h1>
       <div className='my-articles d-flex px-3 pb-5 flex-wrap'>
         {articles.map((article) => (
           <Article key={article.id} handleShowModalEdit={handleShowModalEditArticle} article={article} refreshArticle={initData} />

@@ -32,7 +32,7 @@ const Wishlists = () => {
     <>
       <HeaderComponent />
       <Container>
-        <h1 className='text-center py-3'>Wishlists</h1>
+        <h1 className='text-center py-3'>Daftar Keinginan</h1>
         <Row>
           {userWishlists.map((wishlist) => (
             <CardComponent

@@ -42,7 +42,7 @@ const Article = () => {
     <>
       {isLoading && <LoadingIndicatorComponent />}
       <HeaderComponent />
-      <h1 className='text-center pt-3'>Articles Tourism</h1>
+      <h1 className='text-center pt-3'>Artikel Wisata</h1>
       <Container className='my-4'>
         <Row>
           {articles.map((article) => (

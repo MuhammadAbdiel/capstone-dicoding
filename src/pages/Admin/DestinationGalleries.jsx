@@ -16,11 +16,12 @@ const DestinationGalleries = () => {
 
   const handleDelete = async (destinationGallery) => {
     Swal.fire({
-      title: 'Are you sure you want to delete this image?',
+      title: 'Apakah Anda yakin ingin menghapus gambar ini?',
       text: destinationGallery.image,
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Delete'
+      confirmButtonText: 'Ya, hapus!',
+      cancelButtonText: 'Tidak'
     }).then(async (result) => {
       if (result.isConfirmed) {
         await deleteDestinationGallery(destinationGallery.id)
@@ -67,7 +68,7 @@ const DestinationGalleries = () => {
     <Container>
       {isLoading && <LoadingIndicatorComponent />}
       <LayoutAdmin />
-      <h1 className='text-center'>Destination Gallery</h1>
+      <h1 className='text-center'>Galeri Destinasi Wisata</h1>
       <div className='d-flex px-3 pb-5 flex-wrap'>
         {destinationGalleries.map((destinationGallery) => (
           <Col key={destinationGallery.id} className='my-3 px-3' lg={4} md={4} sm={6}>

@@ -76,14 +76,15 @@ const Home = () => {
               </div>
             </Col>
             <Col sm={5} className='p-lg-5' data-aos={'fade-left'}>
-              <h2 className='text-center'>Latest news about travel ?</h2>
+              <h2 className='text-center'>Berita terbaru tentang wisata?</h2>
               <p>
-                On GoWisata, an article page is also available which makes it easier for you to find out the latest news about tourism
-                around Semarang district.
+                {/* On GoWisata, an article page is also available which makes it easier for you to find out the latest news about tourism
+                around Semarang district. */}
+                Di GoWisata, ada halaman artikel yang juga memudahkan Anda untuk menemukan berita terbaru tentang tempat wisata
               </p>
               <div className='d-flex justify-content-end'>
                 <Link to='/articles'>
-                  <Button variant='primary'>View</Button>
+                  <Button variant='primary'>Kunjungi</Button>
                 </Link>
               </div>
             </Col>

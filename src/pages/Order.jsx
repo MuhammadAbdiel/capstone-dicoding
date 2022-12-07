@@ -20,13 +20,13 @@ const Order = () => {
       Swal.fire({
         icon: 'error',
         title: 'Error',
-        text: 'Quantity is required!'
+        text: 'Jumlah tiket harus diisi'
       })
     } else if (quantity === '0') {
       Swal.fire({
         icon: 'error',
         title: 'Error',
-        text: 'Quantity must be greater than 0!'
+        text: 'Jumlah tiket harus lebih dari 0!'
       })
     } else {
       const response = await createTransaction({ quantity }, id)
@@ -35,7 +35,7 @@ const Order = () => {
           Swal.fire({
             icon: 'success',
             title: 'Success',
-            text: 'Transaction created successfully!'
+            text: 'Pemesanan berhasil!'
           })
           navigate('/user/booking')
         }
@@ -74,7 +74,7 @@ const Order = () => {
       <HeaderComponent />
       <Container className='my-3 pb-5'>
         <div className='text-center mb-2'>
-          <h1>Order</h1>
+          <h1>Pesan</h1>
         </div>
         <Row>
           <Col lg={6} md={12} className='mt-3'>
@@ -89,14 +89,14 @@ const Order = () => {
             <Card className='p-3'>
               <Card.Body>
                 <p>{destination.description}</p>
-                <p>Ticket Price : Rp. {destination.price}</p>
+                <p>Harga Tiket : Rp. {destination.price}</p>
                 <Form onSubmit={onSubmitHandler}>
                   <Form.Group controlId='formBasicQuantity'>
-                    <Form.Label>Quantity</Form.Label>
+                    <Form.Label>Jumlah Tiket</Form.Label>
                     <Form.Control type='number' value={quantity} onChange={handleQuantityChange} />
                   </Form.Group>
                   <Button variant='primary' type='submit' className='mt-3'>
-                    Order
+                    Pesan
                   </Button>
                 </Form>
               </Card.Body>

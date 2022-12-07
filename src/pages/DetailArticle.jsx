@@ -24,7 +24,7 @@ const DetailArticle = () => {
         Swal.fire({
           icon: 'success',
           title: 'Success',
-          text: 'Comment has been created!'
+          text: 'Komentar berhasil dibuat!'
         })
         setArticleComments([...articleComments, response.data.comment])
       }
@@ -101,7 +101,7 @@ const DetailArticle = () => {
               <Card.Img className='my-5' variant='top' src={articleGalleries.image} style={{ width: '700px' }} />
             </div>
             <Card.Text className='pb-5'>{article.content}</Card.Text>
-            <h3>Comments</h3>
+            <h3>Komentar</h3>
             {articleComments.map((articleComment) => (
               <Card key={articleComment.id} className='mb-3 p-3'>
                 <Card.Title>{articleComment.user.name}</Card.Title>
@@ -113,16 +113,16 @@ const DetailArticle = () => {
             ))}
             <Form onSubmit={onSubmitHandler} className='mt-5'>
               <Form.Group className='mb-3' controlId='formComment'>
-                <Form.Control onChange={handleCommentChange} value={comment} type='text' placeholder='Enter your comment!' />
+                <Form.Control onChange={handleCommentChange} value={comment} type='text' placeholder='Tambahkan komentar Anda!' />
               </Form.Group>
               {authedUser != null ? (
                 <Button variant='primary' type='submit'>
-                  Submit
+                  Posting
                 </Button>
               ) : (
                 <Link to='/login'>
                   <Button variant='primary' type='button'>
-                    Submit
+                    Posting
                   </Button>
                 </Link>
               )}

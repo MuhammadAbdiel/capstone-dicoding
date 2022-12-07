@@ -50,18 +50,18 @@ const Transactions = () => {
     <Container>
       {isLoading && <LoadingIndicatorComponent />}
       <LayoutAdmin />
-      <h1 className='text-center'>Transactions</h1>
+      <h1 className='text-center'>Transaksi</h1>
       <div className='mx-5 my-4'>
         <Table className='text-center mt-3' striped bordered hover>
           <thead>
             <tr>
               <th>No</th>
-              <th>User</th>
-              <th>Destination</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Transaction Status</th>
-              <th>Action</th>
+              <th>Nama Pengguna</th>
+              <th>Destinasi Wisata</th>
+              <th>Jumlah Tiket</th>
+              <th>Harga</th>
+              <th>Status Transaksi</th>
+              <th>Aksi</th>
             </tr>
           </thead>
           {transactions.length > 0 ? (
@@ -100,7 +100,7 @@ const Transactions = () => {
           ) : (
             <tbody>
               <tr>
-                <td colSpan='4'>No data</td>
+                <td colSpan='4'>Tidak ada data</td>
               </tr>
             </tbody>
           )}

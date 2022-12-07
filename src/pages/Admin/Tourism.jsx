@@ -54,7 +54,7 @@ const Tourism = () => {
     <Container>
       {isLoading && <LoadingIndicatorComponent />}
       <LayoutAdmin />
-      <h1 className='text-center'>Destinations</h1>
+      <h1 className='text-center'>Destinasi</h1>
       <div className='d-flex px-3 pb-5 flex-wrap'>
         {destinations.map((destination) => (
           <CardDestinationAdmin

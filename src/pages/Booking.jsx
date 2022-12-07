@@ -14,12 +14,12 @@ const Booking = () => {
 
   const handleCancelOrder = async (transaction) => {
     Swal.fire({
-      title: 'Are you sure you want to cancel this following order?',
+      title: 'Apakah Anda yakin ingin membatalkan pesanan ini?',
       text: 'Belum dibayar',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'No'
+      confirmButtonText: 'Ya, batalkan!',
+      cancelButtonText: 'Tidak'
     }).then(async (result) => {
       if (result.isConfirmed) {
         const response = await cancelTransaction(transaction.id)
@@ -28,7 +28,7 @@ const Booking = () => {
             Swal.fire({
               icon: 'success',
               title: 'Success',
-              text: 'Order has been canceled!'
+              text: 'Pesanan berhasil dibatalkan!'
             })
             initData()
           }
@@ -88,8 +88,8 @@ const Booking = () => {
                       <p className='text-muted'>
                         {new Date(detail.created_at).toDateString()} {new Date(detail.created_at).toLocaleTimeString()}
                       </p>
-                      <p>Quantity : {detail.quantity}</p>
-                      <p>Total : Rp. {detail.price}</p>
+                      <p>Jumlah Tiket : {detail.quantity}</p>
+                      <p>Total Harga : Rp. {detail.price}</p>
                       {transaction.transaction_status == 0 ? (
                         <div className='badge bg-danger'>Dibatalkan</div>
                       ) : transaction.transaction_status == 1 ? (

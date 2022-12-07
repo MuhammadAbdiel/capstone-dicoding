@@ -63,22 +63,22 @@ const ChangePassword = () => {
     <>
       <HeaderComponent />
       <div>
-        <h3 className='text-center mt-3'>Change Password</h3>
+        <h3 className='text-center mt-3'>Ganti Kata Sandi</h3>
         <div className=' d-flex justify-content-center my-5 '>
           <Form style={{ width: '80%' }} onSubmit={onSubmitHandler} className='register-form'>
             <Form.Group className='mb-3' controlId='formOldPassword'>
-              <Form.Label>Current Password</Form.Label>
-              <Form.Control type='password' placeholder='Enter your current password' value={oldPassword} onChange={setOldPassword} />
+              <Form.Label>Kata sandi saat ini</Form.Label>
+              <Form.Control type='password' placeholder='Masukkan kata sandi saat ini' value={oldPassword} onChange={setOldPassword} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formNewPassword'>
-              <Form.Label>New Password</Form.Label>
-              <Form.Control type='password' placeholder='Enter your new password' value={newPassword} onChange={setNewPassword} />
+              <Form.Label>Kata sandi baru</Form.Label>
+              <Form.Control type='password' placeholder='Masukkan kata sandi baru' value={newPassword} onChange={setNewPassword} />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formConfirmPassword'>
-              <Form.Label>Confirm Password</Form.Label>
+              <Form.Label>Konfirmasi kata sandi</Form.Label>
               <Form.Control
                 type='password'
-                placeholder='Enter your confirm password'
+                placeholder='Masukkan konfirmasi kata sandi'
                 value={confirmPassword}
                 onChange={setConfirmPassword}
               />

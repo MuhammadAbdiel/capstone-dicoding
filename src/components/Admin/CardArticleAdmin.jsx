@@ -10,11 +10,12 @@ import { deleteArticle } from '../../utils/network-data'
 const CardArticlesAdmin = ({ handleShowModalEdit, article, refreshArticle }) => {
   const handleDelete = async (id) => {
     Swal.fire({
-      title: 'Are you sure you want to delete this following article?',
+      title: 'Apakah Anda yakin ingin menghapus artikel ini?',
       text: article.title,
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Delete'
+      confirmButtonText: 'Hapus',
+      cancelButtonText: 'Batal'
     }).then(async (result) => {
       if (result.isConfirmed) {
         await deleteArticle(id)

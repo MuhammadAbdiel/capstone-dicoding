@@ -12,11 +12,12 @@ const ArticleComments = () => {
 
   const handleDelete = async (comment) => {
     Swal.fire({
-      title: 'Are you sure you want to delete this comment?',
+      title: 'Apakah Anda yakin ingin menghapus komentar ini?',
       text: comment.content,
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Delete'
+      confirmButtonText: 'Ya, hapus!',
+      cancelButtonText: 'Tidak'
     }).then(async (result) => {
       if (result.isConfirmed) {
         await deleteArticleComment(comment.id)
@@ -63,16 +64,16 @@ const ArticleComments = () => {
     <Container>
       {isLoading && <LoadingIndicatorComponent />}
       <LayoutAdmin />
-      <h1 className='text-center'>Article Comment</h1>
+      <h1 className='text-center'>Komentar Artikel</h1>
       <div className='mx-5 my-4'>
         <Table className='text-center mt-3' striped bordered hover>
           <thead>
             <tr>
               <th>No</th>
-              <th>User</th>
-              <th>Article</th>
-              <th>Comment</th>
-              <th>Action</th>
+              <th>Nama Pengguna</th>
+              <th>Judul Artikel</th>
+              <th>Komentar</th>
+              <th>Aksi</th>
             </tr>
           </thead>
           {comments.length > 0 ? (
@@ -94,7 +95,7 @@ const ArticleComments = () => {
           ) : (
             <tbody>
               <tr>
-                <td colSpan='5'>No data</td>
+                <td colSpan='5'>Tidak ada data</td>
               </tr>
             </tbody>
           )}

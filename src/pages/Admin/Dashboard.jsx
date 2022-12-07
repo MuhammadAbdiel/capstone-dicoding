@@ -7,7 +7,7 @@ const Dashboard = () => {
     <div>
       <LayoutAdmin />
       <Container>
-        <h1 className='text-center'>Dashboard Admin</h1>
+        <h1 className='text-center'>Admin Dashboard</h1>
       </Container>
     </div>
   )

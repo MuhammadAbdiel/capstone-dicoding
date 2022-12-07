@@ -47,17 +47,17 @@ const ProfileComponent = () => {
           <li className='list-group-item'>Username : {authedUser.username}</li>
           <li className='list-group-item'>Email : {authedUser.email}</li>
           <li className='list-group-item'>No.Telp : {authedUser.phone_number}</li>
-          <li className='list-group-item'>Bank Account Number : {authedUser.bank_account_number}</li>
+          <li className='list-group-item'>No.Rekening : {authedUser.bank_account_number}</li>
           <br />
           <Row className='text-center'>
             <Col sm={5}>
               <Link to='/user/profile/edit'>
-                <Button variant='warning'>Edit Profile</Button>
+                <Button variant='warning'>Edit Profil</Button>
               </Link>
             </Col>
             <Col sm={7}>
               <Link to='/user/profile/change-password'>
-                <Button variant='success'>Change Password</Button>
+                <Button variant='success'>Ganti Kata Sandi</Button>
               </Link>
             </Col>
           </Row>

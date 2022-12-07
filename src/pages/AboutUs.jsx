@@ -30,11 +30,14 @@ const AboutUs = () => {
             </Col>
             <Col sm={6} className='pt-lg-5' data-aos={'fade-left'}>
               <div>
-                <h2>About GoWisata</h2>
+                <h2>Tentang GoWisata</h2>
                 <p>
-                  GoWisata is a platform that is able to provide information to tourists to search for tourism and buy tourist tickets in
+                  {/* GoWisata is a platform that is able to provide information to tourists to search for tourism and buy tourist tickets in
                   the Malang area. With the construction of a website-based system, it is hoped that it will make it easier for tourists to
-                  go to tourist attractions in Malang district.
+                  go to tourist attractions in Malang district. */}
+                  GoWisata adalah sebuah platform yang mampu memberikan informasi kepada wisatawan untuk mencari wisata dan membeli tiket
+                  wisata di wilayah Malang. Dengan dibangunnya sistem berbasis website, diharapkan akan memudahkan wisatawan untuk berwisata
+                  ke objek wisata di wilayah Malang.
                 </p>
               </div>
             </Col>
@@ -45,18 +48,23 @@ const AboutUs = () => {
             </Col>
             <Col sm={6} className='pt-lg-5' data-aos={'fade-left'}>
               <div>
-                <h2>How To Use GoWisata</h2>
+                <h2>Bagaimana cara menggunakan GoWisata?</h2>
                 <p>
-                  When opening the GoWisata website for the first time, users will be directed to the home page which contains an
+                  {/* When opening the GoWisata website for the first time, users will be directed to the home page which contains an
                   explanation of tourism features and articles on the website, and users can only see the home page, articles, tourism, and
                   about us the first time they open the GoWisata website. so that users can buy tickets and open the my booking page, the
-                  user is required to register and log in first so that users can buy tickets and open the mybooking page
+                  user is required to register and log in first so that users can buy tickets and open the mybooking page */}
+                  Saat membuka website GoWisata untuk pertama kalinya, pengguna akan diarahkan ke halaman home yang berisi penjelasan fitur
+                  wisata dan artikel pada website, dan pengguna hanya dapat melihat halaman home, artikel, wisata, dan tentang kami pada
+                  saat pertama kali membuka website GoWisata. Jadi, jika pengguna ingin membeli tiket dan membuka halaman pesanan saya,
+                  pengguna diwajibkan untuk mendaftar dan login terlebih dahulu sehingga pengguna dapat membeli tiket dan membuka halaman
+                  pesanan saya
                 </p>
               </div>
             </Col>
           </Row>
 
-          <h2 className='text-center p-5'>Developer Team</h2>
+          <h2 className='text-center p-5'>Tim Developer</h2>
 
           <Row>
             <Col className='my-2' lg={3} md={4} sm={6}>
