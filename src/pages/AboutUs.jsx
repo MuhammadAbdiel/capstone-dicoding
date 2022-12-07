@@ -26,7 +26,7 @@ const AboutUs = () => {
         <Container>
           <Row className='d-flex justify-content-evenly'>
             <Col sm={4} className='mb-5'>
-              <Card.Img className='img-fluid' height={400} width={800} src={Airplane} data-aos={'fade-right'} />
+              <Card.Img className='img-fluid' height={400} width={800} src={Airplane} alt='logo gowisata' data-aos={'fade-right'} />
             </Col>
             <Col sm={6} className='pt-lg-5' data-aos={'fade-left'}>
               <div>
@@ -41,7 +41,7 @@ const AboutUs = () => {
           </Row>
           <Row className='d-flex justify-content-evenly'>
             <Col sm={4} className='mb-5'>
-              <Card.Img className='img-fluid' height={400} width={800} src={HowUse} data-aos={'fade-right'} />
+              <Card.Img className='img-fluid' height={400} width={800} src={HowUse} alt='step by step ilustrasi' data-aos={'fade-right'} />
             </Col>
             <Col sm={6} className='pt-lg-5' data-aos={'fade-left'}>
               <div>

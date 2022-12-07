@@ -16,7 +16,7 @@ const CardArticlesComponent = ({ image_article, title, excerpt, id }) => {
       <Card className='h-100' data-aos='zoom-in'>
         <Card.Body>
           <Card.Title>{title}</Card.Title>
-          <img loading='lazy' src={image_article.image} className='card-img-top my-3' alt='' />
+          <img loading='lazy' src={image_article.image} className='card-img-top my-3' alt={title} />
           <Card.Text className='descrp'>{excerpt}</Card.Text>
           <div className='d-flex justify-content-end'>
             <Link to={`/articles/${id}`}>
