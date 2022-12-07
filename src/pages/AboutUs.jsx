@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import FooterComponent from '../components/FooterComponent'
 import HeaderComponent from '../components/HeaderComponent'
 import { Card } from 'react-bootstrap'
@@ -9,8 +9,14 @@ import Logo from '../images/logo192.png'
 import HowUse from '../images/assets/step_by_step_ilustration.webp'
 // import CardGroup from 'react-bootstrap/CardGroup'
 import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs'
+import AOS from 'aos'
 
 const AboutUs = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000
+    })
+  }, [])
   return (
     <div>
       <HeaderComponent />
@@ -18,9 +24,9 @@ const AboutUs = () => {
         <Container>
           <Row className='d-flex justify-content-evenly'>
             <Col sm={5}>
-              <Card.Img height={400} width={800} src={Logo} />
+              <Card.Img height={400} width={800} src={Logo} data-aos={'fade-right'} />
             </Col>
-            <Col sm={5} className='mt-5 pt-lg-5'>
+            <Col sm={5} className='mt-5 pt-lg-5' data-aos={'fade-left'}>
               <div>
                 <h2>About GoWisata</h2>
                 <p>
@@ -33,9 +39,9 @@ const AboutUs = () => {
           </Row>
           <Row className='d-flex justify-content-evenly'>
             <Col sm={5}>
-              <Card.Img height={400} width={800} src={HowUse} />
+              <Card.Img height={400} width={800} src={HowUse} data-aos={'fade-right'} />
             </Col>
-            <Col sm={5} className='mt-5 pt-lg-5'>
+            <Col sm={5} className='mt-5 pt-lg-5' data-aos={'fade-left'}>
               <div>
                 <h2>How To Use GoWisata</h2>
                 <p>
