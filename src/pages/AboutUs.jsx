@@ -6,6 +6,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Logo from '../images/logo192.png'
+import Airplane from '../images/profile/airplane.png'
+import Abdiel from '../images/profile/abdiel.jpg'
 import HowUse from '../images/assets/step_by_step_ilustration.webp'
 // import CardGroup from 'react-bootstrap/CardGroup'
 import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs'
@@ -23,10 +25,10 @@ const AboutUs = () => {
       <div className='mt-5 '>
         <Container>
           <Row className='d-flex justify-content-evenly'>
-            <Col sm={5}>
-              <Card.Img height={400} width={800} src={Logo} data-aos={'fade-right'} />
+            <Col sm={4} className='mb-5'>
+              <Card.Img className='img-fluid' height={400} width={800} src={Airplane} data-aos={'fade-right'} />
             </Col>
-            <Col sm={5} className='mt-5 pt-lg-5' data-aos={'fade-left'}>
+            <Col sm={6} className='pt-lg-5' data-aos={'fade-left'}>
               <div>
                 <h2>About GoWisata</h2>
                 <p>
@@ -38,10 +40,10 @@ const AboutUs = () => {
             </Col>
           </Row>
           <Row className='d-flex justify-content-evenly'>
-            <Col sm={5}>
-              <Card.Img height={400} width={800} src={HowUse} data-aos={'fade-right'} />
+            <Col sm={4} className='mb-5'>
+              <Card.Img className='img-fluid' height={400} width={800} src={HowUse} data-aos={'fade-right'} />
             </Col>
-            <Col sm={5} className='mt-5 pt-lg-5' data-aos={'fade-left'}>
+            <Col sm={6} className='pt-lg-5' data-aos={'fade-left'}>
               <div>
                 <h2>How To Use GoWisata</h2>
                 <p>
@@ -63,15 +65,15 @@ const AboutUs = () => {
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 1</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly mt-3'>
-                    <a href=''>
+                    <a href='' target='_blank' rel='noreferrer'>
                       <BsGithub size={30} color='#000000' />
                     </a>
 
-                    <a href=''>
+                    <a href='' target='_blank' rel='noreferrer'>
                       <BsLinkedin size={30} color='#00A0DC' />
                     </a>
 
-                    <a href=''>
+                    <a href='' target='_blank' rel='noreferrer'>
                       <BsInstagram size={30} color='#CE5614' />
                     </a>
                   </Card.Text>
@@ -80,19 +82,19 @@ const AboutUs = () => {
             </Col>
             <Col className='my-2' lg={3} md={4} sm={6}>
               <Card className='h-100' data-aos='fade-up' data-aos-easing='linear'>
-                <Card.Img variant='top' src={Logo} />
+                <Card.Img variant='top' src={Abdiel} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
-                  <Card.Title className='text-center'>Developer 2</Card.Title>
+                  <Card.Title className='text-center'>Muhammad Abdiel Firjatullah</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly mt-3'>
-                    <a href=''>
+                    <a href='https://github.com/MuhammadAbdiel' target='_blank' rel='noreferrer'>
                       <BsGithub size={30} color='#000000' />
                     </a>
 
-                    <a href=''>
+                    <a href='https://www.linkedin.com/in/muhammad-abdiel-firjatullah-19a1a7206/' target='_blank' rel='noreferrer'>
                       <BsLinkedin size={30} color='#00A0DC' />
                     </a>
 
-                    <a href=''>
+                    <a href='https://instagram.com/abdielfirdie' target='_blank' rel='noreferrer'>
                       <BsInstagram size={30} color='#CE5614' />
                     </a>
                   </Card.Text>
@@ -105,15 +107,15 @@ const AboutUs = () => {
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 3</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly mt-3'>
-                    <a href=''>
+                    <a href='' target='_blank' rel='noreferrer'>
                       <BsGithub size={30} color='#000000' />
                     </a>
 
-                    <a href=''>
+                    <a href='' target='_blank' rel='noreferrer'>
                       <BsLinkedin size={30} color='#00A0DC' />
                     </a>
 
-                    <a href=''>
+                    <a href='' target='_blank' rel='noreferrer'>
                       <BsInstagram size={30} color='#CE5614' />
                     </a>
                   </Card.Text>
@@ -126,15 +128,15 @@ const AboutUs = () => {
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 4</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly mt-3'>
-                    <a href=''>
+                    <a href='' target='_blank' rel='noreferrer'>
                       <BsGithub size={30} color='#000000' />
                     </a>
 
-                    <a href=''>
+                    <a href='' target='_blank' rel='noreferrer'>
                       <BsLinkedin size={30} color='#00A0DC' />
                     </a>
 
-                    <a href=''>
+                    <a href='' target='_blank' rel='noreferrer'>
                       <BsInstagram size={30} color='#CE5614' />
                     </a>
                   </Card.Text>

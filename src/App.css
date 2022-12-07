@@ -68,16 +68,17 @@ input[type='number'] {
   min-height: 100vh;
 }
 
-.header-link > a {
+.header-link>a {
   color: white;
   transition: none;
 }
 
-.header-link > a:hover {
+.header-link>a:hover {
   background-color: #0b8fc4;
   border-radius: 10px;
   color: white;
 }
+
 .nav-link-admin button {
   color: white;
   background-color: transparent;
@@ -90,10 +91,12 @@ input[type='number'] {
   border-radius: 10px;
   color: white;
 }
+
 #collasible-nav-dropdown {
   margin: 0 1rem;
   padding: 0.5rem 1rem;
 }
+
 footer {
   background-color: #e8f9fd;
   top: 100%;
@@ -145,7 +148,7 @@ footer {
   width: 70%;
 }
 
-.not-found > * {
+.not-found>* {
   margin: 0;
 }
 
@@ -260,6 +263,66 @@ header {
   .content_active {
     margin-left: 17rem;
     width: calc(100%-17rem);
+  }
+
+  /* Jumbotron */
+
+  .jumbotron-text-overlay {
+    width: 90%;
+    position: absolute;
+    margin-left: 20px;
+    color: white;
+  }
+
+  .jumbotron-text-overlay h1 {
+    font-size: 5.2vw;
+  }
+
+  .jumbotron-text-overlay p {
+    font-size: 3vw;
+  }
+
+  .jumbotron-text-overlay button {
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #0aa1dd;
+    font-size: 2.2vw;
+  }
+
+  .jumbotron-text-overlay button:hover {
+    background-color: #0893ca;
+  }
+}
+
+@media (max-width: 350px) {
+  .jumbotron-text-overlay {
+    width: 90%;
+    position: absolute;
+    margin-left: 20px;
+    color: white;
+  }
+
+  .jumbotron-text-overlay h1 {
+    font-size: 7.2vw;
+  }
+
+  .jumbotron-text-overlay p {
+    font-size: 4vw;
+  }
+
+  .jumbotron-text-overlay button {
+    padding: 8px 23px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #0aa1dd;
+    font-size: 4.2vw;
+  }
+
+  .jumbotron-text-overlay button:hover {
+    background-color: #0893ca;
   }
 }
 

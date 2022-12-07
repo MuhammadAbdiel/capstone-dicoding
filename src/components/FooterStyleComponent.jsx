@@ -8,13 +8,13 @@ const FooterStyleComponent = () => {
       <div className='card-body'>
         <h5 className='card-title'>GoWisata</h5>
         <p className='card-text'>Contact us for further information.</p>
-        <a href='#' className='btn mx-1' style={{ backgroundColor: '#0AA1DD' }}>
+        <a href='#' className='btn mx-1 text-white' style={{ backgroundColor: '#0AA1DD' }}>
           <FaInstagram />
         </a>
-        <a href='#' className='btn mx-1' style={{ backgroundColor: '#0AA1DD' }}>
+        <a href='#' className='btn mx-1 text-white' style={{ backgroundColor: '#0AA1DD' }}>
           <FaLinkedin />
         </a>
-        <a href='#' className='btn mx-1' style={{ backgroundColor: '#0AA1DD' }}>
+        <a href='#' className='btn mx-1 text-white' style={{ backgroundColor: '#0AA1DD' }}>
           <FaInstagram />
         </a>
       </div>
