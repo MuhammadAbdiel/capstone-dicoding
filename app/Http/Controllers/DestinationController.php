@@ -129,4 +129,15 @@ class DestinationController extends Controller
             'data' => $transaction->load(['user', 'detail_transactions']),
         ]);
     }
+
+    public function cancelOrder(Transaction $transaction)
+    {
+        $transaction->transaction_status = 0;
+        $transaction->save();
+
+        return response()->json([
+            'message' => 'success',
+            'data' => $transaction->load(['user', 'detail_transactions']),
+        ]);
+    }
 }

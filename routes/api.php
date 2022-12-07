@@ -113,6 +113,9 @@ Route::middleware('auth:sanctum')->group(function () {
   // Route put Orders
   Route::put('/orders/{destination}', [DestinationController::class, 'order']);
 
+  // Route put Cancel Order
+  Route::put('/orders/{transaction}/cancel', [DestinationController::class, 'cancelOrder']);
+
   // Route get Data Admin
   Route::get('/admin/data', [UserController::class, 'getDataAdmin']);
 
