@@ -66,8 +66,8 @@ const Transactions = () => {
           </thead>
           {transactions.length > 0 ? (
             <tbody>
-              {transactions.map((transaction) =>
-                transaction.detail_transactions.map((detail, index) => (
+              {transactions.map((transaction, index) =>
+                transaction.detail_transactions.map((detail) => (
                   <tr key={detail.id}>
                     <td>{index + 1}</td>
                     <td>{transaction.user.name}</td>
