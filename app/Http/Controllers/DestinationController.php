@@ -111,7 +111,7 @@ class DestinationController extends Controller
 
         $total_price = $destination->price * $request->quantity;
 
-        $transaction = Transaction::where('user_id', auth()->user()->id)->where('transaction_status', 0)->first();
+        $transaction = Transaction::where('user_id', auth()->user()->id)->where('transaction_status', 1)->first();
 
         if (empty($transaction)) {
             $transaction = Transaction::create([
