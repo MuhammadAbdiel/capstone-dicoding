@@ -95,7 +95,7 @@ const Booking = () => {
                       ) : transaction.transaction_status == 1 ? (
                         <>
                           <div className='badge bg-warning'>Belum dibayar</div>
-                          <Link className='d-block'>
+                          <Link className='d-block' to={`/user/booking/${transaction.id}`}>
                             <div className='badge bg-primary'>Bayar</div>
                           </Link>
                         </>

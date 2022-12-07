@@ -93,24 +93,24 @@ const HeaderComponent = () => {
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='ms-auto header-link'>
               <Link className='nav-link mx-3 px-3' to='/articles'>
-                Article
+                Artikel
               </Link>
               <Link className='nav-link mx-3 px-3' to='/tourism'>
-                Explore
+                Jelajahi
               </Link>
               {/* Link explore nih bisa dimanfaatkan sebagai halaman yang memberikan rekomendasi tempat wisata (Semacam pages explore instagram) */}
               {authedUser != null && (
                 <Link to='/user/booking' className='nav-link mx-3 px-3'>
-                  My Booking
+                  Pesanan Saya
                 </Link>
               )}
               <Link className='nav-link mx-3 px-3' to='/about'>
-                About Us
+                Tentang Kami
               </Link>
               {authedUser != null ? (
                 <NavDropdown title={name} id='collasible-nav-dropdown' className='header-link'>
                   <Link className='dropdown-item' to='/user/profile'>
-                    Profile
+                    Profil
                   </Link>
                   {isAdmin && (
                     <Link className='dropdown-item' to='/admin'>
@@ -118,7 +118,7 @@ const HeaderComponent = () => {
                     </Link>
                   )}
                   <Link className='dropdown-item' to='/user/saved'>
-                    Saved
+                    Tersimpan
                   </Link>
                   <NavDropdown.Divider />
                   <Link className='dropdown-item' onClick={handleLogout}>

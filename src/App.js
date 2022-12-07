@@ -26,6 +26,7 @@ import ArticleComments from './pages/Admin/ArticleComments'
 import DestinationGalleries from './pages/Admin/DestinationGalleries'
 import Transactions from './pages/Admin/Transactions'
 import ChangePassword from './pages/ChangePassword'
+import Payment from './pages/Payment'
 const App = () => {
   return (
     <main>
@@ -37,6 +38,7 @@ const App = () => {
         <Route path='/admin/login' element={<LoginAdmin />} />
         <Route path='/user/profile' element={<Profile />} />
         <Route path='/user/booking' element={<Booking />} />
+        <Route path='/user/booking/:id' element={<Payment />} />
         <Route path='/user/saved' element={<Wishlists />} />
         <Route path='/user/profile/edit' element={<ProfileEdit />} />
         <Route path='/user/profile/change-password' element={<ChangePassword />} />

@@ -34,7 +34,7 @@ const Home = () => {
           <h1>Bukit Teletubbies Batu</h1>
           <p>Nikmati liburan bersama keluarga melihat indah nya pemandangan Bukit Teletubbies Batu</p>
           <Link to='/tourism'>
-            <button>Start My Trip</button>
+            <button>Mulai Perjalanan</button>
           </Link>
         </div>
       </div>
@@ -45,17 +45,22 @@ const Home = () => {
               <Card.Img className='img-fluid' height={400} width={800} src={Travel} data-aos={'fade-right'} />
             </Col>
             <Col data-aos={'fade-left'} sm={5} className='p-lg-5'>
-              <h2 className='text-center'>Want to Go on Vacation?</h2>
+              <h2 className='text-center'>Ingin pergi liburan?</h2>
               <p>
-                Have you ever been confused to find information about interesting tours in Malang? or looking for places that are popular
+                {/* Have you ever been confused to find information about interesting tours in Malang? or looking for places that are popular
                 and have never been visited in Malang? .now GoWisata is here to solve your problem, at GoWisata you can find information
                 about interesting tourism in the Malang area, not only information about tourism, at GoWisata there are also travel ticket
                 bookings available which will definitely make it easier for you and your family to visit various tourist attractions in
-                poor. Come on, register your account immediately and order tickets now.
+                poor. Come on, register your account immediately and order tickets now.  */}
+                Pernahkah Anda bingung untuk menemukan informasi mengenai tempat wisata yang menarik di Malang? atau mencari tempat yang
+                populer dan belum pernah Anda kunjungi di Malang? Sekarang GoWisata ada untuk menyelesaikan masalah Anda, di GoWisata Anda
+                bisa menemukan informasi tentang tempat wisata yang menarik di area Malang, tidak hanya informasi tentang tempat wisata, di
+                GoWisata Anda bisa membeli Ticket Wisata yang mana hal tersebut sangat memudahkan Anda dan keluarga Anda untuk mengunjungi
+                berbagai tempat wisata yang menarik. Ayo, daftarkan akunmu segera dan pesan ticket sekarang.
               </p>
               <div className='d-flex justify-content-end'>
                 <Link to='/tourism'>
-                  <Button variant='primary'>View</Button>
+                  <Button variant='primary'>Kunjungi</Button>
                 </Link>
               </div>
             </Col>
@@ -94,7 +99,7 @@ const Home = () => {
             </div>
             <p style={{ textAlign: 'justify' }}>
               Aplikasi GoWisata memberikan informasi mengenai artikel tempat liburan, yang mana membuat anda tidak bingung untuk mencari
-              tempat wisata yang ada di kabupaten Malang. (masing bingung logo apa)
+              tempat wisata yang ada di Kabupaten Malang.
             </p>
           </div>
           <div className='col mt-2'>
@@ -111,8 +116,7 @@ const Home = () => {
               <FaMoneyCheckAlt className='fs-1 border border-dark border-2 rounded-circle p-1' />
             </div>
             <p style={{ textAlign: 'justify' }}>
-              Tersedia fitur pembayaran dengan berbagai macam Bank Account Number yang mana memudahkan anda dalam melakukan proses masuk
-              tanpa membeli tiket secara offline.
+              Tersedia fitur pembayaran yang memudahkan Anda dalam melakukan proses masuk tanpa membeli tiket secara offline.
             </p>
           </div>
         </div>
