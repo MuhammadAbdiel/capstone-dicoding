@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Card, Col, Container, Row } from 'react-bootstrap'
+import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import FooterComponent from '../components/FooterComponent'
 import HeaderComponent from '../components/HeaderComponent'
-import { getAllTransactionUsers } from '../utils/network-data'
+import { AiFillDelete } from 'react-icons/ai'
+import { cancelTransaction, getAllTransactionUsers } from '../utils/network-data'
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom'
 import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
@@ -11,7 +12,38 @@ const Booking = () => {
   const [transactions, setTransactions] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
-  useEffect(() => {
+  const handleCancelOrder = async (transaction) => {
+    Swal.fire({
+      title: 'Are you sure you want to cancel this following order?',
+      text: 'Belum dibayar',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No'
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const response = await cancelTransaction(transaction.id)
+        try {
+          if (!response.error) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Success',
+              text: 'Order has been canceled!'
+            })
+            initData()
+          }
+        } catch (e) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: e
+          })
+        }
+      }
+    })
+  }
+
+  const initData = () => {
     const fetchData = async () => {
       setIsLoading(true)
       const response = await getAllTransactionUsers()
@@ -31,6 +63,10 @@ const Booking = () => {
     }
 
     fetchData()
+  }
+
+  useEffect(() => {
+    initData()
   }, [])
 
   return (
@@ -43,11 +79,11 @@ const Booking = () => {
             transaction.detail_transactions.map((detail) => (
               <Col sm={12} className='mt-3' key={transaction.id}>
                 <Card className='px-3 py-1'>
-                  <Row>
+                  <Row className='align-items-center'>
                     <Col lg={3} md={5} className='my-3'>
                       <Card.Img src={detail.destination.destination_galleries[0].image}></Card.Img>
                     </Col>
-                    <Col lg={9} md={7} className='my-3'>
+                    <Col lg={8} md={6} className='my-3'>
                       <h5>{detail.destination.name}</h5>
                       <p className='text-muted'>
                         {new Date(detail.created_at).toDateString()} {new Date(detail.created_at).toLocaleTimeString()}
@@ -67,6 +103,13 @@ const Booking = () => {
                         <div className='badge bg-success'>Sudah dibayar</div>
                       )}
                     </Col>
+                    {transaction.transaction_status == 1 && (
+                      <Col lg={1} md={1}>
+                        <Button variant='danger' type='button' onClick={() => handleCancelOrder(transaction)}>
+                          <AiFillDelete color='white' />
+                        </Button>
+                      </Col>
+                    )}
                   </Row>
                 </Card>
               </Col>

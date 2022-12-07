@@ -426,6 +426,16 @@ async function updateTransaction({ transaction_status }, transaction_id) {
   return { error: false, data: responseJson }
 }
 
+async function cancelTransaction(transaction_id) {
+  const response = await fetchWithToken(`${BASE_URL}/orders/${transaction_id}/cancel`, {
+    method: 'PUT'
+  })
+
+  const responseJson = await response.json()
+
+  return { error: false, data: responseJson }
+}
+
 // Article Comment
 
 async function getArticleCommentsByArticleId(article_id) {
@@ -542,6 +552,7 @@ export {
   getTransactionById,
   createTransaction,
   updateTransaction,
+  cancelTransaction,
   getArticleCommentsByArticleId,
   getAllArticleComments,
   getArticleCommentById,
