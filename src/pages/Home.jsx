@@ -42,7 +42,7 @@ const Home = () => {
         <Container>
           <Row className='d-flex justify-content-evenly'>
             <Col sm={5}>
-              <Card.Img className='img-fluid' height={400} width={800} src={Travel} data-aos={'fade-right'} />
+              <Card.Img className='img-fluid' height={400} width={800} src={Travel} alt='adventure-journey' data-aos={'fade-right'} />
             </Col>
             <Col data-aos={'fade-left'} sm={5} className='p-lg-5'>
               <h2 className='text-center'>Want to Go on Vacation?</h2>
@@ -67,7 +67,7 @@ const Home = () => {
           <Row className='d-flex justify-content-evenly'>
             <Col sm={5}>
               <div>
-                <Card.Img className='img-fluid' height={500} width={800} src={Article} data-aos={'fade-right'} />
+                <Card.Img className='img-fluid' height={500} width={800} src={Article} alt='read articles' data-aos={'fade-right'} />
               </div>
             </Col>
             <Col sm={5} className='p-lg-5' data-aos={'fade-left'}>
