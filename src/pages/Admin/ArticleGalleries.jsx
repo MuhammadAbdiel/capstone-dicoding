@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Card, Col, Container } from 'react-bootstrap'
 import LayoutAdmin from '../../components/Admin/LayoutAdmin'
-import { AiFillDelete, AiFillEdit, AiFillFileAdd } from 'react-icons/ai'
+import { AiFillDelete, AiFillFileAdd } from 'react-icons/ai'
 import { deleteArticleGallery, getAllArticleGalleries } from '../../utils/network-data'
 import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import CreateArticleGalleryModal from '../../components/Admin/CreateArticleGalleryModal'
@@ -75,9 +75,6 @@ const ArticleGalleries = () => {
               <Card.Img variant='top' src={articleGallery.image} />
               <Card.Body>
                 <div className='d-flex justify-content-end'>
-                  <Button variant='secondary' type='button' className='mx-3'>
-                    <AiFillEdit color='white' />
-                  </Button>
                   <Button variant='danger' type='button' onClick={() => handleDelete(articleGallery)}>
                     <AiFillDelete color='white' />
                   </Button>

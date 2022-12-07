@@ -272,8 +272,8 @@ async function getDestinationGalleryById(destination_gallery_id) {
 }
 
 async function createDestinationGallery({ image, destination_id }) {
-  const response = await fetchWithToken(`${BASE_URL}/galleries/${destination_id}`, {
-    method: 'PUT',
+  const response = await fetchWithToken(`${BASE_URL}/destination_galleries`, {
+    method: 'POST',
     body: JSON.stringify({ image, destination_id })
   })
 

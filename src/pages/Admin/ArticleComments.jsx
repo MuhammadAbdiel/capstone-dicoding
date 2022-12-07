@@ -1,16 +1,105 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
+import React, { useState, useEffect } from 'react'
+import { Button, Container, Table } from 'react-bootstrap'
 import LayoutAdmin from '../../components/Admin/LayoutAdmin'
-import { AiFillFileAdd } from 'react-icons/ai'
+import { AiFillDelete } from 'react-icons/ai'
+import Swal from 'sweetalert2'
+import { deleteArticleComment, getAllArticleComments } from '../../utils/network-data'
+import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 
 const ArticleComments = () => {
+  const [comments, setComments] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleDelete = async (comment) => {
+    Swal.fire({
+      title: 'Are you sure you want to delete this comment?',
+      text: comment.content,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Delete'
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await deleteArticleComment(comment.id)
+        try {
+          initData()
+        } catch (e) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: e
+          })
+        }
+      }
+    })
+  }
+
+  const initData = () => {
+    const fetchData = async () => {
+      setIsLoading(true)
+      const response = await getAllArticleComments()
+      try {
+        if (!response.error) {
+          setIsLoading(false)
+          setComments(response.data.data)
+        }
+      } catch (error) {
+        setIsLoading(false)
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error
+        })
+      }
+    }
+
+    fetchData()
+  }
+
+  useEffect(() => {
+    initData()
+  }, [])
+
   return (
     <Container>
+      {isLoading && <LoadingIndicatorComponent />}
       <LayoutAdmin />
-      <h1 className='text-center'>Article Comments</h1>
-      <button className='floating'>
-        <AiFillFileAdd size={30} />
-      </button>
+      <h1 className='text-center'>Article Comment</h1>
+      <div className='mx-5 my-4'>
+        <Table className='text-center mt-3' striped bordered hover>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>User</th>
+              <th>Article</th>
+              <th>Comment</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          {comments.length > 0 ? (
+            <tbody>
+              {comments.map((comment, index) => (
+                <tr key={comment.id}>
+                  <td>{index + 1}</td>
+                  <td>{comment.user.name}</td>
+                  <td>{comment.article.title}</td>
+                  <td>{comment.content}</td>
+                  <td>
+                    <Button variant='danger' type='button' onClick={() => handleDelete(comment)}>
+                      <AiFillDelete color='white' />
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          ) : (
+            <tbody>
+              <tr>
+                <td colSpan='5'>No data</td>
+              </tr>
+            </tbody>
+          )}
+        </Table>
+      </div>
     </Container>
   )
 }
