@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HeaderComponent from '../components/HeaderComponent'
 import FooterComponent from '../components/FooterComponent'
 import { Card } from 'react-bootstrap'
@@ -13,8 +13,14 @@ import { FaInfoCircle } from 'react-icons/fa'
 import { FaMoneyCheckAlt } from 'react-icons/fa'
 import { FaPencilRuler } from 'react-icons/fa'
 // import FooterStyleComponent from '../components/FooterStyleComponent'
+import AOS from 'aos'
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000
+    })
+  }, [])
   return (
     <>
       <HeaderComponent />
@@ -36,9 +42,9 @@ const Home = () => {
         <Container>
           <Row className='d-flex justify-content-evenly'>
             <Col sm={5}>
-              <Card.Img height={400} width={800} src={Travel} />
+              <Card.Img height={400} width={800} src={Travel} data-aos={'fade-right'} />
             </Col>
-            <Col sm={5} className='mt-5 p-lg-5'>
+            <Col data-aos={'fade-left'} sm={5} className='mt-5 p-lg-5'>
               <h2 className='text-center'>Want to Go on Vacation?</h2>
               <p>
                 Have you ever been confused to find information about interesting tours in Malang? or looking for places that are popular
@@ -61,10 +67,10 @@ const Home = () => {
           <Row className='d-flex justify-content-evenly'>
             <Col sm={5} className='mt-5'>
               <div>
-                <Card.Img height={500} width={800} src={Article} />
+                <Card.Img height={500} width={800} src={Article} data-aos={'fade-right'} />
               </div>
             </Col>
-            <Col sm={5} className='mt-5 p-lg-5'>
+            <Col sm={5} className='mt-5 p-lg-5' data-aos={'fade-left'}>
               <h2 className='text-center'>Latest news about travel ?</h2>
               <p>
                 On GoWisata, an article page is also available which makes it easier for you to find out the latest news about tourism
