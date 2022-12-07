@@ -20,7 +20,7 @@ class TransactionController extends Controller
     {
         abort_if(Gate::denies('index-transaction'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return new TransactionResource(Transaction::with(['user', 'detail_transactions'])->latest()->get());
+        return new TransactionResource(Transaction::with(['user', 'detail_transactions.destination.destination_galleries'])->latest()->get());
     }
 
     /**
@@ -54,7 +54,7 @@ class TransactionController extends Controller
     {
         abort_if(Gate::denies('show-transaction'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return new TransactionResource($transaction->load(['user', 'detail_transactions']));
+        return new TransactionResource($transaction->load(['user', 'detail_transactions.destination.destination_galleries']));
     }
 
     /**
