@@ -5,18 +5,23 @@ import HeaderComponent from '../components/HeaderComponent'
 import { getAllTransactionUsers } from '../utils/network-data'
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom'
+import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
 
 const Booking = () => {
   const [transactions, setTransactions] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true)
       const response = await getAllTransactionUsers()
       try {
         if (!response.error) {
+          setIsLoading(false)
           setTransactions(response.data.transactions)
         }
       } catch (error) {
+        setIsLoading(false)
         Swal.fire({
           icon: 'error',
           title: 'Error',
@@ -30,6 +35,7 @@ const Booking = () => {
 
   return (
     <>
+      {isLoading && <LoadingIndicatorComponent />}
       <HeaderComponent />
       <Container className='my-3 pb-5'>
         <Row>
@@ -44,19 +50,21 @@ const Booking = () => {
                     <Col lg={9} md={7} className='my-3'>
                       <h5>{detail.destination.name}</h5>
                       <p className='text-muted'>
-                        {new Date(detail.updated_at).toDateString()} {new Date(detail.updated_at).toLocaleTimeString()}
+                        {new Date(detail.created_at).toDateString()} {new Date(detail.created_at).toLocaleTimeString()}
                       </p>
                       <p>Quantity : {detail.quantity}</p>
                       <p>Total : Rp. {detail.price}</p>
-                      {transaction.transaction_status == 1 ? (
+                      {transaction.transaction_status == 0 ? (
+                        <div className='badge bg-danger'>Dibatalkan</div>
+                      ) : transaction.transaction_status == 1 ? (
                         <>
-                          <div className='badge bg-danger'>Belum lunas</div>
+                          <div className='badge bg-warning'>Belum dibayar</div>
                           <Link className='d-block'>
                             <div className='badge bg-primary'>Bayar</div>
                           </Link>
                         </>
                       ) : (
-                        <div className='badge bg-success'>Lunas</div>
+                        <div className='badge bg-success'>Sudah dibayar</div>
                       )}
                     </Col>
                   </Row>
