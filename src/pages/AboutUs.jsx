@@ -58,7 +58,7 @@ const AboutUs = () => {
 
           <Row>
             <Col className='my-2' lg={3} md={4} sm={6}>
-              <Card className='h-100'>
+              <Card className='h-100' data-aos='fade-down' data-aos-easing='linear'>
                 <Card.Img variant='top' src={Logo} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 1</Card.Title>
@@ -79,7 +79,7 @@ const AboutUs = () => {
               </Card>
             </Col>
             <Col className='my-2' lg={3} md={4} sm={6}>
-              <Card className='h-100'>
+              <Card className='h-100' data-aos='fade-up' data-aos-easing='linear'>
                 <Card.Img variant='top' src={Logo} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 2</Card.Title>
@@ -100,7 +100,7 @@ const AboutUs = () => {
               </Card>
             </Col>
             <Col className='my-2' lg={3} md={4} sm={6}>
-              <Card className='h-100'>
+              <Card className='h-100' data-aos='fade-down' data-aos-easing='linear'>
                 <Card.Img variant='top' src={Logo} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 3</Card.Title>
@@ -121,7 +121,7 @@ const AboutUs = () => {
               </Card>
             </Col>
             <Col className='my-2' lg={3} md={4} sm={6}>
-              <Card className='h-100'>
+              <Card className='h-100' data-aos='fade-up' data-aos-easing='linear'>
                 <Card.Img variant='top' src={Logo} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
                   <Card.Title className='text-center'>Developer 4</Card.Title>
