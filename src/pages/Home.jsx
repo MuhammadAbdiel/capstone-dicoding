@@ -102,8 +102,8 @@ const Home = () => {
               <FaPencilRuler className='fs-1 border border-dark border-2 rounded-circle p-1' />
             </div>
             <p style={{ textAlign: 'justify' }}>
-              Tersedia juga informasi mengenai peraturan masing-masing wisata. Peraturan ini juga dibuat berdasarkan beberapa komplain dari
-              pengunjung lain yang merasa terganggu karena pengunjung lainnya yang meresahkan.
+              Tersedia juga informasi mengenai peraturan di beberapa tempat wisata. Peraturan ini juga dibuat berdasarkan beberapa komplain
+              dari pengunjung lain yang merasa terganggu karena pengunjung lainnya yang meresahkan.
             </p>
           </div>
           <div className='col mt-2'>

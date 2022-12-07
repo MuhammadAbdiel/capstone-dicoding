@@ -120,9 +120,6 @@ const HeaderComponent = () => {
                   <Link className='dropdown-item' to='/user/saved'>
                     Saved
                   </Link>
-                  <Link className='dropdown-item' to='/user/setting'>
-                    Setting
-                  </Link>
                   <NavDropdown.Divider />
                   <Link className='dropdown-item' onClick={handleLogout}>
                     Logout

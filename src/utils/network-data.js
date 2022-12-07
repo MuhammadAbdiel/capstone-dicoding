@@ -33,14 +33,12 @@ async function updateProfile({ name, username, email, phone_number, bank_account
 }
 
 async function changePassword({ old_password, password, password_confirmation }) {
-  const response = await fetchWithToken(`${BASE_URL}/user/change-password`, {
+  await fetchWithToken(`${BASE_URL}/user/change-password`, {
     method: 'PUT',
     body: JSON.stringify({ old_password, password, password_confirmation })
   })
 
-  const responseJson = await response.json()
-
-  return { error: false, data: responseJson }
+  return { error: false }
 }
 
 // User
