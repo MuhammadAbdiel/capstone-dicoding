@@ -74,7 +74,7 @@ const SideBarAdmin = ({ active }) => {
         className={active ? 'sidebar_active vertical-nav bg-white' : 'vertical-nav bg-white sidebar'}
       >
         <div className='py-3 px-3 mb-4' style={{ backgroundColor: '#0AA1DD' }}>
-          <div className='media d-flex align-items-center' style={{ height: '40.4px' }}>
+          <div className='media d-flex align-items-center' style={{ height: '40px' }}>
             <div className='media-body text-white'>{authedAdmin !== null && <h4 className='m-0'>{authedAdmin.name}</h4>}</div>
           </div>
         </div>
