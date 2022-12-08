@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import Swal from 'sweetalert2'
 import CardArticlesComponent from '../components/CardArticlesComponent'
-// import FooterComponent from '../components/FooterComponent'
-import FooterStyleComponent from '../components/FooterStyleComponent'
+import FooterComponent from '../components/FooterComponent'
+// import FooterStyleComponent from '../components/FooterStyleComponent'
 import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
 import { getAllArticles } from '../utils/network-data'
 
@@ -54,7 +54,7 @@ const Article = () => {
           ))}
         </Row>
       </Container>
-      <FooterStyleComponent />
+      <FooterComponent />
     </>
   )
 }
