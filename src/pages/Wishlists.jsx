@@ -1,21 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import FooterComponent from '../components/FooterComponent'
 import { getAllWishlistUsers } from '../utils/network-data'
 import Swal from 'sweetalert2'
 import CardComponent from '../components/CardComponent'
+import AppContext from '../context/AppContext'
 
 const Wishlists = () => {
   const [userWishlists, setUserWishlists] = useState([])
+  const { setIsLoading } = useContext(AppContext)
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true)
       const response = await getAllWishlistUsers()
       try {
         if (!response.error) {
+          setIsLoading(false)
           setUserWishlists(response.data.wishlists)
         }
       } catch (error) {
+        setIsLoading(false)
         Swal.fire({
           icon: 'error',
           title: 'Error',
