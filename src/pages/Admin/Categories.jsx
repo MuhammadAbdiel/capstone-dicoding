@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Table from 'react-bootstrap/Table'
 import { AiFillDelete, AiFillEdit, AiFillFileAdd } from 'react-icons/ai'
 import { Button, Container } from 'react-bootstrap'
 import { deleteCategory, getAllCategories } from '../../utils/network-data'
 import Swal from 'sweetalert2'
 // import { Link } from 'react-router-dom'
-import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import CreateCategoryModal from '../../components/Admin/CreateCategoryModal'
 import EditCategoryModal from '../../components/Admin/EditCategoryModal'
+import AppContext from '../../context/AppContext'
 
 const Categories = () => {
   const [categories, setCategories] = useState([])
   const [idCategory, setIdCategory] = useState(0)
   const [isModalNewCategory, setIsModalNewCategory] = useState(false)
   const [isModalEditCategory, setIsModalEditCategory] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-
+  const { setIsLoading } = useContext(AppContext)
   const handleCloseModalNewCategory = () => setIsModalNewCategory(false)
   const handleCloseModalEditCategory = () => setIsModalEditCategory(false)
 
@@ -76,7 +75,6 @@ const Categories = () => {
 
   return (
     <Container>
-      {isLoading && <LoadingIndicatorComponent />}
       <h1 className='text-center'>Kategori</h1>
       <button className='floating' onClick={() => setIsModalNewCategory(true)}>
         <AiFillFileAdd size={30} />

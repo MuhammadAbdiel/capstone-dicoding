@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Swal from 'sweetalert2'
 import { Col, Container, Row } from 'react-bootstrap'
 import ArticleGallery from '../../images/dashboard/article_gallery.png'
@@ -12,15 +12,15 @@ import {
   getAllDestinations,
   getAllTransactions
 } from '../../utils/network-data'
-import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import Category from '../../images/dashboard/categories.png'
 import Comment from '../../images/dashboard/comments.png'
 import DestinationGallery from '../../images/dashboard/destination_gallery.png'
 import Destination from '../../images/dashboard/destination.png'
 import Transaction from '../../images/dashboard/transaction.png'
+import AppContext from '../../context/AppContext'
 
 const Dashboard = () => {
-  const [isLoading, setIsLoading] = useState(false)
+  const { setIsLoading } = useContext(AppContext)
   const [articles, setArticles] = useState([])
   const [articleGalleries, setArticleGalleries] = useState([])
   const [articleComments, setArticleComments] = useState([])
@@ -147,7 +147,6 @@ const Dashboard = () => {
 
   return (
     <>
-      {isLoading && <LoadingIndicatorComponent />}
       <Container>
         <h1 className='text-center mb-5'>Admin Dashboard</h1>
         <Row className='justify-content-center'>

@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Button, Container, Table } from 'react-bootstrap'
 import { getAllTransactions } from '../../utils/network-data'
 import Swal from 'sweetalert2'
-import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import { AiFillEdit } from 'react-icons/ai'
 import EditModalTransaction from '../../components/Admin/EditModalTransaction'
+import AppContext from '../../context/AppContext'
 
 const Transactions = () => {
   const [transactions, setTransactions] = useState([])
   const [idTransaction, setIdTransaction] = useState(0)
   const [isModalEditTransaction, setIsModalEditTransaction] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-
+  const { setIsLoading } = useContext(AppContext)
   const handleCloseModalEditTransaction = () => setIsModalEditTransaction(false)
 
   const handleShowModalEditTransaction = (id) => {
@@ -47,7 +46,6 @@ const Transactions = () => {
 
   return (
     <Container>
-      {isLoading && <LoadingIndicatorComponent />}
       <h1 className='text-center'>Transaksi</h1>
       <div className='mx-5 my-4'>
         <Table className='text-center mt-3' striped bordered hover>

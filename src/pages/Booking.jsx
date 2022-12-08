@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import FooterComponent from '../components/FooterComponent'
 import { AiFillDelete } from 'react-icons/ai'
 import { cancelTransaction, getAllTransactionUsers } from '../utils/network-data'
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom'
-import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
+import AppContext from '../context/AppContext'
 
 const Booking = () => {
   const [transactions, setTransactions] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const { setIsLoading } = useContext(AppContext)
 
   const handleCancelOrder = async (transaction) => {
     Swal.fire({
@@ -70,7 +70,6 @@ const Booking = () => {
 
   return (
     <>
-      {isLoading && <LoadingIndicatorComponent />}
       <Container className='my-3 pb-5'>
         <Row>
           {transactions.map((transaction) =>

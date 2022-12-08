@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import CardComponent from '../components/CardComponent'
 import FooterComponent from '../components/FooterComponent'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { getAllDestinations } from '../utils/network-data'
 import Swal from 'sweetalert2'
-import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
+import AppContext from '../context/AppContext'
 
 const Explore = () => {
   const [destinations, setDestinations] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const { setIsLoading } = useContext(AppContext)
 
   const initData = () => {
     const fetchData = async () => {
@@ -38,7 +38,6 @@ const Explore = () => {
 
   return (
     <>
-      {isLoading && <LoadingIndicatorComponent />}
       <Container className='my-4'>
         <Row>
           {destinations.map((destination) => (

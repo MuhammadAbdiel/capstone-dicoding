@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import Swal from 'sweetalert2'
 import CardArticlesComponent from '../components/CardArticlesComponent'
 // import FooterComponent from '../components/FooterComponent'
 import FooterStyleComponent from '../components/FooterStyleComponent'
-import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
+import AppContext from '../context/AppContext'
 import { getAllArticles } from '../utils/network-data'
 
 const Article = () => {
   const [articles, setArticles] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const { setIsLoading } = useContext(AppContext)
 
   const initData = () => {
     const fetchData = async () => {
@@ -39,7 +39,6 @@ const Article = () => {
 
   return (
     <>
-      {isLoading && <LoadingIndicatorComponent />}
       <h1 className='text-center pt-3'>Artikel Wisata</h1>
       <Container className='my-4'>
         <Row>

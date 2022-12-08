@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { AiFillFileAdd } from 'react-icons/ai'
 import { getAllDestinations } from '../../utils/network-data'
 import Swal from 'sweetalert2'
-import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import { Container } from 'react-bootstrap'
 import CardDestinationAdmin from '../../components/Admin/CardDestinationAdmin'
 import CreateDestinationModal from '../../components/Admin/CreateDestinationModal'
 import EditDestinationModal from '../../components/Admin/EditDestinationModal'
+import AppContext from '../../context/AppContext'
 
 const Tourism = () => {
   const [destinations, setDestinations] = useState([])
   const [idDestination, setIdDestination] = useState(0)
   const [isModalNewDestination, setIsModalNewDestination] = useState(false)
   const [isModalEditDestination, setIsModalEditDestination] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-
+  const { setIsLoading } = useContext(AppContext)
   const handleCloseModalNewDestination = () => setIsModalNewDestination(false)
   const handleCloseModalEditDestination = () => setIsModalEditDestination(false)
 
@@ -51,7 +50,6 @@ const Tourism = () => {
 
   return (
     <Container>
-      {isLoading && <LoadingIndicatorComponent />}
       <h1 className='text-center'>Destinasi</h1>
       <div className='d-flex px-3 pb-5 flex-wrap'>
         {destinations.map((destination) => (

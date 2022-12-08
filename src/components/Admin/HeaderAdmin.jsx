@@ -1,36 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
 import { FiLogOut } from 'react-icons/fi'
 import Swal from 'sweetalert2'
-import { getUserLoggedAdmin, logoutAdmin } from '../../utils/network-data'
+import { logoutAdmin } from '../../utils/network-data'
+import AppContext from '../../context/AppContext'
 
 const HeaderAdmin = ({ active, setActive }) => {
-  const [authedAdmin, setAuthedAdmin] = useState(null)
+  const { authedUser, setAuthedUser, isAdmin, setIsAdmin, setIsLoading } = useContext(AppContext)
   const navigate = useNavigate()
-
-  useEffect(() => {
-    if (!localStorage.getItem('accessToken')) {
-      setAuthedAdmin(null)
-    } else {
-      const fetchData = async () => {
-        const response = await getUserLoggedAdmin()
-        try {
-          if (!response.error) {
-            setAuthedAdmin(response.data.data)
-          }
-        } catch (error) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: error
-          })
-        }
-      }
-
-      fetchData()
-    }
-  }, [])
 
   const handleLogout = async () => {
     Swal.fire({
@@ -42,13 +20,18 @@ const HeaderAdmin = ({ active, setActive }) => {
       cancelButtonText: 'Tidak'
     }).then(async (result) => {
       if (result.isConfirmed) {
+        setIsLoading(true)
         const response = await logoutAdmin()
         try {
           if (!response.error) {
+            setIsLoading(false)
+            setAuthedUser(null)
+            setIsAdmin(false)
             localStorage.removeItem('accessToken')
-            navigate('/')
+            navigate('/admin/login')
           }
         } catch (e) {
+          setIsLoading(false)
           Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -58,7 +41,11 @@ const HeaderAdmin = ({ active, setActive }) => {
       }
     })
   }
-
+  useEffect(() => {
+    if (!isAdmin) {
+      navigate('/admin/login')
+    }
+  }, [])
   return (
     <>
       <header style={{ backgroundColor: '#0AA1DD', zIndex: '1' }} className={active ? 'sidebar_active p-3' : 'p-3 sidebar'}>
@@ -75,7 +62,7 @@ const HeaderAdmin = ({ active, setActive }) => {
               <FaBars />
             </i>
           </button>
-          {authedAdmin != null && (
+          {authedUser != null && (
             <button onClick={handleLogout} className='btn px-3 py-2'>
               <FiLogOut size={20} className='me-2' />
               Logout

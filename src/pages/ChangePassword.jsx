@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import FooterStyleComponent from '../components/FooterStyleComponent'
-import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
 import useInput from '../components/useInput'
 import Swal from 'sweetalert2'
 import { changePassword } from '../utils/network-data'
+import AppContext from '../context/AppContext'
 
 const ChangePassword = () => {
   const [oldPassword, setOldPassword] = useInput('')
   const [newPassword, setNewPassword] = useInput('')
   const [confirmPassword, setConfirmPassword] = useInput('')
-  const [isLoading, setIsLoading] = useState(false)
+  const { setIsLoading } = useContext(AppContext)
   const navigate = useNavigate()
 
   const onSubmitHandler = async (e) => {
@@ -100,7 +100,6 @@ const ChangePassword = () => {
         </div>
       </div>
       <FooterStyleComponent />
-      {isLoading && <LoadingIndicatorComponent />}
     </>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import Swal from 'sweetalert2'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
@@ -6,49 +6,12 @@ import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 // import PropTypes from 'prop-types'
 import { Link, useNavigate } from 'react-router-dom'
-import { getUserLogged, logout } from '../utils/network-data'
-import LoadingIndicatorComponent from './LoadingIndicatorComponent'
+import { logout } from '../utils/network-data'
+import AppContext from '../context/AppContext'
 
 const HeaderComponent = () => {
-  const [authedUser, setAuthedUser] = useState(null)
-  const [name, setName] = useState('')
-  const [isAdmin, setIsAdmin] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
+  const { authedUser, setAuthedUser, isAdmin, setIsLoading } = useContext(AppContext)
   const navigate = useNavigate()
-
-  useEffect(() => {
-    if (!localStorage.getItem('accessToken')) {
-      setAuthedUser(null)
-      setName('')
-      setIsLoading(false)
-    } else {
-      const fetchData = async () => {
-        setIsLoading(true)
-        const response = await getUserLogged()
-        try {
-          if (!response.error) {
-            setIsLoading(false)
-
-            setAuthedUser(response.data.data)
-            setName(response.data.data.name)
-          }
-        } catch (error) {
-          setIsLoading(false)
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: error
-          })
-        }
-
-        if (response.data.data.role === 'admin') {
-          setIsAdmin(true)
-        }
-      }
-
-      fetchData()
-    }
-  }, [])
 
   const handleLogout = async () => {
     Swal.fire({
@@ -65,6 +28,7 @@ const HeaderComponent = () => {
         try {
           if (!response.error) {
             setIsLoading(false)
+            setAuthedUser(null)
             localStorage.removeItem('accessToken')
             navigate('/login')
           }
@@ -82,7 +46,6 @@ const HeaderComponent = () => {
 
   return (
     <>
-      {isLoading && <LoadingIndicatorComponent />}
       <Navbar collapseOnSelect expand='lg' style={{ backgroundColor: '#0AA1DD' }} variant='dark' className='py-3'>
         <Container>
           <Navbar.Brand>
@@ -109,7 +72,7 @@ const HeaderComponent = () => {
                 Tentang Kami
               </Link>
               {authedUser != null ? (
-                <NavDropdown title={name} id='collasible-nav-dropdown' className='header-link'>
+                <NavDropdown title={authedUser.name} id='collasible-nav-dropdown' className='header-link'>
                   <Link className='dropdown-item' to='/user/profile'>
                     Profil
                   </Link>

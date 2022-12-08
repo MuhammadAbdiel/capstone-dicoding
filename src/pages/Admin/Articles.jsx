@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { default as Article } from '../../components/Admin/CardArticleAdmin'
 import { AiFillFileAdd } from 'react-icons/ai'
 import CreateArticleModal from '../../components/Admin/CreateArticleModal'
 import { getAllArticles } from '../../utils/network-data'
 import Swal from 'sweetalert2'
-import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import { Container } from 'react-bootstrap'
 import EditArticleModal from '../../components/Admin/EditArticleModal'
+import AppContext from '../../context/AppContext'
+
 const Articles = () => {
   const [articles, setArticles] = useState([])
   const [idArticle, setIdArticle] = useState(0)
   const [isModalNewArticle, setIsModalNewArticle] = useState(false)
   const [isModalEditArticle, setIsModalEditArticle] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-
+  const { setIsLoading } = useContext(AppContext)
   const handleCloseModalNewArticle = () => setIsModalNewArticle(false)
   const handleCloseModalEditArticle = () => setIsModalEditArticle(false)
 
@@ -50,7 +50,6 @@ const Articles = () => {
 
   return (
     <Container>
-      {isLoading && <LoadingIndicatorComponent />}
       <h1 className='text-center'>Artikel</h1>
       <div className='my-articles d-flex px-3 pb-5 flex-wrap'>
         {articles.map((article) => (

@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Container } from 'react-bootstrap'
 import FooterComponent from '../components/FooterComponent'
 import { getDataAdmin } from '../utils/network-data'
 import Swal from 'sweetalert2'
-import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
 import PaymentImage from '../images/credit-card.png'
-
+import AppContext from '../context/AppContext'
 const Payment = () => {
   const [dataAdmin, setDataAdmin] = useState({})
-  const [isLoading, setIsLoading] = useState(false)
+  const { setIsLoading } = useContext(AppContext)
 
   const initData = () => {
     const fetchData = async () => {
@@ -37,7 +36,6 @@ const Payment = () => {
 
   return (
     <>
-      {isLoading && <LoadingIndicatorComponent />}
       <Container>
         <h1 className='my-3 text-center'>Pembayaran</h1>
         <div className='alert alert-success'>

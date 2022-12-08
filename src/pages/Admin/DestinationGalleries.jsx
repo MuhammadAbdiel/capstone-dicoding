@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Button, Card, Col, Container } from 'react-bootstrap'
 import { AiFillDelete, AiFillFileAdd } from 'react-icons/ai'
 import { deleteDestinationGallery, getAllDestinationGalleries } from '../../utils/network-data'
-import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import CreateDestinationGalleryModal from '../../components/Admin/CreateDestinationGalleryModal'
 import Swal from 'sweetalert2'
+import AppContext from '../../context/AppContext'
 
 const DestinationGalleries = () => {
   const [destinationGalleries, setDestinationGalleries] = useState([])
   const [isModalNewDestinationGallery, setIsModalNewDestinationGallery] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-
+  const { setIsLoading } = useContext(AppContext)
   const handleCloseModalNewDestinationGallery = () => setIsModalNewDestinationGallery(false)
 
   const handleDelete = async (destinationGallery) => {
@@ -65,7 +64,6 @@ const DestinationGalleries = () => {
 
   return (
     <Container>
-      {isLoading && <LoadingIndicatorComponent />}
       <h1 className='text-center'>Galeri Destinasi Wisata</h1>
       <div className='d-flex px-3 pb-5 flex-wrap'>
         {destinationGalleries.map((destinationGallery) => (

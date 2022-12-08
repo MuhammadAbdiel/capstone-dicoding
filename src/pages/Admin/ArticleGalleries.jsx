@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Button, Card, Col, Container } from 'react-bootstrap'
 import { AiFillDelete, AiFillFileAdd } from 'react-icons/ai'
 import { deleteArticleGallery, getAllArticleGalleries } from '../../utils/network-data'
-import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import CreateArticleGalleryModal from '../../components/Admin/CreateArticleGalleryModal'
 import Swal from 'sweetalert2'
+import AppContext from '../../context/AppContext'
 
 const ArticleGalleries = () => {
   const [articleGalleries, setArticleGalleries] = useState([])
   const [isModalNewArticleGallery, setIsModalNewArticleGallery] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const { setIsLoading } = useContext(AppContext)
 
   const handleCloseModalNewArticleGallery = () => setIsModalNewArticleGallery(false)
 
@@ -65,7 +65,6 @@ const ArticleGalleries = () => {
 
   return (
     <Container>
-      {isLoading && <LoadingIndicatorComponent />}
       <h1 className='text-center'>Galeri Artikel</h1>
       <div className='d-flex px-3 pb-5 flex-wrap'>
         {articleGalleries.map((articleGallery) => (

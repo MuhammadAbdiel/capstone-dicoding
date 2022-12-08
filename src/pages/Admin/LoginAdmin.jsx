@@ -7,8 +7,9 @@ import useInput from '../../components/useInput'
 import { loginAdmin, putAccessToken } from '../../utils/network-data'
 import { IoMdCloseCircle } from 'react-icons/io'
 import { alertIfFoundMissingInput } from '../../utils/alertMissingInputForm'
-import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import Swal from 'sweetalert2'
+import { useContext } from 'react'
+import AppContext from '../../context/AppContext'
 // import FooterComponent from '../components/FooterComponent'
 
 const LoginAdmin = () => {
@@ -17,7 +18,7 @@ const LoginAdmin = () => {
   const [password, handlePasswordChange] = useInput('')
   const [isEmailValid, setIsEmailValid] = useState('Not Set')
   const [isPasswordValid, setIsPasswordValid] = useState('Not Set')
-  const [isLoading, setIsLoading] = useState(false)
+  const { setAuthedUser, isAdmin, setIsAdmin, setIsLoading } = useContext(AppContext)
 
   useEffect(() => {
     if (email !== '') {
@@ -43,15 +44,30 @@ const LoginAdmin = () => {
     }
   }, [password])
 
+  useEffect(() => {
+    if (isAdmin) {
+      navigate('/admin')
+    }
+  }, [])
+
   const onSubmitHandler = async (event) => {
     event.preventDefault()
     if (email !== '' && password !== '' && isEmailValid && isPasswordValid) {
+      const getLogged = async () => {
+        const response = await getUserLogged()
+        setAuthedUser(response.data.data)
+        if (response.data.data.role === 'admin') {
+          setIsAdmin(true)
+        }
+      }
       setIsLoading(true)
       const response = await loginAdmin({ email, password })
+      console.log(response)
       try {
         if (!response.error && !response.data.message) {
-          setIsLoading(false)
           putAccessToken(response.data.access_token)
+          getLogged()
+          setIsLoading(false)
           navigate('/admin')
         } else {
           setIsLoading(false)
@@ -76,7 +92,6 @@ const LoginAdmin = () => {
 
   return (
     <>
-      {isLoading && <LoadingIndicatorComponent />}
       <div className=' d-flex justify-content-center my-5 '>
         <Form style={{ width: '80%' }} onSubmit={onSubmitHandler}>
           <Form.Group

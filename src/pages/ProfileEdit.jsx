@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Row, Col, InputGroup } from 'react-bootstrap'
@@ -9,9 +9,9 @@ import Swal from 'sweetalert2'
 import { alertIfFoundMissingInput } from '../utils/alertMissingInputForm'
 import { IoMdCloseCircle } from 'react-icons/io'
 import { updateProfile } from '../utils/network-data'
-import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
 import NotFound from '../components/NotFound'
 import { getUserLogged } from '../utils/network-data'
+import AppContext from '../context/AppContext'
 
 const ProfileEdit = () => {
   const [username, handleUsernameChange] = useInput('')
@@ -21,8 +21,8 @@ const ProfileEdit = () => {
   const [bankAccountNumber, handleBankAccountNumberChange] = useInput('')
   const [isEmailValid, setIsEmailValid] = useState('Not Set')
   const [isPhoneNumberValid, setIsPhoneNumberValid] = useState('Not Set')
-  const [isLoading, setIsLoading] = useState(false)
   const [authedUser, setAuthedUser] = useState('Not Set')
+  const { setIsLoading } = useContext(AppContext)
 
   useEffect(() => {
     if (!localStorage.getItem('accessToken')) {
@@ -213,7 +213,6 @@ const ProfileEdit = () => {
         </div>
       </div>
       <FooterStyleComponent />
-      {isLoading && <LoadingIndicatorComponent />}
     </>
   )
 }

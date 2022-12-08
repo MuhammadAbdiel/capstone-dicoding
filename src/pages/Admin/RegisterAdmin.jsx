@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { InputGroup } from 'react-bootstrap'
@@ -8,8 +8,9 @@ import Swal from 'sweetalert2'
 import { alertIfFoundMissingInput } from '../../utils/alertMissingInputForm'
 import { IoMdCloseCircle } from 'react-icons/io'
 import { putAccessToken, registerAdmin } from '../../utils/network-data'
-import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import FooterComponent from '../../components/FooterComponent'
+import AppContext from '../../context/AppContext'
+
 const Register = () => {
   const navigate = useNavigate()
   const [fullname, handleFullnameChange] = useInput('')
@@ -23,7 +24,7 @@ const Register = () => {
   const [isPasswordValid, setIsPasswordValid] = useState('Not Set')
   const [isBothPasswordMatch, setIsBothPasswordMatch] = useState('Not Set')
   const [isPhoneNumberValid, setIsPhoneNumberValid] = useState('Not Set')
-  const [isLoading, setIsLoading] = useState(false)
+  const { setIsLoading } = useContext(AppContext)
   useEffect(() => {
     if (email !== '') {
       if (/\S+@\S+\.\S+/.test(email)) {
@@ -235,7 +236,6 @@ const Register = () => {
         </div>
       </div>
       <FooterComponent />
-      {isLoading && <LoadingIndicatorComponent />}
     </>
   )
 }
