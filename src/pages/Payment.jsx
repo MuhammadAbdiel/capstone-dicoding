@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import FooterComponent from '../components/FooterComponent'
-import HeaderComponent from '../components/HeaderComponent'
 import { getDataAdmin } from '../utils/network-data'
 import Swal from 'sweetalert2'
 import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
@@ -39,7 +38,6 @@ const Payment = () => {
   return (
     <>
       {isLoading && <LoadingIndicatorComponent />}
-      <HeaderComponent />
       <Container>
         <h1 className='my-3 text-center'>Pembayaran</h1>
         <div className='alert alert-success'>

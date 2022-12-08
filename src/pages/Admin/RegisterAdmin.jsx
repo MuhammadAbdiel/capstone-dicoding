@@ -10,7 +10,6 @@ import { IoMdCloseCircle } from 'react-icons/io'
 import { putAccessToken, registerAdmin } from '../../utils/network-data'
 import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import FooterComponent from '../../components/FooterComponent'
-import LayoutAdmin from '../../components/Admin/LayoutAdmin'
 const Register = () => {
   const navigate = useNavigate()
   const [fullname, handleFullnameChange] = useInput('')
@@ -131,7 +130,6 @@ const Register = () => {
 
   return (
     <>
-      <LayoutAdmin />
       <div>
         <h1 className='text-center'>Daftar sebagai Admin</h1>
         <div className=' d-flex justify-content-center my-5 '>

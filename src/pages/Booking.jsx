@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import FooterComponent from '../components/FooterComponent'
-import HeaderComponent from '../components/HeaderComponent'
 import { AiFillDelete } from 'react-icons/ai'
 import { cancelTransaction, getAllTransactionUsers } from '../utils/network-data'
 import Swal from 'sweetalert2'
@@ -72,7 +71,6 @@ const Booking = () => {
   return (
     <>
       {isLoading && <LoadingIndicatorComponent />}
-      <HeaderComponent />
       <Container className='my-3 pb-5'>
         <Row>
           {transactions.map((transaction) =>

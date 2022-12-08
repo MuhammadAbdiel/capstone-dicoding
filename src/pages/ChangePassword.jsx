@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import FooterStyleComponent from '../components/FooterStyleComponent'
-import HeaderComponent from '../components/HeaderComponent'
 import LoadingIndicatorComponent from '../components/LoadingIndicatorComponent'
 import useInput from '../components/useInput'
 import Swal from 'sweetalert2'
@@ -61,7 +60,6 @@ const ChangePassword = () => {
 
   return (
     <>
-      <HeaderComponent />
       <div>
         <h3 className='text-center mt-3'>Ganti Kata Sandi</h3>
         <div className=' d-flex justify-content-center my-5 '>

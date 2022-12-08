@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Container, Table } from 'react-bootstrap'
-import LayoutAdmin from '../../components/Admin/LayoutAdmin'
 import { AiFillDelete } from 'react-icons/ai'
 import Swal from 'sweetalert2'
 import { deleteArticleComment, getAllArticleComments } from '../../utils/network-data'
@@ -63,7 +62,6 @@ const ArticleComments = () => {
   return (
     <Container>
       {isLoading && <LoadingIndicatorComponent />}
-      <LayoutAdmin />
       <h1 className='text-center'>Komentar Artikel</h1>
       <div className='mx-5 my-4'>
         <Table className='text-center mt-3' striped bordered hover>

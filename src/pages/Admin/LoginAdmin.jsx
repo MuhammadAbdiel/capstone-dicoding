@@ -9,7 +9,6 @@ import { IoMdCloseCircle } from 'react-icons/io'
 import { alertIfFoundMissingInput } from '../../utils/alertMissingInputForm'
 import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
 import Swal from 'sweetalert2'
-import LayoutAdmin from '../../components/Admin/LayoutAdmin'
 // import FooterComponent from '../components/FooterComponent'
 
 const LoginAdmin = () => {
@@ -78,7 +77,6 @@ const LoginAdmin = () => {
   return (
     <>
       {isLoading && <LoadingIndicatorComponent />}
-      <LayoutAdmin />
       <div className=' d-flex justify-content-center my-5 '>
         <Form style={{ width: '80%' }} onSubmit={onSubmitHandler}>
           <Form.Group
