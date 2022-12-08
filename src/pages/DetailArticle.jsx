@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import FooterComponent from '../components/FooterComponent'
-import HeaderComponent from '../components/HeaderComponent'
 import Card from 'react-bootstrap/Card'
 import { Link, useParams } from 'react-router-dom'
 import { createArticleComment, getArticleById, getArticleCommentsByArticleId, getUserLogged } from '../utils/network-data'
@@ -90,7 +89,6 @@ const DetailArticle = () => {
 
   return (
     <div>
-      <HeaderComponent />
       <Card>
         <Container>
           <Card.Body>

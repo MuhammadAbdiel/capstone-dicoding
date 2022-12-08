@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import FooterComponent from '../components/FooterComponent'
-import HeaderComponent from '../components/HeaderComponent'
 import { getAllWishlistUsers } from '../utils/network-data'
 import Swal from 'sweetalert2'
 import CardComponent from '../components/CardComponent'
@@ -30,7 +29,6 @@ const Wishlists = () => {
 
   return (
     <>
-      <HeaderComponent />
       <Container>
         <h1 className='text-center py-3'>Daftar Keinginan</h1>
         <Row>

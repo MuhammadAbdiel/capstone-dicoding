@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import LayoutAdmin from '../../components/Admin/LayoutAdmin'
 import { AiFillFileAdd } from 'react-icons/ai'
 import { getAllDestinations } from '../../utils/network-data'
 import Swal from 'sweetalert2'
@@ -53,7 +52,6 @@ const Tourism = () => {
   return (
     <Container>
       {isLoading && <LoadingIndicatorComponent />}
-      <LayoutAdmin />
       <h1 className='text-center'>Destinasi</h1>
       <div className='d-flex px-3 pb-5 flex-wrap'>
         {destinations.map((destination) => (

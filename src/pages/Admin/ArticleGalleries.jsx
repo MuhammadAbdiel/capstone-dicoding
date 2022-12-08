@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Card, Col, Container } from 'react-bootstrap'
-import LayoutAdmin from '../../components/Admin/LayoutAdmin'
 import { AiFillDelete, AiFillFileAdd } from 'react-icons/ai'
 import { deleteArticleGallery, getAllArticleGalleries } from '../../utils/network-data'
 import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
@@ -67,7 +66,6 @@ const ArticleGalleries = () => {
   return (
     <Container>
       {isLoading && <LoadingIndicatorComponent />}
-      <LayoutAdmin />
       <h1 className='text-center'>Galeri Artikel</h1>
       <div className='d-flex px-3 pb-5 flex-wrap'>
         {articleGalleries.map((articleGallery) => (

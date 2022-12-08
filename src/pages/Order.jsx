@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap'
 import FooterComponent from '../components/FooterComponent'
-import HeaderComponent from '../components/HeaderComponent'
 import useInput from '../components/useInput'
 import { createTransaction, getDestinationById } from '../utils/network-data'
 import Swal from 'sweetalert2'
@@ -71,7 +70,6 @@ const Order = () => {
 
   return (
     <>
-      <HeaderComponent />
       <Container className='my-3 pb-5'>
         <div className='text-center mb-2'>
           <h1>Pesan</h1>

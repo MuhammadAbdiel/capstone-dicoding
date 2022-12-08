@@ -5,7 +5,6 @@ import { InputGroup } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 // import FooterComponent from '../components/FooterComponent'
 import FooterStyleComponent from '../components/FooterStyleComponent'
-import HeaderComponent from '../components/HeaderComponent'
 import useInput from '../components/useInput'
 import Swal from 'sweetalert2'
 import { alertIfFoundMissingInput } from '../utils/alertMissingInputForm'
@@ -132,7 +131,6 @@ const Register = () => {
 
   return (
     <>
-      <HeaderComponent />
       <div>
         <div className=' d-flex justify-content-center my-5 '>
           <Form style={{ width: '80%' }} onSubmit={onSubmitHandler} className='register-form'>

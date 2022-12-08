@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import HeaderComponent from '../components/HeaderComponent'
 import { Link, useNavigate } from 'react-router-dom'
 import FooterStyleComponent from '../components/FooterStyleComponent'
 import useInput from '../components/useInput'
@@ -78,7 +77,6 @@ const Login = () => {
   return (
     <>
       {isLoading && <LoadingIndicatorComponent />}
-      <HeaderComponent />
       <div className=' d-flex justify-content-center my-5 '>
         <Form style={{ width: '80%' }} onSubmit={onSubmitHandler}>
           <Form.Group

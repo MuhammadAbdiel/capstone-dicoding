@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import HeaderComponent from '../components/HeaderComponent'
 import FooterComponent from '../components/FooterComponent'
 import { Card } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
@@ -23,7 +22,6 @@ const Home = () => {
   }, [])
   return (
     <>
-      <HeaderComponent />
       <div className='jumbotron'>
         <img
           src='https://cdn.wisata.app/diary/f7c0cded-dbf8-46b4-87cd-98ad7a341453.jpg'

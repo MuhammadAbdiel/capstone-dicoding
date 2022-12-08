@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Container, Table } from 'react-bootstrap'
-import LayoutAdmin from '../../components/Admin/LayoutAdmin'
 import { getAllTransactions } from '../../utils/network-data'
 import Swal from 'sweetalert2'
 import LoadingIndicatorComponent from '../../components/LoadingIndicatorComponent'
@@ -49,7 +48,6 @@ const Transactions = () => {
   return (
     <Container>
       {isLoading && <LoadingIndicatorComponent />}
-      <LayoutAdmin />
       <h1 className='text-center'>Transaksi</h1>
       <div className='mx-5 my-4'>
         <Table className='text-center mt-3' striped bordered hover>

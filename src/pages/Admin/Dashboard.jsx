@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Swal from 'sweetalert2'
 import { Col, Container, Row } from 'react-bootstrap'
-import LayoutAdmin from '../../components/Admin/LayoutAdmin'
 import ArticleGallery from '../../images/dashboard/article_gallery.png'
 import Article from '../../images/dashboard/article.png'
 import {
@@ -149,7 +148,6 @@ const Dashboard = () => {
   return (
     <>
       {isLoading && <LoadingIndicatorComponent />}
-      <LayoutAdmin />
       <Container>
         <h1 className='text-center mb-5'>Admin Dashboard</h1>
         <Row className='justify-content-center'>

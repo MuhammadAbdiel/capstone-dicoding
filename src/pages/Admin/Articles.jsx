@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import LayoutAdmin from '../../components/Admin/LayoutAdmin'
 import { default as Article } from '../../components/Admin/CardArticleAdmin'
 import { AiFillFileAdd } from 'react-icons/ai'
 import CreateArticleModal from '../../components/Admin/CreateArticleModal'
@@ -52,7 +51,6 @@ const Articles = () => {
   return (
     <Container>
       {isLoading && <LoadingIndicatorComponent />}
-      <LayoutAdmin />
       <h1 className='text-center'>Artikel</h1>
       <div className='my-articles d-flex px-3 pb-5 flex-wrap'>
         {articles.map((article) => (

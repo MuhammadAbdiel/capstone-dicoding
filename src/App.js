@@ -27,15 +27,29 @@ import DestinationGalleries from './pages/Admin/DestinationGalleries'
 import Transactions from './pages/Admin/Transactions'
 import ChangePassword from './pages/ChangePassword'
 import Payment from './pages/Payment'
+import LayoutAdmin from './components/Admin/LayoutAdmin'
+import HeaderComponent from './components/HeaderComponent'
 const App = () => {
   return (
     <main>
       <Routes>
+        <Route path='/admin/*' element={<LayoutAdmin />} />
+        <Route path='*' element={<HeaderComponent />} />
+      </Routes>
+      <Routes>
+        <Route path='/admin/register' element={<RegisterAdmin />} />
+        <Route path='/admin/login' element={<LoginAdmin />} />
+        <Route path='/admin/' element={<Dashboard />} />
+        <Route path='/admin/articles' element={<Articles />} />
+        <Route path='/admin/article_galleries' element={<ArticleGalleries />} />
+        <Route path='/admin/article_comments' element={<ArticleComments />} />
+        <Route path='/admin/categories' element={<Categories />} />
+        <Route path='/admin/tourism' element={<Tourism />} />
+        <Route path='/admin/tourism_galleries' element={<DestinationGalleries />} />
+        <Route path='/admin/transactions' element={<Transactions />} />
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/admin/register' element={<RegisterAdmin />} />
-        <Route path='/admin/login' element={<LoginAdmin />} />
         <Route path='/user/profile' element={<Profile />} />
         <Route path='/user/booking' element={<Booking />} />
         <Route path='/user/booking/:id' element={<Payment />} />
@@ -46,14 +60,6 @@ const App = () => {
         <Route path='/tourism/:id' element={<DetailTourism />} />
         <Route path='/articles' element={<Article />} />
         <Route path='/articles/:id' element={<DetailArticle />} />
-        <Route path='/admin/' element={<Dashboard />} />
-        <Route path='/admin/articles' element={<Articles />} />
-        <Route path='/admin/article_galleries' element={<ArticleGalleries />} />
-        <Route path='/admin/article_comments' element={<ArticleComments />} />
-        <Route path='/admin/categories' element={<Categories />} />
-        <Route path='/admin/tourism' element={<Tourism />} />
-        <Route path='/admin/tourism_galleries' element={<DestinationGalleries />} />
-        <Route path='/admin/transactions' element={<Transactions />} />
         <Route path='/order/:id' element={<Order />} />
         <Route path='/about' element={<AboutUs />} />
         <Route path='*' element={<NotFoundPage />} />

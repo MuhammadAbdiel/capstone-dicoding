@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Table from 'react-bootstrap/Table'
-import LayoutAdmin from '../../components/Admin/LayoutAdmin'
 import { AiFillDelete, AiFillEdit, AiFillFileAdd } from 'react-icons/ai'
 import { Button, Container } from 'react-bootstrap'
 import { deleteCategory, getAllCategories } from '../../utils/network-data'
@@ -78,7 +77,6 @@ const Categories = () => {
   return (
     <Container>
       {isLoading && <LoadingIndicatorComponent />}
-      <LayoutAdmin />
       <h1 className='text-center'>Kategori</h1>
       <button className='floating' onClick={() => setIsModalNewCategory(true)}>
         <AiFillFileAdd size={30} />

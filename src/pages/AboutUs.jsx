@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import FooterComponent from '../components/FooterComponent'
-import HeaderComponent from '../components/HeaderComponent'
 import { Card } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -23,7 +22,6 @@ const AboutUs = () => {
   }, [])
   return (
     <div>
-      <HeaderComponent />
       <div className='mt-5 '>
         <Container>
           <Row className='d-flex justify-content-evenly'>

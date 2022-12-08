@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import CardComponent from '../components/CardComponent'
 import FooterComponent from '../components/FooterComponent'
-import HeaderComponent from '../components/HeaderComponent'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { getAllDestinations } from '../utils/network-data'
@@ -40,7 +39,6 @@ const Explore = () => {
   return (
     <>
       {isLoading && <LoadingIndicatorComponent />}
-      <HeaderComponent />
       <Container className='my-4'>
         <Row>
           {destinations.map((destination) => (
