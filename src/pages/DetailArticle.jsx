@@ -117,12 +117,12 @@ const DetailArticle = () => {
               </Form.Group>
               {authedUser != null ? (
                 <Button variant='primary' type='submit'>
-                  Posting
+                  Kirim
                 </Button>
               ) : (
                 <Link to='/login'>
                   <Button variant='primary' type='button'>
-                    Posting
+                    Kirim
                   </Button>
                 </Link>
               )}
