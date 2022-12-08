@@ -62,7 +62,6 @@ const LoginAdmin = () => {
       }
       setIsLoading(true)
       const response = await loginAdmin({ email, password })
-      console.log(response)
       try {
         if (!response.error && !response.data.message) {
           putAccessToken(response.data.access_token)

@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Row, Col, InputGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-// import FooterStyleComponent from '../components/FooterStyleComponent'
 import FooterComponent from '../components/FooterComponent'
 import useInput from '../components/useInput'
 import Swal from 'sweetalert2'
@@ -214,7 +213,6 @@ const ProfileEdit = () => {
         </div>
       </div>
       <FooterComponent />
-      {isLoading && <LoadingIndicatorComponent />}
     </>
   )
 }

@@ -55,7 +55,6 @@ const Login = () => {
       }
       setIsLoading(true)
       const response = await login({ email, password })
-      console.log(response)
       try {
         if (!response.error && !response.data.message) {
           putAccessToken(response.data.access_token)

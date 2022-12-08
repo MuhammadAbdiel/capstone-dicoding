@@ -41,7 +41,6 @@ const App = () => {
   const fetchData = async () => {
     setIsLoading(true)
     const response = await getUserLogged()
-    console.log(response)
     try {
       if (!response.error) {
         if (response.data.message) {
