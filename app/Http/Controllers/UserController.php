@@ -75,7 +75,7 @@ class UserController extends Controller
     {
         $userLogin = auth()->user();
 
-        $wishlists = Wishlist::where('user_id', $userLogin->id)->get();
+        $wishlists = Wishlist::where('user_id', $userLogin->id)->latest()->get();
 
         return response()->json([
             'message' => 'success',
@@ -85,7 +85,7 @@ class UserController extends Controller
 
     public function getComments(Article $article)
     {
-        $articleComments = Comment::where('article_id', $article->id)->get();
+        $articleComments = Comment::where('article_id', $article->id)->latest()->get();
 
         return response()->json([
             'message' => 'success',
@@ -97,7 +97,7 @@ class UserController extends Controller
     {
         $user = auth()->user();
 
-        $transactions = Transaction::where('user_id', $user->id)->get();
+        $transactions = Transaction::where('user_id', $user->id)->latest()->get();
 
         return response()->json([
             'message' => 'success',
