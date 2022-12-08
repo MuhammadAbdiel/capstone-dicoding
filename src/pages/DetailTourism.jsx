@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import FooterComponent from '../components/FooterComponent'
@@ -13,13 +13,14 @@ import { checkWishlist, createWishlists, getDestinationById, getUserLogged } fro
 // eslint-disable-next-line no-unused-vars
 import { BsFillHeartFill, BsHeart } from 'react-icons/bs'
 import { FaStar } from 'react-icons/fa'
+import AppContext from '../context/AppContext'
 
 const DetailTourism = () => {
   const [destination, setDestination] = useState({})
   const [destinationGalleries, setDestinationGalleries] = useState([])
-  const [authedUser, setAuthedUser] = useState(null)
   const [wishlist, setWishlist] = useState(false)
   const { id } = useParams()
+  const { authedUser, setAuthedUser } = useContext(AppContext)
 
   const handleClickButton = async (event) => {
     event.preventDefault()

@@ -57,9 +57,9 @@ const Login = () => {
       const response = await login({ email, password })
       try {
         if (!response.error && !response.data.message) {
+          setIsLoading(false)
           putAccessToken(response.data.access_token)
           getLogged()
-          setIsLoading(false)
           navigate('/')
         } else {
           setIsLoading(false)

@@ -28,7 +28,7 @@ const HeaderAdmin = ({ active, setActive }) => {
             setAuthedUser(null)
             setIsAdmin(false)
             localStorage.removeItem('accessToken')
-            navigate('/admin/login')
+            navigate('/')
           }
         } catch (e) {
           setIsLoading(false)
@@ -43,7 +43,7 @@ const HeaderAdmin = ({ active, setActive }) => {
   }
   useEffect(() => {
     if (!isAdmin) {
-      navigate('/admin/login')
+      navigate('/')
     }
   }, [])
   return (

@@ -26,7 +26,7 @@ const SideBarAdmin = ({ active }) => {
             setAuthedUser(null)
             setIsAdmin(false)
             localStorage.removeItem('accessToken')
-            navigate('/admin/login')
+            navigate('/')
           }
         } catch (e) {
           setIsLoading(false)

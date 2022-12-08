@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import FooterComponent from '../components/FooterComponent'
 import Card from 'react-bootstrap/Card'
 import { Link, useParams } from 'react-router-dom'
@@ -6,13 +6,14 @@ import { createArticleComment, getArticleById, getArticleCommentsByArticleId, ge
 import Swal from 'sweetalert2'
 import { Button, Container, Form } from 'react-bootstrap'
 import useInput from '../components/useInput'
+import AppContext from '../context/AppContext'
 
 const DetailArticle = () => {
   const [article, setArticle] = useState({})
   const [articleComments, setArticleComments] = useState([])
   const [articleGalleries, setArticleGalleries] = useState([])
   const [comment, handleCommentChange] = useInput('')
-  const [authedUser, setAuthedUser] = useState(null)
+  const { authedUser, setAuthedUser } = useContext(AppContext)
   const { id } = useParams()
 
   const onSubmitHandler = async (event) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { getUserLogged } from '../utils/network-data'
 import logo from '../images/profile/user.png'
 import Button from 'react-bootstrap/Button'
@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom'
 import NotFound from './NotFound'
 import Swal from 'sweetalert2'
 import { Col, Row } from 'react-bootstrap'
+import AppContext from '../context/AppContext'
 
 const ProfileComponent = () => {
-  const [authedUser, setAuthedUser] = useState('Not Set')
+  const { authedUser, setAuthedUser } = useContext(AppContext)
   useEffect(() => {
     if (!localStorage.getItem('accessToken')) {
       setAuthedUser(null)

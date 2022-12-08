@@ -21,8 +21,7 @@ const ProfileEdit = () => {
   const [bankAccountNumber, handleBankAccountNumberChange] = useInput('')
   const [isEmailValid, setIsEmailValid] = useState('Not Set')
   const [isPhoneNumberValid, setIsPhoneNumberValid] = useState('Not Set')
-  const [authedUser, setAuthedUser] = useState('Not Set')
-  const { setIsLoading } = useContext(AppContext)
+  const { authedUser, setAuthedUser, setIsLoading } = useContext(AppContext)
 
   useEffect(() => {
     if (!localStorage.getItem('accessToken')) {
