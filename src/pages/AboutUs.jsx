@@ -4,12 +4,12 @@ import { Card } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Logo from '../images/logo192.png'
 import Airplane from '../images/profile/airplane.png'
 import Abdiel from '../images/profile/abdiel.jpg'
 import Riko from '../images/profile/Riko.jpg'
 import Dimas from '../images/profile/dimas.jpg'
 import HowUse from '../images/assets/step_by_step_ilustration.webp'
+import Ardin from '../images/profile/ardin.jpg'
 // import CardGroup from 'react-bootstrap/CardGroup'
 import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs'
 import AOS from 'aos'
@@ -69,19 +69,19 @@ const AboutUs = () => {
           <Row className='mb-5'>
             <Col className='my-2' lg={3} md={4} sm={6}>
               <Card className='h-100' data-aos='fade-down' data-aos-easing='linear'>
-                <Card.Img variant='top' src={Logo} />
+                <Card.Img variant='top' src={Ardin} />
                 <Card.Body className='d-flex flex-column justify-content-between'>
-                  <Card.Title className='text-center'>Developer 1</Card.Title>
+                  <Card.Title className='text-center'>Ardin Nugraha</Card.Title>
                   <Card.Text className='d-flex justify-content-evenly mt-3'>
-                    <a href='' target='_blank' rel='noreferrer'>
+                    <a href='https://github.com/ardin2001' target='_blank' rel='noreferrer'>
                       <BsGithub size={30} color='#000000' />
                     </a>
 
-                    <a href='' target='_blank' rel='noreferrer'>
+                    <a href='https://www.linkedin.com/in/ardin-nugraha-b2536324b/' target='_blank' rel='noreferrer'>
                       <BsLinkedin size={30} color='#00A0DC' />
                     </a>
 
-                    <a href='' target='_blank' rel='noreferrer'>
+                    <a href='https://www.instagram.com/ardin_nugrahaa/' target='_blank' rel='noreferrer'>
                       <BsInstagram size={30} color='#CE5614' />
                     </a>
                   </Card.Text>

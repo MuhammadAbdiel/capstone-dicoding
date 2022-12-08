@@ -53,7 +53,7 @@ const Article = () => {
           ))}
         </Row>
       </Container>
-      <FooterStyleComponent />
+      <FooterComponent />
     </>
   )
 }
