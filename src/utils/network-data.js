@@ -1,4 +1,4 @@
-const BASE_URL = 'https://capstone-backend-production-f91c.up.railway.app/api'
+const BASE_URL = 'https://capstone-backend-production-ce8b.up.railway.app/api'
 
 function getAccessToken() {
   return localStorage.getItem('accessToken')
