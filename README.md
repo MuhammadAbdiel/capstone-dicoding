@@ -1,5 +1,6 @@
 # GoWisata
-Aplikasi ini dapat diakses di
+
+Aplikasi ini dapat diakses [disini](https://gowisata.netlify.app/)
 <br>
 <br>
 
