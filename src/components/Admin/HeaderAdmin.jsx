@@ -7,7 +7,7 @@ import { logoutAdmin } from '../../utils/network-data'
 import AppContext from '../../context/AppContext'
 
 const HeaderAdmin = ({ active, setActive }) => {
-  const { authedUser, setAuthedUser, isAdmin, setIsAdmin, setIsLoading } = useContext(AppContext)
+  const { setAuthedUser, isAdmin, setIsAdmin, setIsLoading } = useContext(AppContext)
   const navigate = useNavigate()
 
   const handleLogout = async () => {
@@ -43,7 +43,7 @@ const HeaderAdmin = ({ active, setActive }) => {
   }
   useEffect(() => {
     if (!isAdmin) {
-      navigate('/')
+      navigate('/admin/login')
     }
   }, [])
   return (
@@ -62,7 +62,7 @@ const HeaderAdmin = ({ active, setActive }) => {
               <FaBars />
             </i>
           </button>
-          {authedUser != null && (
+          {isAdmin && (
             <button onClick={handleLogout} className='btn px-3 py-2'>
               <FiLogOut size={20} className='me-2' />
               Logout

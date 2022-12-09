@@ -110,13 +110,15 @@ const SideBarAdmin = ({ active }) => {
           </li>
         </ul>
         <hr />
-        <ul className='nav flex-column bg-white mb-0'>
-          <li className='nav-item'>
-            <Link className='nav-link text-dark' onClick={handleLogout}>
-              Logout
-            </Link>
-          </li>
-        </ul>
+        {isAdmin && (
+          <ul className='nav flex-column bg-white mb-0'>
+            <li className='nav-item'>
+              <Link className='nav-link text-dark' onClick={handleLogout}>
+                Logout
+              </Link>
+            </li>
+          </ul>
+        )}
       </div>
     </>
   )
