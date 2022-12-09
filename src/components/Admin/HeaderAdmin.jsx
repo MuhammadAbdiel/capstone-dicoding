@@ -43,7 +43,7 @@ const HeaderAdmin = ({ active, setActive }) => {
   }
   useEffect(() => {
     if (!isAdmin) {
-      navigate('/admin/login')
+      navigate('/')
     }
   }, [])
   return (
