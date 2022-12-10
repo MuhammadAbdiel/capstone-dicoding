@@ -219,7 +219,7 @@ GoWisata adalah aplikasi pembelian tiket online yang dapat membantu anda dalam m
 
 5. Isi semua kolom input yang diperlukan. Kemudian, klik tombol Perbarui
 
-6. Untuk menghapus artikel, klik tombol Hapus yang berada di sebelah tombol edit
+6. Untuk menghapus artikel, klik tombol Hapus yang berada di sebelah tombol edit (Untuk menghapus artikel, harus menghapus gambar dari artikel yang ingin dihapus terlebih dahulu)
 <br>
 <br>
 
@@ -316,7 +316,7 @@ GoWisata adalah aplikasi pembelian tiket online yang dapat membantu anda dalam m
 
 5. Isi semua kolom input yang diperlukan. Kemudian, klik tombol Perbarui
 
-6. Untuk menghapus destinasi wisata, klik tombol Hapus yang berada di sebelah tombol edit
+6. Untuk menghapus destinasi wisata, klik tombol Hapus yang berada di sebelah tombol edit (Untuk menghapus destinasi wisata, harus menghapus gambar dari destinasi wisata yang ingin dihapus terlebih dahulu)
 <br>
 <br>
 
