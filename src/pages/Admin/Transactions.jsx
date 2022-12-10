@@ -57,6 +57,7 @@ const Transactions = () => {
               <th>Jumlah Tiket</th>
               <th>Harga</th>
               <th>Status Transaksi</th>
+              <th>Waktu Pemesanan</th>
               <th>Aksi</th>
             </tr>
           </thead>
@@ -78,6 +79,9 @@ const Transactions = () => {
                       ) : (
                         <div className='badge bg-success'>Sudah dibayar</div>
                       )}
+                    </td>
+                    <td>
+                      {new Date(detail.created_at).toDateString()} {new Date(detail.created_at).toLocaleTimeString()}
                     </td>
                     <td>
                       <Button
